@@ -1,10 +1,683 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello Vercel</title>
-  </head>
-  <body>
-    <h1>It works!</h1>
-    <p>This is my plain HTML site on Vercel.</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hootova - Track, Share, and Earn from Your Trusted Referrals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a3a52;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-space {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+            color: #ffffff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: #e0f2fe;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #ff8555;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,53,0.4);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mockup-placeholder {
+            width: 300px;
+            height: 550px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mockup-header {
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .mockup-agent {
+            width: 60px;
+            height: 60px;
+            background-color: #cbd5e1;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+        }
+
+        .mockup-name {
+            color: #1a3a52;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .mockup-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .mockup-item {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #1a3a52;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Value Pillars Section */
+        .value-pillars {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .pillar {
+            background-color: #f8fafc;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .pillar h3 {
+            color: #1a3a52;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pillar ul {
+            list-style: none;
+        }
+
+        .pillar li {
+            margin-bottom: 1.2rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .pillar li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .pillar strong {
+            color: #1a3a52;
+        }
+
+        /* Steps Section */
+        .steps {
+            background-color: #f1f5f9;
+            padding: 4rem 2rem;
+        }
+
+        .steps-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .steps h2 {
+            text-align: center;
+            color: #1a3a52;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #ff6b35;
+            color: #ffffff;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .step h4 {
+            color: #1a3a52;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Trust Section */
+        .trust {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .testimonial {
+            background-color: #f8fafc;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
+            margin-bottom: 3rem;
+            font-style: italic;
+            color: #475569;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            font-style: normal;
+            color: #1a3a52;
+            font-weight: 600;
+        }
+
+        .promise {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+            color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .promise h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .promise p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .legal-notice {
+            background-color: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #fbbf24;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: #ffffff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .cta-button {
+            background-color: #1a3a52;
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .cta-button:hover {
+            background-color: #2d5f7e;
+        }
+
+        .vendor-link {
+            color: #ffffff;
+            font-size: 1rem;
+            text-decoration: underline;
+            opacity: 0.9;
+        }
+
+        .vendor-link:hover {
+            opacity: 1;
+        }
+
+        /* Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.3s;
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #94a3b8;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: #1a3a52;
+        }
+
+        .form-title {
+            color: #1a3a52;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            clear: both;
+        }
+
+        .form-subtitle {
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1a3a52;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+
+        .form-group.optional label:after {
+            content: " (Optional)";
+            color: #94a3b8;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .submit-button {
+            width: 100%;
+            background-color: #ff6b35;
+            color: #ffffff;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #ff8555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+
+            .value-pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mockup-placeholder {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero-text h3 {
+                font-size: 1.1rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo-space"></div>
+            <h1>HOOTOVA</h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Track, Share, and Earn from Your Trusted Referrals.</h2>
+                <h3>The simple, compliant way to build measurable equity from your local vendor network.</h3>
+                <button class="cta-button" onclick="openModal()">Launch My Roster Now (Free Pilot)</button>
+            </div>
+            <div class="hero-visual">
+                <div class="mockup-placeholder">
+                    <div class="mockup-header">
+                        <div class="mockup-agent"></div>
+                        <div class="mockup-name">Agent Name's Trusted Vendors</div>
+                    </div>
+                    <div class="mockup-list">
+                        <div class="mockup-item">🔧 Plumber</div>
+                        <div class="mockup-item">❄️ HVAC</div>
+                        <div class="mockup-item">🏠 Roofer</div>
+                        <div class="mockup-item">⚡ Electrician</div>
+                        <div class="mockup-item">🎨 Painter</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Pillars -->
+    <section class="value-pillars">
+        <div class="pillar">
+            <h3>📣 For the Agent: Build Equity. Stay Top-of-Mind.</h3>
+            <ul>
+                <li><strong>Keep Your Influence:</strong> Turn word-of-mouth recommendations into a measurable, tracked business asset.</li>
+                <li><strong>Zero Kickback Risk:</strong> Earn compliant, influencer-style compensation based on visibility, not per-lead.</li>
+                <li><strong>The Ultimate Follow-Up:</strong> Provide a valuable post-closing tool that keeps your name attached to the homeowner long after the deal closes.</li>
+            </ul>
+        </div>
+        <div class="pillar">
+            <h3>🛠️ For the Trusted Vendor: Warm Intros Only. Predictable Cost.</h3>
+            <ul>
+                <li><strong>No Cold Leads:</strong> Receive requests from clients referred directly by trusted local professionals.</li>
+                <li><strong>Pay-Per-Placement:</strong> A simple, predictable subscription model, not expensive, low-quality lead fees.</li>
+                <li><strong>Instant Context:</strong> Get the client's need and the agent's endorsement right in your introductory email.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Simple 3-Step Flow -->
+    <section class="steps">
+        <div class="steps-content">
+            <h2>How It Works: Simple as 1-2-3</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Your Roster, Ready to Go.</h4>
+                    <p>We build your page instantly. Share the link, a printable card, or a QR code. Zero setup time.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Every Referral is Tracked.</h4>
+                    <p>We log every view and click automatically. You finally know who asked for what and when.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Instant, Warm Intro.</h4>
+                    <p>Hootova sends the vendor a direct email with the client's request. You are instantly notified.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust and Compliance -->
+    <section class="trust">
+        <div class="testimonial">
+            "I stop fielding 'who do you know?' calls and just send the link. My plumbers love the warm intros. It's a win-win."
+            <div class="testimonial-author">— [Agent Name, Brokerage]</div>
+        </div>
+
+        <div class="promise">
+            <h3>The Hootova Promise: Trust, Tracked.</h3>
+            <p>We manage the legal disclosure and the tracking, so you can focus on building your network. <strong>No RESPA violation concerns.</strong></p>
+        </div>
+
+        <div class="legal-notice">
+            <strong>Required Disclosure:</strong> Some providers may pay Hootova and/or me for sponsored placement. I only include providers I trust.
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Stop Giving Away Value. Launch Your Roster Now.</h2>
+        <button class="cta-button" onclick="openModal()">Get Started Free</button>
+        <br><br>
+        <a href="/vendor-signup" class="vendor-link">Interested in being listed? Learn about Vendor Subscriptions →</a>
+    </section>
+
+    <!-- Form Modal -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 class="form-title">Launch Your Roster</h3>
+            <p class="form-subtitle">Start your free pilot today. No credit card required.</p>
+            <form id="signupForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="brokerage">Brokerage Name *</label>
+                    <input type="text" id="brokerage" name="brokerage" required>
+                </div>
+                <div class="form-group optional">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <button type="submit" class="submit-button">Launch My Roster</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('formModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('formModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('formModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                brokerage: document.getElementById('brokerage').value,
+                phone: document.getElementById('phone').value
+            };
+
+            // Store in memory for this session
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Thank you! We\'ll be in touch soon to set up your roster.');
+            closeModal();
+            
+            // Reset form
+            document.getElementById('signupForm').reset();
+
+            // In production, you would send this to your backend or use a service like:
+            // - Web3Forms (https://web3forms.com)
+            // - Formspree (https://formspree.io)
+            // - Basin (https://usebasin.com)
+        }
+    </script>
+</body>
 </html>
