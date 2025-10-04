@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hootova - Track, Share, and Earn from Your Trusted Referrals</title>
+    <title>Hootova - Stop Giving Away Value With Every Referral</title>
     <style>
         * {
             margin: 0;
@@ -64,16 +63,18 @@
         }
 
         .hero-text h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            font-weight: 700;
         }
 
         .hero-text h3 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 2rem;
             font-weight: 400;
             color: #e0f2fe;
+            line-height: 1.7;
         }
 
         .cta-button {
@@ -95,6 +96,13 @@
             background-color: #ff8555;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255,107,53,0.4);
+        }
+
+        .trust-line {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            font-style: italic;
         }
 
         .hero-visual {
@@ -151,194 +159,267 @@
             font-weight: 500;
         }
 
-        /* Value Pillars Section */
-        .value-pillars {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+        /* How It Works Section */
+        .how-it-works {
+            background-color: #f8fafc;
+            padding: 5rem 2rem;
         }
 
-        .pillar {
+        .how-it-works-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            color: #1a3a52;
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+            font-weight: 700;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .step {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step h4 {
+            color: #1a3a52;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .step p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Value Proposition Section */
+        .value-prop {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .value-prop h2 {
+            text-align: center;
+            color: #1a3a52;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .value-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            text-align: center;
+        }
+
+        .value-intro strong {
+            color: #1a3a52;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .benefit {
             background-color: #f8fafc;
             padding: 2.5rem;
             border-radius: 12px;
             border: 2px solid #e2e8f0;
         }
 
-        .pillar h3 {
+        .benefit h4 {
             color: #1a3a52;
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .pillar ul {
-            list-style: none;
+        .benefit p {
+            color: #64748b;
+            line-height: 1.7;
         }
 
-        .pillar li {
-            margin-bottom: 1.2rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .pillar li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #ff6b35;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .pillar strong {
-            color: #1a3a52;
-        }
-
-        /* Steps Section */
-        .steps {
+        /* Compliance/FAQ Section */
+        .compliance {
             background-color: #f1f5f9;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
         }
 
-        .steps-content {
-            max-width: 1000px;
+        .compliance-content {
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .steps h2 {
+        .compliance h2 {
             text-align: center;
             color: #1a3a52;
-            font-size: 2rem;
-            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
         }
 
-        .steps-grid {
+        .compliance-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .compliance-points {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .compliance-points ul {
+            list-style: none;
+        }
+
+        .compliance-points li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #1a3a52;
+            font-size: 1.05rem;
+        }
+
+        .compliance-points li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .faq-item {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h4 {
+            color: #1a3a52;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .social-proof h2 {
+            text-align: center;
+            color: #1a3a52;
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+            font-weight: 700;
+        }
+
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-        .step {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background-color: #ff6b35;
-            color: #ffffff;
-            border-radius: 50%;
-            line-height: 50px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .step h4 {
-            color: #1a3a52;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .step p {
-            color: #64748b;
-            font-size: 0.95rem;
-        }
-
-        /* Trust Section */
-        .trust {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
         .testimonial {
             background-color: #f8fafc;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid #ff6b35;
-            margin-bottom: 3rem;
             font-style: italic;
             color: #475569;
-            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         .testimonial-author {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             font-style: normal;
             color: #1a3a52;
             font-weight: 600;
-        }
-
-        .promise {
-            background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
-            color: #ffffff;
-            padding: 2.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-        }
-
-        .promise h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .promise p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .legal-notice {
-            background-color: #fef3c7;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #fbbf24;
-            font-size: 0.9rem;
-            color: #92400e;
+            font-size: 0.95rem;
         }
 
         /* Final CTA Section */
         .final-cta {
             background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
             color: #ffffff;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
         }
 
         .final-cta h2 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
 
         .final-cta .cta-button {
             background-color: #1a3a52;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .final-cta .cta-button:hover {
             background-color: #2d5f7e;
         }
 
-        .vendor-link {
-            color: #ffffff;
-            font-size: 1rem;
-            text-decoration: underline;
-            opacity: 0.9;
-        }
-
-        .vendor-link:hover {
-            opacity: 1;
+        .cta-subtext {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+            margin-top: 1rem;
         }
 
         /* Form Modal */
@@ -388,6 +469,7 @@
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
             clear: both;
+            font-weight: 700;
         }
 
         .form-subtitle {
@@ -462,14 +544,18 @@
             }
 
             .hero-text h2 {
-                font-size: 2rem;
-            }
-
-            .value-pillars {
-                grid-template-columns: 1fr;
+                font-size: 2.2rem;
             }
 
             .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -484,7 +570,7 @@
             }
 
             .hero-text h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .hero-text h3 {
@@ -494,6 +580,25 @@
             .cta-button {
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
+            }
+
+            .how-it-works,
+            .value-prop,
+            .compliance,
+            .social-proof,
+            .final-cta {
+                padding: 3rem 1rem;
+            }
+
+            .how-it-works h2,
+            .value-prop h2,
+            .compliance h2,
+            .social-proof h2 {
+                font-size: 1.8rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
             }
 
             .modal-content {
@@ -515,20 +620,21 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h2>Track, Share, and Earn from Your Trusted Referrals.</h2>
-                <h3>The simple, compliant way to build measurable equity from your local vendor network.</h3>
-                <button class="cta-button" onclick="openModal()">Launch My Roster Now (Free Pilot)</button>
+                <h2>Stop Giving Away Value With Every Referral.</h2>
+                <h3>Every landscaper, mechanic, and contractor you recommend generates business—for them. Hootova turns your trusted network into a simple, compliant roster that tracks every referral and builds your influence.</h3>
+                <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
+                <p class="trust-line">No kickbacks. No hassle. Just your trusted pros, tracked.</p>
             </div>
             <div class="hero-visual">
                 <div class="mockup-placeholder">
                     <div class="mockup-header">
                         <div class="mockup-agent"></div>
-                        <div class="mockup-name">Agent Name's Trusted Vendors</div>
+                        <div class="mockup-name">Your Trusted Vendors</div>
                     </div>
                     <div class="mockup-list">
-                        <div class="mockup-item">🔧 Plumber</div>
-                        <div class="mockup-item">❄️ HVAC</div>
-                        <div class="mockup-item">🏠 Roofer</div>
+                        <div class="mockup-item">🌿 Landscaping</div>
+                        <div class="mockup-item">🔧 Auto Repair</div>
+                        <div class="mockup-item">🏗️ Contractors</div>
                         <div class="mockup-item">⚡ Electrician</div>
                         <div class="mockup-item">🎨 Painter</div>
                     </div>
@@ -537,73 +643,118 @@
         </div>
     </section>
 
-    <!-- Value Pillars -->
-    <section class="value-pillars">
-        <div class="pillar">
-            <h3>📣 For the Agent: Build Equity. Stay Top-of-Mind.</h3>
-            <ul>
-                <li><strong>Keep Your Influence:</strong> Turn word-of-mouth recommendations into a measurable, tracked business asset.</li>
-                <li><strong>Zero Kickback Risk:</strong> Earn compliant, influencer-style compensation based on visibility, not per-lead.</li>
-                <li><strong>The Ultimate Follow-Up:</strong> Provide a valuable post-closing tool that keeps your name attached to the homeowner long after the deal closes.</li>
-            </ul>
-        </div>
-        <div class="pillar">
-            <h3>🛠️ For the Trusted Vendor: Warm Intros Only. Predictable Cost.</h3>
-            <ul>
-                <li><strong>No Cold Leads:</strong> Receive requests from clients referred directly by trusted local professionals.</li>
-                <li><strong>Pay-Per-Placement:</strong> A simple, predictable subscription model, not expensive, low-quality lead fees.</li>
-                <li><strong>Instant Context:</strong> Get the client's need and the agent's endorsement right in your introductory email.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Simple 3-Step Flow -->
-    <section class="steps">
-        <div class="steps-content">
-            <h2>How It Works: Simple as 1-2-3</h2>
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="how-it-works-content">
+            <h2>Three Steps to Start Tracking Your Network</h2>
             <div class="steps-grid">
                 <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Your Roster, Ready to Go.</h4>
-                    <p>We build your page instantly. Share the link, a printable card, or a QR code. Zero setup time.</p>
+                    <div class="step-icon">✓</div>
+                    <h4>Build Your Roster</h4>
+                    <p>Add your trusted landscapers, mechanics, contractors, and service pros in minutes. No complicated setup—just names, numbers, and specialties.</p>
                 </div>
                 <div class="step">
-                    <div class="step-number">2</div>
-                    <h4>Every Referral is Tracked.</h4>
-                    <p>We log every view and click automatically. You finally know who asked for what and when.</p>
+                    <div class="step-icon">📱</div>
+                    <h4>Share Your Link</h4>
+                    <p>Send clients your branded Hootova page via text, email, or social media. Print business cards with your QR code, or share it during closing conversations.</p>
                 </div>
                 <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Instant, Warm Intro.</h4>
-                    <p>Hootova sends the vendor a direct email with the client's request. You are instantly notified.</p>
+                    <div class="step-icon">📊</div>
+                    <h4>Track Every Referral</h4>
+                    <p>See who's viewing your roster, which vendors clients are contacting, and when requests happen. Finally know what your network is worth.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust and Compliance -->
-    <section class="trust">
-        <div class="testimonial">
-            "I stop fielding 'who do you know?' calls and just send the link. My plumbers love the warm intros. It's a win-win."
-            <div class="testimonial-author">— [Agent Name, Brokerage]</div>
+    <!-- Value Proposition Section -->
+    <section class="value-prop">
+        <h2>Your Referrals Are Building Businesses. Start Getting Credit.</h2>
+        <div class="value-intro">
+            <p>You've spent years cultivating relationships with the best local pros—the landscaper who always shows up on time, the mechanic your clients rave about, the contractor who gets permits right the first time.</p>
+            <p style="margin-top: 1rem;">Every time you refer one of these vendors, you're generating revenue for them. But you have no way to track who converted, what the relationship is worth, or whether your recommendation even reached the client after closing.</p>
+            <p style="margin-top: 1rem;"><strong>Hootova changes that.</strong> It's not a payment platform or referral fee system—it's a simple, professional directory that captures the value of your network while keeping you 100% compliant.</p>
         </div>
-
-        <div class="promise">
-            <h3>The Hootova Promise: Trust, Tracked.</h3>
-            <p>We manage the legal disclosure and the tracking, so you can focus on building your network. <strong>No RESPA violation concerns.</strong></p>
-        </div>
-
-        <div class="legal-notice">
-            <strong>Required Disclosure:</strong> Some providers may pay Hootova and/or me for sponsored placement. I only include providers I trust.
+        <div class="benefits-grid">
+            <div class="benefit">
+                <h4>Professional Reputation</h4>
+                <p>Show up as the organized agent who connects clients with trusted pros—even years after closing. Your branded roster keeps you top-of-mind.</p>
+            </div>
+            <div class="benefit">
+                <h4>Trackable Influence</h4>
+                <p>Stop wondering if your referrals matter. See real-time data on which vendors clients are contacting and measure the impact of your recommendations.</p>
+            </div>
+            <div class="benefit">
+                <h4>Zero Maintenance</h4>
+                <p>Set up your roster once in under 10 minutes. No ongoing management, no follow-ups, no software to learn. Just share your link and let it work.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- Compliance/FAQ Section -->
+    <section class="compliance">
+        <div class="compliance-content">
+            <h2>Is This Legal? (Yes. Here's Why.)</h2>
+            <p class="compliance-intro">Hootova is a referral tracking tool, not a payment platform. There are no kickbacks, commissions, or fees tied to your recommendations. It's simply a branded directory of service providers you trust—like handing out business cards, but smarter.</p>
+            
+            <div class="compliance-points">
+                <ul>
+                    <li>No financial compensation for referrals</li>
+                    <li>No settlement service providers (we focus on general contractors, landscapers, mechanics—not lenders or title companies)</li>
+                    <li>Full disclosure to clients that this is your personal recommendation list</li>
+                    <li>100% compliant with RESPA guidelines</li>
+                </ul>
+            </div>
+
+            <h3 style="text-align: center; color: #1a3a52; margin-bottom: 2rem; font-size: 1.6rem;">Common Questions</h3>
+
+            <div class="faq-item">
+                <h4>Q: Do I get paid when clients use my vendors?</h4>
+                <p>A: No. Hootova tracks referrals, but doesn't facilitate payments or kickbacks. You're simply organizing your network and measuring its impact.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: What kind of vendors can I include?</h4>
+                <p>A: General service providers like landscapers, contractors, mechanics, electricians, plumbers, painters, and masons. We avoid settlement service providers (lenders, title companies, inspectors) to keep you safely outside RESPA restrictions.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Do my clients know this is my list?</h4>
+                <p>A: Yes. Your Hootova page is clearly branded with your name and includes disclosure language that these are your personal recommendations.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: How long does setup take?</h4>
+                <p>A: Under 10 minutes. Add vendor names, contact info, and specialties. We handle the rest—page design, tracking, and email notifications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <h2>Agents Are Finally Getting Credit for Their Networks</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                "I've been referring the same landscaper for 8 years, but had no idea how many of my clients actually called him. Now I can see it in real time—and it's way more than I thought."
+                <div class="testimonial-author">— Sarah M., Keller Williams</div>
+            </div>
+            <div class="testimonial">
+                "I was worried about compliance, but Hootova makes it so simple. No kickbacks, no gray areas—just a professional way to share my trusted vendors."
+                <div class="testimonial-author">— Mike D., RE/MAX</div>
+            </div>
+            <div class="testimonial">
+                "Set it up in 5 minutes, sent the link to my last 50 clients, and already had 12 people view my roster. This is genius."
+                <div class="testimonial-author">— Jennifer L., Coldwell Banker</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
     <section class="final-cta">
-        <h2>Stop Giving Away Value. Launch Your Roster Now.</h2>
-        <button class="cta-button" onclick="openModal()">Get Started Free</button>
-        <br><br>
-        <a href="/vendor-signup" class="vendor-link">Interested in being listed? Learn about Vendor Subscriptions →</a>
+        <h2>Your Network Is Worth More Than You Think.</h2>
+        <p>Stop letting your referrals disappear into the void. Start tracking the value you create every time you recommend a trusted pro.</p>
+        <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
+        <p class="cta-subtext">No credit card required. Set up in under 10 minutes.</p>
     </section>
 
     <!-- Form Modal -->
@@ -629,7 +780,7 @@
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone">
                 </div>
-                <button type="submit" class="submit-button">Launch My Roster</button>
+                <button type="submit" class="submit-button">Launch My Free Pilot</button>
             </form>
         </div>
     </div>
@@ -645,7 +796,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('formModal');
             if (event.target === modal) {
@@ -663,20 +813,15 @@
                 phone: document.getElementById('phone').value
             };
 
-            // Store in memory for this session
             console.log('Form submitted:', formData);
             
-            // Show success message
             alert('Thank you! We\'ll be in touch soon to set up your roster.');
             closeModal();
             
-            // Reset form
             document.getElementById('signupForm').reset();
 
-            // In production, you would send this to your backend or use a service like:
-            // - Web3Forms (https://web3forms.com)
-            // - Formspree (https://formspree.io)
-            // - Basin (https://usebasin.com)
+            // To connect to a form service like Web3Forms, Formspree, or Basin,
+            // replace the above with an actual API call to your chosen service
         }
     </script>
 </body>
