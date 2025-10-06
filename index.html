@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hootova - Stop Giving Away Value With Every Referral</title>
+    <title>Hootova - Get Paid to Keep Local Businesses Honest</title>
     <style>
         * {
             margin: 0;
@@ -215,14 +215,14 @@
             line-height: 1.7;
         }
 
-        /* Value Proposition Section */
-        .value-prop {
+        /* How You Get Paid Section */
+        .get-paid {
             max-width: 1200px;
             margin: 0 auto;
             padding: 5rem 2rem;
         }
 
-        .value-prop h2 {
+        .get-paid h2 {
             text-align: center;
             color: #1a3a52;
             font-size: 2.2rem;
@@ -230,7 +230,7 @@
             font-weight: 700;
         }
 
-        .value-intro {
+        .get-paid-intro {
             max-width: 800px;
             margin: 0 auto 3rem;
             font-size: 1.1rem;
@@ -239,45 +239,196 @@
             text-align: center;
         }
 
-        .value-intro strong {
+        .get-paid-intro strong {
             color: #1a3a52;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 3rem;
+        /* Who This Is For Section */
+        .who-for {
+            background-color: #f8fafc;
+            padding: 5rem 2rem;
         }
 
-        .benefit {
-            background-color: #f8fafc;
+        .who-for-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .who-for h2 {
+            text-align: center;
+            color: #1a3a52;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .who-for-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            text-align: center;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .use-case {
+            background-color: #ffffff;
             padding: 2.5rem;
             border-radius: 12px;
             border: 2px solid #e2e8f0;
         }
 
-        .benefit h4 {
+        .use-case h4 {
             color: #1a3a52;
             font-size: 1.3rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
 
-        .benefit p {
+        .use-case p {
             color: #64748b;
             line-height: 1.7;
         }
 
-        /* Compliance/FAQ Section */
-        .compliance {
+        /* Consumer Protection Section */
+        .consumer-protection {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .consumer-protection h2 {
+            text-align: center;
+            color: #1a3a52;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .consumer-protection-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit {
+            background-color: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h4 {
+            color: #1a3a52;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .benefit-content p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Disclosure Section */
+        .disclosure {
             background-color: #f1f5f9;
             padding: 5rem 2rem;
         }
 
-        .compliance-content {
+        .disclosure-content {
             max-width: 900px;
             margin: 0 auto;
+        }
+
+        .disclosure h2 {
+            text-align: center;
+            color: #1a3a52;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .disclosure-box {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #10b981;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .disclosure-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #1a3a52;
+            font-style: italic;
+        }
+
+        .disclosure-why {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .disclosure-why h4 {
+            color: #1a3a52;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .disclosure-why ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .disclosure-why li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .disclosure-why li:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* Compliance/FAQ Section */
+        .compliance {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
         }
 
         .compliance h2 {
@@ -297,7 +448,7 @@
         }
 
         .compliance-points {
-            background-color: #ffffff;
+            background-color: #f8fafc;
             padding: 2rem;
             border-radius: 12px;
             margin-bottom: 3rem;
@@ -325,31 +476,12 @@
             font-size: 1.3rem;
         }
 
-        .faq-item {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .faq-item h4 {
-            color: #1a3a52;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .faq-item p {
-            color: #64748b;
-            line-height: 1.7;
-        }
-
         /* Social Proof Section */
         .social-proof {
             max-width: 1100px;
             margin: 0 auto;
             padding: 5rem 2rem;
+            background-color: #f8fafc;
         }
 
         .social-proof h2 {
@@ -367,13 +499,14 @@
         }
 
         .testimonial {
-            background-color: #f8fafc;
+            background-color: #ffffff;
             padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid #ff6b35;
             font-style: italic;
             color: #475569;
             line-height: 1.7;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .testimonial-author {
@@ -555,6 +688,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
@@ -583,7 +720,10 @@
             }
 
             .how-it-works,
-            .value-prop,
+            .get-paid,
+            .who-for,
+            .consumer-protection,
+            .disclosure,
             .compliance,
             .social-proof,
             .final-cta {
@@ -591,7 +731,10 @@
             }
 
             .how-it-works h2,
-            .value-prop h2,
+            .get-paid h2,
+            .who-for h2,
+            .consumer-protection h2,
+            .disclosure h2,
             .compliance h2,
             .social-proof h2 {
                 font-size: 1.8rem;
@@ -620,10 +763,10 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h2>Stop Giving Away Value With Every Referral.</h2>
-                <h3>Every landscaper, mechanic, and contractor you recommend generates business—for them. Hootova turns your trusted network into a simple, compliant roster that tracks every referral and builds your influence.</h3>
+                <h2>Get Paid to Keep Local Businesses Honest.</h2>
+                <h3>Hootova pays you to curate and recommend trusted local pros—landscapers, mechanics, contractors—while holding them accountable for great service. Your network, your influence, your income.</h3>
                 <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
-                <p class="trust-line">No kickbacks. No hassle. Just your trusted pros, tracked.</p>
+                <p class="trust-line">Earn when clients use your vendors. Stay compliant. Build your reputation.</p>
             </div>
             <div class="hero-visual">
                 <div class="mockup-placeholder">
@@ -667,66 +810,131 @@
         </div>
     </section>
 
-    <!-- Value Proposition Section -->
-    <section class="value-prop">
-        <h2>Your Referrals Are Building Businesses. Start Getting Credit.</h2>
-        <div class="value-intro">
-            <p>You've spent years cultivating relationships with the best local pros—the landscaper who always shows up on time, the mechanic your clients rave about, the contractor who gets permits right the first time.</p>
-            <p style="margin-top: 1rem;">Every time you refer one of these vendors, you're generating revenue for them. But you have no way to track who converted, what the relationship is worth, or whether your recommendation even reached the client after closing.</p>
-            <p style="margin-top: 1rem;"><strong>Hootova changes that.</strong> It's not a payment platform or referral fee system—it's a simple, professional directory that captures the value of your network while keeping you 100% compliant.</p>
+    <!-- How You Get Paid Section -->
+    <section class="get-paid">
+        <h2>You Get Paid When Your Referrals Convert.</h2>
+        <div class="get-paid-intro">
+            <p>When a client contacts a vendor through your Hootova roster and books a service, you earn a referral fee—just like an affiliate link, but for your local network.</p>
+            <p style="margin-top: 1rem;"><strong>Here's the key difference:</strong> You're not just getting paid to send a name. You're compensated for curating quality, holding vendors accountable, and protecting your clients from bad service. If a vendor underperforms, your reputation is on the line—so you only refer pros you trust.</p>
         </div>
         <div class="benefits-grid">
             <div class="benefit">
-                <h4>Professional Reputation</h4>
-                <p>Show up as the organized agent who connects clients with trusted pros—even years after closing. Your branded roster keeps you top-of-mind.</p>
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-content">
+                    <h4>Transparent Compensation</h4>
+                    <p>Your clients know you're compensated by Hootova to ensure quality recommendations. It's disclosed upfront, so there's no hidden agenda—just honest curation.</p>
+                </div>
             </div>
             <div class="benefit">
-                <h4>Trackable Influence</h4>
-                <p>Stop wondering if your referrals matter. See real-time data on which vendors clients are contacting and measure the impact of your recommendations.</p>
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-content">
+                    <h4>Vendor Accountability</h4>
+                    <p>When a client reaches out, the vendor is notified who referred them. They know you're watching, which creates built-in quality control.</p>
+                </div>
             </div>
             <div class="benefit">
-                <h4>Zero Maintenance</h4>
-                <p>Set up your roster once in under 10 minutes. No ongoing management, no follow-ups, no software to learn. Just share your link and let it work.</p>
+                <div class="benefit-icon">⭐</div>
+                <div class="benefit-content">
+                    <h4>Your Reputation, Your Standards</h4>
+                    <p>If a vendor screws up, your client can reach out to you directly. You control who stays on your roster, so you're incentivized to recommend only the best.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Compliance/FAQ Section -->
-    <section class="compliance">
-        <div class="compliance-content">
-            <h2>Is This Legal? (Yes. Here's Why.)</h2>
-            <p class="compliance-intro">Hootova is a referral tracking tool, not a payment platform. There are no kickbacks, commissions, or fees tied to your recommendations. It's simply a branded directory of service providers you trust—like handing out business cards, but smarter.</p>
-            
-            <div class="compliance-points">
+    <!-- Who This Is For Section -->
+    <section class="who-for">
+        <div class="who-for-content">
+            <h2>Not Just for Agents. For Anyone with Local Influence.</h2>
+            <p class="who-for-intro">If people ask you for recommendations—whether you're a real estate agent, apartment manager, barista, or just the person everyone calls for advice—Hootova turns your network into income.</p>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <h4>Real Estate Agents</h4>
+                    <p>Your clients need contractors, landscapers, and mechanics long after closing. Get paid to connect them with pros you trust.</p>
+                </div>
+                <div class="use-case">
+                    <h4>Apartment Complex Managers</h4>
+                    <p>Tenants constantly ask for vendor recommendations. Share your Hootova roster and earn when they book services.</p>
+                </div>
+                <div class="use-case">
+                    <h4>Local Business Owners</h4>
+                    <p>Coffee shops, gyms, salons—print your QR code on receipts or post it in-store. When customers need a plumber or electrician, they scan, book, and you earn.</p>
+                </div>
+                <div class="use-case">
+                    <h4>Community Connectors</h4>
+                    <p>If you're the person friends call for recommendations, turn your social capital into trackable income.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consumer Protection Section -->
+    <section class="consumer-protection">
+        <h2>How This Protects Your Clients (Not Just You)</h2>
+        <p class="consumer-protection-intro">When your client contacts a vendor through Hootova, the vendor is notified exactly who referred them. They know you're watching. They know your reputation is tied to their performance. This creates built-in accountability that a random Google search or Yelp listing can't provide.</p>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <div class="benefit-icon">👁️</div>
+                <div class="benefit-content">
+                    <h4>Vendor Accountability</h4>
+                    <p>Pros know they were referred by someone the client trusts</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🔄</div>
+                <div class="benefit-content">
+                    <h4>Direct Feedback Loop</h4>
+                    <p>Clients can contact you if service is subpar</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">✨</div>
+                <div class="benefit-content">
+                    <h4>Curated Quality</h4>
+                    <p>You only recommend vendors you'd use yourself</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🤝</div>
+                <div class="benefit-content">
+                    <h4>Transparent Compensation</h4>
+                    <p>Clients know you're paid to ensure quality, not to push random vendors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclosure Section -->
+    <section class="disclosure">
+        <div class="disclosure-content">
+            <h2>Full Transparency with Your Clients</h2>
+            <div class="disclosure-box">
+                <p>"Hey, just a heads up—I'm compensated by Hootova to ensure these vendors provide the best service possible. It's my job to make sure they're treating you right. If your experience is anything less than great, please let me know immediately."</p>
+            </div>
+            <div class="disclosure-why">
+                <h4>Why This Works:</h4>
                 <ul>
-                    <li>No financial compensation for referrals</li>
-                    <li>No settlement service providers (we focus on general contractors, landscapers, mechanics—not lenders or title companies)</li>
-                    <li>Full disclosure to clients that this is your personal recommendation list</li>
-                    <li>100% compliant with RESPA guidelines</li>
+                    <li>Makes your role clear (you're a quality curator, not a middleman)</li>
+                    <li>Gives clients permission to hold vendors accountable through you</li>
+                    <li>Positions compensation as a service (ensuring quality) rather than a kickback (pushing random vendors)</li>
                 </ul>
             </div>
+        </div>
+    </section>
 
-            <h3 style="text-align: center; color: #1a3a52; margin-bottom: 2rem; font-size: 1.6rem;">Common Questions</h3>
-
-            <div class="faq-item">
-                <h4>Q: Do I get paid when clients use my vendors?</h4>
-                <p>A: No. Hootova tracks referrals, but doesn't facilitate payments or kickbacks. You're simply organizing your network and measuring its impact.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: What kind of vendors can I include?</h4>
-                <p>A: General service providers like landscapers, contractors, mechanics, electricians, plumbers, painters, and masons. We avoid settlement service providers (lenders, title companies, inspectors) to keep you safely outside RESPA restrictions.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: Do my clients know this is my list?</h4>
-                <p>A: Yes. Your Hootova page is clearly branded with your name and includes disclosure language that these are your personal recommendations.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: How long does setup take?</h4>
-                <p>A: Under 10 minutes. Add vendor names, contact info, and specialties. We handle the rest—page design, tracking, and email notifications.</p>
-            </div>
+    <!-- Compliance Section -->
+    <section class="compliance">
+        <h2>Yes, You Get Paid. Here's Why It's Compliant.</h2>
+<p class="compliance-intro">Hootova compensates you for curating and maintaining a quality vendor network—similar to how influencers earn affiliate income. The key difference: this isn't a settlement service kickback.</p>
+        <p class="compliance-intro">We focus exclusively on general service providers (landscapers, mechanics, contractors, electricians) that are outside RESPA's scope. You're not getting paid for referring lenders or title companies—you're earning income for connecting clients with trusted local pros and holding those pros accountable.</p>
+        
+        <div class="compliance-points">
+            <ul>
+                <li>Compensation is for curation and quality assurance, not settlement service referrals</li>
+                <li>Full disclosure to clients that you earn when they use your vendors</li>
+                <li>You control your roster—remove vendors who underperform</li>
+                <li>Vendors know you referred the client, creating built-in accountability</li>
+            </ul>
         </div>
     </section>
 
@@ -819,9 +1027,6 @@
             closeModal();
             
             document.getElementById('signupForm').reset();
-
-            // To connect to a form service like Web3Forms, Formspree, or Basin,
-            // replace the above with an actual API call to your chosen service
         }
     </script>
 </body>
