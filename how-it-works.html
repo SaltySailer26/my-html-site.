@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Hootova</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #1a3a52;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-space {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+            color: #ffffff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #e0f2fe;
+            line-height: 1.7;
+        }
+
+        .steps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .step-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            align-items: center;
+        }
+
+        .step-wrapper.reverse {
+            direction: rtl;
+        }
+
+        .step-wrapper.reverse > * {
+            direction: ltr;
+        }
+
+        .step-content {
+            padding: 2rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.3);
+        }
+
+        .step-content h3 {
+            color: #1a3a52;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .step-content p {
+            color: #475569;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-box {
+            background-color: #f8fafc;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .benefit-box h4 {
+            color: #1a3a52;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .benefit-box p {
+            color: #64748b;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .step-visual {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .visual-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .roster-preview {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 350px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .roster-preview h5 {
+            color: #1a3a52;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .vendor-item {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            text-align: left;
+            color: #1a3a52;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .distribution-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .icon-box {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            width: 120px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .icon-box-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .icon-box-label {
+            color: #1a3a52;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .notification-preview {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .notification-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .notification-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+
+        .notification-title {
+            color: #1a3a52;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .notification-body {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .dashboard-preview {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .stat-value {
+            color: #1a3a52;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .earnings-box {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .earnings-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .earnings-amount {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .final-cta-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: #ffffff;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .final-cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .final-cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #1a3a52;
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(26,58,82,0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #2d5f7e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26,58,82,0.4);
+        }
+
+        @media (max-width: 968px) {
+            .step-wrapper,
+            .step-wrapper.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+                gap: 2rem;
+            }
+
+            .page-hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .step-content h3 {
+                font-size: 1.6rem;
+            }
+
+            .steps-container {
+                padding: 3rem 1rem;
+            }
+
+            .step-wrapper {
+                margin-bottom: 4rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-hero {
+                padding: 3rem 1rem;
+            }
+
+            .page-hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .page-hero p {
+                font-size: 1.1rem;
+            }
+
+            .step-visual {
+                padding: 2rem 1rem;
+                min-height: 300px;
+            }
+
+            .distribution-icons {
+                gap: 1rem;
+            }
+
+            .icon-box {
+                width: 100px;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-space"></div>
+            <h1>HOOTOVA</h1>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h2>How Hootova Works</h2>
+        <p>Turn your local network into trackable income in five simple steps. No complicated setup, no hidden fees—just transparent compensation for the referrals you're already making.</p>
+    </section>
+
+    <div class="steps-container">
+        <!-- Step 1 -->
+        <div class="step-wrapper">
+            <div class="step-content">
+                <div class="step-number">1</div>
+                <h3>Curate Your Trusted Roster</h3>
+                <p>Select the local service providers you genuinely trust—landscapers, mechanics, contractors, electricians, plumbers. These are vendors you'd refer to your own family.</p>
+                <p>Add them to your Hootova roster in minutes. Just their name, specialty, and contact info. You're building a curated list that reflects your reputation.</p>
+                <div class="benefit-box">
+                    <h4>💡 Your Advantage</h4>
+                    <p>You control the quality. Only vendors you vouch for make the list. Local businesses will want to earn a spot on your roster.</p>
+                </div>
+            </div>
+            <div class="step-visual">
+                <div class="roster-preview">
+                    <h5>Building Your Roster...</h5>
+                    <div class="vendor-item">🌿 Garcia Landscaping</div>
+                    <div class="vendor-item">🔧 Mike's Auto Repair</div>
+                    <div class="vendor-item">🏗️ Summit Contractors</div>
+                    <div class="vendor-item">⚡ Elite Electric Co.</div>
+                    <div class="vendor-item">🎨 ProPaint Services</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-wrapper reverse">
+            <div class="step-content">
+                <div class="step-number">2</div>
+                <h3>Share Your Roster Everywhere</h3>
+                <p>Your roster gets a mobile-optimized page with your name and branding. Share it via text, email signature, business cards with QR codes, refrigerator magnets, closing packets, or posted in your office.</p>
+                <p>Unlike a verbal recommendation that gets forgotten, your Hootova page is always accessible. Clients bookmark it and return when they need a contractor months later.</p>
+                <div class="benefit-box">
+                    <h4>📈 Your Advantage</h4>
+                    <p>You become a resource, not just a contact. Clients save your roster link and return repeatedly. Local vendors recognize the value of being featured—increasing your social capital.</p>
+                </div>
+            </div>
+            <div class="step-visual">
+                <div class="visual-content">
+                    <div class="distribution-icons">
+                        <div class="icon-box">
+                            <div class="icon-box-icon">💬</div>
+                            <div class="icon-box-label">Text Message</div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon-box-icon">📧</div>
+                            <div class="icon-box-label">Email</div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon-box-icon">📱</div>
+                            <div class="icon-box-label">QR Code</div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon-box-icon">🧲</div>
+                            <div class="icon-box-label">Magnets</div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon-box-icon">📄</div>
+                            <div class="icon-box-label">Print</div>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon-box-icon">🌐</div>
+                            <div class="icon-box-label">Social Media</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-wrapper">
+            <div class="step-content">
+                <div class="step-number">3</div>
+                <h3>Track Referrals & Built-In Accountability</h3>
+                <p>Every time a client contacts a vendor through your roster, you're notified in real time. You'll see who reached out, which vendor they chose, and when it happened.</p>
+                <p>The accountability layer: when vendors receive a referral, they're explicitly told it came from you. They know your reputation is on the line, creating quality pressure that random Google searches can't provide.</p>
+                <div class="benefit-box">
+                    <h4>🎯 Your Advantage</h4>
+                    <p>Clients get better service because vendors know someone the client trusts is watching. If a vendor underperforms, clients report back—and you can remove them.</p>
+                </div>
+            </div>
+            <div class="step-visual">
+                <div class="notification-preview">
+                    <div class="notification-header">
+                        <div class="notification-icon">🔔</div>
+                        <div class="notification-title">New Referral Activity</div>
+                    </div>
+                    <div class="notification-body">
+                        <p><strong>Client:</strong> Jessica M.</p>
+                        <p><strong>Contacted:</strong> Garcia Landscaping</p>
+                        <p><strong>Request:</strong> "Need spring cleanup and lawn aeration for 0.5 acre property"</p>
+                        <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; color: #10b981; font-weight: 600;">✓ Vendor notified: "Referral from [Your Name]"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-wrapper reverse">
+            <div class="step-content">
+                <div class="step-number">4</div>
+                <h3>Maintain Quality Standards</h3>
+                <p>Your roster isn't static—it's a living reflection of your network. Feature top performers at the top of your list. Remove vendors who underperform, ghost clients, or deliver subpar work.</p>
+                <p>You'll receive client feedback when things go wrong or right. Use that intel to keep your roster fresh and reliable.</p>
+                <div class="benefit-box">
+                    <h4>⭐ Your Advantage</h4>
+                    <p>You're not locked into bad relationships. Hootova keeps you in the loop so you can protect your reputation proactively.</p>
+                </div>
+            </div>
+            <div class="step-visual">
+                <div class="roster-preview">
+                    <h5 style="color: #10b981; margin-bottom: 0.5rem;">⭐ Top Performers</h5>
+                    <div class="vendor-item" style="border: 2px solid #10b981;">🌿 Garcia Landscaping <span style="margin-left: auto; color: #10b981;">★★★★★</span></div>
+                    <div class="vendor-item" style="border: 2px solid #10b981;">🔧 Mike's Auto Repair <span style="margin-left: auto; color: #10b981;">★★★★★</span></div>
+                    <h5 style="color: #64748b; margin-top: 1.5rem; margin-bottom: 0.5rem;">Other Services</h5>
+                    <div class="vendor-item">🏗️ Summit Contractors</div>
+                    <div class="vendor-item">⚡ Elite Electric Co.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-wrapper">
+            <div class="step-content">
+                <div class="step-number">5</div>
+                <h3>Earn Compensation for Your Influence</h3>
+                <p>You're compensated based on your roster's monthly traffic—not per transaction. Think influencer affiliate income, but for your local network. When clients visit and engage with your page, you earn.</p>
+                <p>This isn't a kickback. It's transparent compensation for curating quality and maintaining accountability. Your clients know you're compensated (disclosed upfront) to ensure quality recommendations.</p>
+                <div class="benefit-box">
+                    <h4>💰 Your Advantage</h4>
+                    <p>Your network finally has measurable value. Every client you help builds passive income. Vendors stay motivated to deliver because referrals come from your roster.</p>
+                </div>
+            </div>
+            <div class="step-visual">
+                <div class="dashboard-preview">
+                    <h5 style="color: #1a3a52; margin-bottom: 1.5rem; font-size: 1.1rem;">Your Monthly Activity</h5>
+                    <div class="stat-row">
+                        <div class="stat-label">Roster Page Views</div>
+                        <div class="stat-value">342</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-label">Vendor Contacts</div>
+                        <div class="stat-value">47</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-label">Active Vendors</div>
+                        <div class="stat-value">12</div>
+                    </div>
+                    <div class="earnings-box">
+                        <div class="earnings-label">This Month's Earnings</div>
+                        <div class="earnings-amount">$428</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="final-cta-section">
+        <h2>Ready to Turn Your Network Into Income?</h2>
+        <p>Set up your roster in under 10 minutes. No credit card required. Start tracking the value you create every time you make a referral.</p>
+        <button class="cta-button" onclick="alert('This would open the signup modal')">Launch My Free Pilot</button>
+    </section>
+</body>
+</html>
