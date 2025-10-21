@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hootova - Get Paid to Recommmend Local Businesses.</title>
+    <title>Hootova - Get Paid to Recommend Local Businesses.</title>
     <style>
         * {
             margin: 0;
@@ -25,12 +26,20 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-   .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: inherit;
+        }
 
         .logo-space {
             width: 40px;
@@ -46,11 +55,29 @@
             letter-spacing: 0.5px;
         }
 
+        .nav-button {
+            margin-left: auto;
+            background-color: rgba(255,255,255,0.15);
+            color: #ffffff !important;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.4);
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.6);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
             color: #ffffff;
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
         }
 
@@ -64,14 +91,14 @@
         }
 
         .hero-text h2 {
-            font-size: 2.8rem;
+            font-size: 2.3rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
             font-weight: 700;
         }
 
         .hero-text h3 {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             font-weight: 400;
             color: #e0f2fe;
@@ -82,8 +109,8 @@
             display: inline-block;
             background-color: #ff6b35;
             color: #ffffff;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
+            padding: 0.9rem 2.2rem;
+            font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
             border-radius: 8px;
@@ -101,7 +128,7 @@
 
         .trust-line {
             margin-top: 1rem;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #cbd5e1;
             font-style: italic;
         }
@@ -122,6 +149,7 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            overflow: hidden;
         }
 
         .mockup-header {
@@ -148,6 +176,8 @@
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
+            flex: 1;
+            overflow-y: auto;
         }
 
         .mockup-item {
@@ -160,10 +190,25 @@
             font-weight: 500;
         }
 
+        .mockup-link {
+            display: block;
+            text-align: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            color: #1a3a52;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .mockup-link:hover {
+            color: #ff6b35;
+        }
+
         /* How It Works Section */
         .how-it-works {
             background-color: #f8fafc;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
         }
 
         .how-it-works-content {
@@ -174,20 +219,20 @@
         .how-it-works h2 {
             text-align: center;
             color: #1a3a52;
-            font-size: 2.2rem;
-            margin-bottom: 4rem;
+            font-size: 1.9rem;
+            margin-bottom: 3rem;
             font-weight: 700;
         }
 
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .step {
             background-color: #ffffff;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -199,43 +244,43 @@
         }
 
         .step-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .step h4 {
             color: #1a3a52;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
         }
 
         .step p {
             color: #64748b;
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* How You Get Paid Section */
         .get-paid {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
         }
 
         .get-paid h2 {
             text-align: center;
             color: #1a3a52;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
         }
 
         .get-paid-intro {
             max-width: 800px;
-            margin: 0 auto 3rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            margin: 0 auto 2.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
             color: #475569;
             text-align: center;
         }
@@ -244,10 +289,47 @@
             color: #1a3a52;
         }
 
+        .benefits-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1.2rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-item-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-item-content h4 {
+            color: #1a3a52;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .benefit-item-content p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* Who This Is For Section */
         .who-for {
             background-color: #f8fafc;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
         }
 
         .who-for-content {
@@ -258,106 +340,111 @@
         .who-for h2 {
             text-align: center;
             color: #1a3a52;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
         }
 
         .who-for-intro {
             max-width: 800px;
-            margin: 0 auto 3rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            margin: 0 auto 2.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
             color: #475569;
             text-align: center;
         }
 
         .use-cases-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
         .use-case {
             background-color: #ffffff;
-            padding: 2.5rem;
+            padding: 1.8rem;
             border-radius: 12px;
             border: 2px solid #e2e8f0;
         }
 
         .use-case h4 {
             color: #1a3a52;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
             font-weight: 600;
         }
 
         .use-case p {
             color: #64748b;
-            line-height: 1.7;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         /* Consumer Protection Section */
         .consumer-protection {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
         }
 
         .consumer-protection h2 {
             text-align: center;
             color: #1a3a52;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
         }
 
         .consumer-protection-intro {
             max-width: 800px;
-            margin: 0 auto 3rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            margin: 0 auto 2.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
             color: #475569;
             text-align: center;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .benefit {
+        .protection-list {
+            max-width: 800px;
+            margin: 0 auto;
             background-color: #f8fafc;
             padding: 2rem;
             border-radius: 12px;
-            border: 2px solid #e2e8f0;
-            display: flex;
-            gap: 1.5rem;
         }
 
-        .benefit-icon {
-            font-size: 2.5rem;
+        .protection-item {
+            display: flex;
+            gap: 1.2rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .protection-item:last-child {
+            border-bottom: none;
+        }
+
+        .protection-item-icon {
+            font-size: 2rem;
             flex-shrink: 0;
         }
 
-        .benefit-content h4 {
+        .protection-item-content h4 {
             color: #1a3a52;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
             font-weight: 600;
         }
 
-        .benefit-content p {
+        .protection-item-content p {
             color: #64748b;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Disclosure Section */
         .disclosure {
             background-color: #f1f5f9;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
         }
 
         .disclosure-content {
@@ -368,14 +455,14 @@
         .disclosure h2 {
             text-align: center;
             color: #1a3a52;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
         }
 
         .disclosure-box {
             background-color: #ffffff;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid #10b981;
             margin-bottom: 2rem;
@@ -383,8 +470,8 @@
         }
 
         .disclosure-box p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.7;
             color: #1a3a52;
             font-style: italic;
         }
@@ -398,7 +485,7 @@
 
         .disclosure-why h4 {
             color: #1a3a52;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
@@ -409,11 +496,12 @@
         }
 
         .disclosure-why li {
-            padding: 0.6rem 0;
+            padding: 0.5rem 0;
             padding-left: 2rem;
             position: relative;
             color: #475569;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .disclosure-why li:before {
@@ -429,22 +517,22 @@
         .compliance {
             max-width: 900px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
         }
 
         .compliance h2 {
             text-align: center;
             color: #1a3a52;
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
         }
 
         .compliance-intro {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.7;
             color: #475569;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
 
@@ -452,7 +540,7 @@
             background-color: #f8fafc;
             padding: 2rem;
             border-radius: 12px;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
@@ -461,11 +549,11 @@
         }
 
         .compliance-points li {
-            padding: 0.8rem 0;
+            padding: 0.7rem 0;
             padding-left: 2rem;
             position: relative;
             color: #1a3a52;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
         }
 
         .compliance-points li:before {
@@ -474,86 +562,143 @@
             left: 0;
             color: #10b981;
             font-weight: bold;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         /* Social Proof Section */
         .social-proof {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
             background-color: #f8fafc;
         }
 
         .social-proof h2 {
             text-align: center;
             color: #1a3a52;
-            font-size: 2.2rem;
-            margin-bottom: 4rem;
+            font-size: 1.9rem;
+            margin-bottom: 3rem;
             font-weight: 700;
         }
 
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .testimonial {
             background-color: #ffffff;
-            padding: 2rem;
+            padding: 1.8rem;
             border-radius: 12px;
             border-left: 4px solid #ff6b35;
             font-style: italic;
             color: #475569;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.6;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .testimonial-author {
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
             font-style: normal;
             color: #1a3a52;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* Final CTA Section */
         .final-cta {
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
             color: #ffffff;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
         }
 
         .final-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.1rem;
+            margin-bottom: 1.2rem;
             font-weight: 700;
         }
 
         .final-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .final-cta .cta-button {
-            background-color: #1a3a52;
+            background-color: #ff6b35;
             margin-bottom: 1rem;
         }
 
         .final-cta .cta-button:hover {
-            background-color: #2d5f7e;
+            background-color: #ff8555;
         }
 
         .cta-subtext {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: rgba(255,255,255,0.9);
             margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a3a52;
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-contact {
+            font-size: 0.95rem;
+        }
+
+        .footer-contact a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-copyright {
+            width: 100%;
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
         }
 
         /* Form Modal */
@@ -600,7 +745,7 @@
 
         .form-title {
             color: #1a3a52;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             margin-bottom: 0.5rem;
             clear: both;
             font-weight: 700;
@@ -609,6 +754,7 @@
         .form-subtitle {
             color: #64748b;
             margin-bottom: 2rem;
+            font-size: 0.95rem;
         }
 
         .form-group {
@@ -620,6 +766,7 @@
             margin-bottom: 0.5rem;
             color: #1a3a52;
             font-weight: 500;
+            font-size: 0.95rem;
         }
 
         .form-group input {
@@ -640,7 +787,7 @@
             content: " (Optional)";
             color: #94a3b8;
             font-weight: 400;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .submit-button {
@@ -648,7 +795,7 @@
             background-color: #ff6b35;
             color: #ffffff;
             padding: 1rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             border: none;
             border-radius: 8px;
@@ -678,19 +825,15 @@
             }
 
             .hero-text h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .steps-grid {
                 grid-template-columns: 1fr;
             }
 
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
             .use-cases-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .testimonials-grid {
@@ -700,24 +843,34 @@
             .mockup-placeholder {
                 margin: 0 auto;
             }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
         }
 
         @media (max-width: 640px) {
             .hero {
-                padding: 3rem 1rem;
+                padding: 2.5rem 1rem;
             }
 
             .hero-text h2 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
 
             .hero-text h3 {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+                font-size: 0.95rem;
             }
 
             .how-it-works,
@@ -728,7 +881,7 @@
             .compliance,
             .social-proof,
             .final-cta {
-                padding: 3rem 1rem;
+                padding: 2.5rem 1rem;
             }
 
             .how-it-works h2,
@@ -738,15 +891,23 @@
             .disclosure h2,
             .compliance h2,
             .social-proof h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
 
             .final-cta h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .modal-content {
                 padding: 2rem 1.5rem;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 2rem 1rem;
             }
         }
     </style>
@@ -755,15 +916,15 @@
 <!-- Header -->
 <header>
     <div class="logo">
-        <div class="logo-space"></div>
-        <h1>HOOTOVA</h1>
-        <nav style="margin-left: auto;">
-            <a href="/how-it-works.html" style="color: #ffffff; text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 0.5rem 1.5rem; border-radius: 6px; transition: background-color 0.3s;">How It Works</a>
-        </nav>
+        <a href="/index.html">
+            <div class="logo-space"></div>
+            <h1>HOOTOVA</h1>
+        </a>
+        <a href="/how-it-works.html" class="nav-button">How It Works</a>
     </div>
 </header>
 
-    <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
         <div class="hero-text">
@@ -785,217 +946,234 @@
                     <div class="mockup-item">⚡ Electrician</div>
                     <div class="mockup-item">🎨 Painter</div>
                 </div>
-                <a href="/how-it-works.html" style="display: block; text-align: center; margin-top: 1rem; color: #1a3a52; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Learn How It Works →</a>
+                <a href="/how-it-works.html" class="mockup-link">Learn How It Works →</a>
             </div>
         </div>
     </div>
 </section>
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="how-it-works-content">
-            <h2>Three Steps to Start Tracking Your Network</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-icon">✓</div>
-                    <h4>Build Your Roster</h4>
-                    <p>Add your trusted landscapers, mechanics, contractors, and service pros in minutes. No complicated setup—just names, numbers, and specialties.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">📱</div>
-                    <h4>Share Your Link</h4>
-                    <p>Send clients your branded Hootova page via text, email, or social media. Print business cards with your QR code, or share it during closing conversations.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">📊</div>
-                    <h4>Track Every Referral</h4>
-                    <p>See who's viewing your roster, which vendors clients are contacting, and when requests happen. Finally know what your network is worth.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- How You Get Paid Section -->
-    <section class="get-paid">
-        <h2>You Get Paid Based on Your Reach.</h2>
-        <div class="get-paid-intro">
-            <p>When clients view your Hootova roster, you earn based on monthly page visits—just like an influencer gets paid for reach, but for your local network.</p>
-            <p style="margin-top: 1rem;"><strong>Here's the key difference:</strong> You're not just getting paid to send a name. You're compensated for curating quality, holding vendors accountable, and protecting your clients from bad service. If a vendor underperforms, your reputation is on the line—so you only refer pros you trust.</p>
-        </div>
-        <div class="benefits-grid">
-            <div class="benefit">
-                <div class="benefit-icon">💰</div>
-                <div class="benefit-content">
-                    <h4>Transparent Compensation</h4>
-                    <p>Your clients know you're compensated by Hootova to ensure quality recommendations. It's disclosed upfront, so there's no hidden agenda—just honest curation.</p>
-                </div>
+<!-- How It Works Section -->
+<section class="how-it-works">
+    <div class="how-it-works-content">
+        <h2>Three Steps to Start Tracking Your Network</h2>
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-icon">✓</div>
+                <h4>Build Your Roster</h4>
+                <p>Add your trusted landscapers, mechanics, contractors, and service pros in minutes. No complicated setup—just names, numbers, and specialties.</p>
             </div>
-            <div class="benefit">
-                <div class="benefit-icon">🎯</div>
-                <div class="benefit-content">
-                    <h4>Vendor Accountability</h4>
-                    <p>When a client reaches out, the vendor is notified who referred them. They know you're watching, which creates built-in quality control.</p>
-                </div>
+            <div class="step">
+                <div class="step-icon">📱</div>
+                <h4>Share Your Link</h4>
+                <p>Send clients your branded Hootova page via text, email, or social media. Print business cards with your QR code, or share it during closing conversations.</p>
             </div>
-            <div class="benefit">
-                <div class="benefit-icon">⭐</div>
-                <div class="benefit-content">
-                    <h4>Your Reputation, Your Standards</h4>
-                    <p>If a vendor screws up, your client can reach out to you directly. You control who stays on your roster, so you're incentivized to recommend only the best.</p>
-                </div>
+            <div class="step">
+                <div class="step-icon">📊</div>
+                <h4>Track Every Referral</h4>
+                <p>See who's viewing your roster, which vendors clients are contacting, and when requests happen. Finally know what your network is worth.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Who This Is For Section -->
-    <section class="who-for">
-        <div class="who-for-content">
-            <h2>Not Just for Agents. For Anyone with Local Influence.</h2>
-            <p class="who-for-intro">If people ask you for recommendations—whether you're a real estate agent, apartment manager, barista, or just the person everyone calls for advice—Hootova turns your network into income.</p>
-            <div class="use-cases-grid">
-                <div class="use-case">
-                    <h4>Real Estate Agents</h4>
-                    <p>Your clients need contractors, landscapers, and mechanics long after closing. Get paid to connect them with pros you trust.</p>
-                </div>
-                <div class="use-case">
-                    <h4>Apartment Complex Managers</h4>
-                    <p>Tenants constantly ask for vendor recommendations. Share your Hootova roster and earn when they book services.</p>
-                </div>
-                <div class="use-case">
-                    <h4>Local Business Owners</h4>
-                    <p>Coffee shops, gyms, salons—print your QR code on receipts or post it in-store. When customers need a plumber or electrician, they scan, book, and you earn.</p>
-                </div>
-                <div class="use-case">
-                    <h4>Community Connectors</h4>
-                    <p>If you're the person friends call for recommendations, turn your social capital into trackable income.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Consumer Protection Section -->
-    <section class="consumer-protection">
-        <h2>How This Protects Your Clients (Not Just You)</h2>
-        <p class="consumer-protection-intro">When your client contacts a vendor through Hootova, the vendor is notified exactly who referred them. They know you're watching. They know your reputation is tied to their performance. This creates built-in accountability that a random Google search or Yelp listing can't provide.</p>
-        <div class="benefits-grid">
-            <div class="benefit">
-                <div class="benefit-icon">👁️</div>
-                <div class="benefit-content">
-                    <h4>Vendor Accountability</h4>
-                    <p>Pros know they were referred by someone the client trusts</p>
-                </div>
-            </div>
-            <div class="benefit">
-                <div class="benefit-icon">🔄</div>
-                <div class="benefit-content">
-                    <h4>Direct Feedback Loop</h4>
-                    <p>Clients can contact you if service is subpar</p>
-                </div>
-            </div>
-            <div class="benefit">
-                <div class="benefit-icon">✨</div>
-                <div class="benefit-content">
-                    <h4>Curated Quality</h4>
-                    <p>You only recommend vendors you'd use yourself</p>
-                </div>
-            </div>
-            <div class="benefit">
-                <div class="benefit-icon">🤝</div>
-                <div class="benefit-content">
-                    <h4>Transparent Compensation</h4>
-                    <p>Clients know you're paid to ensure quality, not to push random vendors</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Disclosure Section -->
-    <section class="disclosure">
-        <div class="disclosure-content">
-            <h2>Full Transparency with Your Clients</h2>
-            <div class="disclosure-box">
-                <p>"Hey, just a heads up—I'm compensated by Hootova to ensure these vendors provide the best service possible. It's my job to make sure they're treating you right. If your experience is anything less than great, please let me know immediately."</p>
-            </div>
-            <div class="disclosure-why">
-                <h4>Why This Works:</h4>
-                <ul>
-                    <li>Makes your role clear (you're a quality curator, not a middleman)</li>
-                    <li>Gives clients permission to hold vendors accountable through you</li>
-                    <li>Positions compensation as a service (ensuring quality) rather than a kickback (pushing random vendors)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compliance Section -->
-    <section class="compliance">
-        <h2>Yes, You Get Paid. Here's Why It's Compliant.</h2>
-<p class="compliance-intro">Hootova compensates you for curating and maintaining a quality vendor network—similar to how influencers earn affiliate income. The key difference: this isn't a settlement service kickback.</p>
-        <p class="compliance-intro">We focus exclusively on general service providers (landscapers, mechanics, contractors, electricians) that are outside RESPA's scope. You're not getting paid for referring lenders or title companies—you're earning income for connecting clients with trusted local pros and holding those pros accountable.</p>
-        
-        <div class="compliance-points">
-            <ul>
-                <li>Compensation is for curation and quality assurance, not settlement service referrals</li>
-                <li>Full disclosure to clients that you earn when they use your vendors</li>
-                <li>You control your roster—remove vendors who underperform</li>
-                <li>Vendors know you referred the client, creating built-in accountability</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section class="social-proof">
-        <h2>Agents Are Finally Getting Credit for Their Networks</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial">
-                "I've been referring the same landscaper for 8 years, but had no idea how many of my clients actually called him. Now I can see it in real time—and it's way more than I thought."
-                <div class="testimonial-author">— Sarah M., Keller Williams</div>
-            </div>
-            <div class="testimonial">
-                "I was worried about compliance, but Hootova makes it so simple. No kickbacks, no gray areas—just a professional way to share my trusted vendors."
-                <div class="testimonial-author">— Mike D., RE/MAX</div>
-            </div>
-            <div class="testimonial">
-                "Set it up in 5 minutes, sent the link to my last 50 clients, and already had 12 people view my roster. This is genius."
-                <div class="testimonial-author">— Jennifer L., Coldwell Banker</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section class="final-cta">
-        <h2>Your Network Is Worth More Than You Think.</h2>
-        <p>Stop letting your referrals disappear into the void. Start tracking the value you create every time you recommend a trusted pro.</p>
-        <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
-        <p class="cta-subtext">No credit card required. Set up in under 10 minutes.</p>
-    </section>
-
-    <!-- Form Modal -->
-    <div id="formModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h3 class="form-title">Launch Your Roster</h3>
-            <p class="form-subtitle">Start your free pilot today. No credit card required.</p>
-            <form id="signupForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="fullName">Full Name *</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                 <div class="form-group">
-                    <label for="company">Company Name *</label>
-                    <input type="text" id="company" name="company" required>
-                </div>
-                <div class="form-group optional">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <button type="submit" class="submit-button">Launch My Free Pilot</button>
-            </form>
         </div>
     </div>
+</section>
+
+<!-- How You Get Paid Section -->
+<section class="get-paid">
+    <h2>You Get Paid Based on Your Reach.</h2>
+    <div class="get-paid-intro">
+        <p>When clients view your Hootova roster, you earn based on monthly page visits—just like an influencer gets paid for reach, but for your local network.</p>
+        <p style="margin-top: 1rem;"><strong>Here's the key difference:</strong> You're not just getting paid to send a name. You're compensated for curating quality, holding vendors accountable, and protecting your clients from bad service. If a vendor underperforms, your reputation is on the line—so you only refer pros you trust.</p>
+    </div>
+    <div class="benefits-list">
+        <div class="benefit-item">
+            <div class="benefit-item-icon">💰</div>
+            <div class="benefit-item-content">
+                <h4>Transparent Compensation</h4>
+                <p>Your clients know you're compensated by Hootova to ensure quality recommendations. It's disclosed upfront, so there's no hidden agenda—just honest curation.</p>
+            </div>
+        </div>
+        <div class="benefit-item">
+            <div class="benefit-item-icon">🎯</div>
+            <div class="benefit-item-content">
+                <h4>Vendor Accountability</h4>
+                <p>When a client reaches out, the vendor is notified who referred them. They know you're watching, which creates built-in quality control.</p>
+            </div>
+        </div>
+        <div class="benefit-item">
+            <div class="benefit-item-icon">⭐</div>
+            <div class="benefit-item-content">
+                <h4>Your Reputation, Your Standards</h4>
+                <p>If a vendor screws up, your client can reach out to you directly. You control who stays on your roster, so you're incentivized to recommend only the best.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Who This Is For Section -->
+<section class="who-for">
+    <div class="who-for-content">
+        <h2>Not Just for Agents. For Anyone with Local Influence.</h2>
+        <p class="who-for-intro">If people ask you for recommendations—whether you're a real estate agent, apartment manager, barista, or just the person everyone calls for advice—Hootova turns your network into income.</p>
+        <div class="use-cases-grid">
+            <div class="use-case">
+                <h4>Real Estate Agents</h4>
+                <p>Your clients need contractors, landscapers, and mechanics long after closing. Get paid to connect them with pros you trust.</p>
+            </div>
+            <div class="use-case">
+                <h4>Apartment Complex Managers</h4>
+                <p>Tenants constantly ask for vendor recommendations. Share your Hootova roster and earn when they book services.</p>
+            </div>
+            <div class="use-case">
+                <h4>Local Business Owners</h4>
+                <p>Coffee shops, gyms, salons—print your QR code on receipts or post it in-store. When customers need a plumber or electrician, they scan, book, and you earn.</p>
+            </div>
+            <div class="use-case">
+                <h4>Community Connectors</h4>
+                <p>If you're the person friends call for recommendations, turn your social capital into trackable income.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Consumer Protection Section -->
+<section class="consumer-protection">
+    <h2>How This Protects Your Clients (Not Just You)</h2>
+    <p class="consumer-protection-intro">When your client contacts a vendor through Hootova, the vendor is notified exactly who referred them. They know you're watching. They know your reputation is tied to their performance. This creates built-in accountability that a random Google search or Yelp listing can't provide.</p>
+    <div class="protection-list">
+        <div class="protection-item">
+            <div class="protection-item-icon">👁️</div>
+            <div class="protection-item-content">
+                <h4>Vendor Accountability</h4>
+                <p>Pros know they were referred by someone the client trusts</p>
+            </div>
+        </div>
+        <div class="protection-item">
+            <div class="protection-item-icon">🔄</div>
+            <div class="protection-item-content">
+                <h4>Direct Feedback Loop</h4>
+                <p>Clients can contact you if service is subpar</p>
+            </div>
+        </div>
+        <div class="protection-item">
+            <div class="protection-item-icon">✨</div>
+            <div class="protection-item-content">
+                <h4>Curated Quality</h4>
+                <p>You only recommend vendors you'd use yourself</p>
+            </div>
+        </div>
+        <div class="protection-item">
+            <div class="protection-item-icon">🤝</div>
+            <div class="protection-item-content">
+                <h4>Transparent Compensation</h4>
+                <p>Clients know you're paid to ensure quality, not to push random vendors</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Disclosure Section -->
+<section class="disclosure">
+    <div class="disclosure-content">
+        <h2>Full Transparency with Your Clients</h2>
+        <div class="disclosure-box">
+            <p>"Hey, just a heads up—I'm compensated by Hootova to ensure these vendors provide the best service possible. It's my job to make sure they're treating you right. If your experience is anything less than great, please let me know immediately."</p>
+        </div>
+        <div class="disclosure-why">
+            <h4>Why This Works:</h4>
+            <ul>
+                <li>Makes your role clear (you're a quality curator, not a middleman)</li>
+                <li>Gives clients permission to hold vendors accountable through you</li>
+                <li>Positions compensation as a service (ensuring quality) rather than a kickback (pushing random vendors)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Compliance Section -->
+<section class="compliance">
+    <h2>Yes, You Get Paid. Here's Why It's Compliant.</h2>
+    <p class="compliance-intro">Hootova compensates you for curating and maintaining a quality vendor network—similar to how influencers earn affiliate income. The key difference: this isn't a settlement service kickback.</p>
+    <p class="compliance-intro">We focus exclusively on general service providers (landscapers, mechanics, contractors, electricians) that are outside RESPA's scope. You're not getting paid for referring lenders or title companies—you're earning income for connecting clients with trusted local pros and holding those pros accountable.</p>
+    
+    <div class="compliance-points">
+        <ul>
+            <li>Compensation is for curation and quality assurance, not settlement service referrals</li>
+            <li>Full disclosure to clients that you earn when they use your vendors</li>
+            <li>You control your roster—remove vendors who underperform</li>
+            <li>Vendors know you referred the client, creating built-in accountability</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Social Proof Section -->
+<section class="social-proof">
+    <h2>Agents Are Finally Getting Credit for Their Networks</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            "I've been referring the same landscaper for 8 years, but had no idea how many of my clients actually called him. Now I can see it in real time—and it's way more than I thought."
+            <div class="testimonial-author">— Sarah M., Keller Williams</div>
+        </div>
+        <div class="testimonial">
+            "I was worried about compliance, but Hootova makes it so simple. No kickbacks, no gray areas—just a professional way to share my trusted vendors."
+            <div class="testimonial-author">— Mike D., RE/MAX</div>
+        </div>
+        <div class="testimonial">
+            "Set it up in 5 minutes, sent the link to my last 50 clients, and already had 12 people view my roster. This is genius."
+            <div class="testimonial-author">— Jennifer L., Coldwell Banker</div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta">
+    <h2>Your Network Is Worth More Than You Think.</h2>
+    <p>Stop letting your referrals disappear into the void. Start tracking the value you create every time you recommend a trusted pro.</p>
+    <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
+    <p class="cta-subtext">No credit card required. Set up in under 10 minutes.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-contact">
+            Contact: <a href="mailto:zac@hootova.com">zac@hootova.com</a>
+        </div>
+        <div class="footer-links">
+            <a href="/privacy-policy.html">Privacy Policy</a>
+            <a href="/terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Hootova. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- Form Modal -->
+<div id="formModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3 class="form-title">Launch Your Roster</h3>
+        <p class="form-subtitle">Start your free pilot today. No credit card required.</p>
+        <form id="signupForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company Name *</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+            <div class="form-group optional">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <button type="submit" class="submit-button">Launch My Free Pilot</button>
+        </form>
+    </div>
+</div>
 
 <script>
     function openModal() {
