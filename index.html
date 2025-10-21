@@ -25,11 +25,12 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+   .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
 
         .logo-space {
             width: 40px;
@@ -751,41 +752,44 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <div class="logo-space"></div>
-            <h1>HOOTOVA</h1>
-        </div>
-    </header>
+<!-- Header -->
+<header>
+    <div class="logo">
+        <div class="logo-space"></div>
+        <h1>HOOTOVA</h1>
+        <nav style="margin-left: auto;">
+            <a href="/how-it-works.html" style="color: #ffffff; text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 0.5rem 1.5rem; border-radius: 6px; transition: background-color 0.3s;">How It Works</a>
+        </nav>
+    </div>
+</header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h2>Get Paid to Recommend Local Businesses.</h2>
-                <h3>Hootova is the platform that pays you to curate a trusted network of local pros and hold them accountable for quality service.</h3>
-                <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
-                <p class="trust-line">Earn with every business page visit. Stay compliant. Build your reputation.</p>
-            </div>
-            <div class="hero-visual">
-                <div class="mockup-placeholder">
-                    <div class="mockup-header">
-                        <div class="mockup-agent"></div>
-                        <div class="mockup-name">Your Trusted Vendors</div>
-                    </div>
-                    <div class="mockup-list">
-                        <div class="mockup-item">🌿 Landscaping</div>
-                        <div class="mockup-item">🔧 Auto Repair</div>
-                        <div class="mockup-item">🏗️ Contractors</div>
-                        <div class="mockup-item">⚡ Electrician</div>
-                        <div class="mockup-item">🎨 Painter</div>
-                    </div>
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h2>Get Paid to Recommend Local Businesses.</h2>
+            <h3>Hootova is the platform that pays you to curate a trusted network of local pros and hold them accountable for quality service.</h3>
+            <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
+            <p class="trust-line">Earn with every business page visit. Stay compliant. Build your reputation.</p>
+        </div>
+        <div class="hero-visual">
+            <div class="mockup-placeholder">
+                <div class="mockup-header">
+                    <div class="mockup-agent"></div>
+                    <div class="mockup-name">Your Trusted Vendors</div>
                 </div>
+                <div class="mockup-list">
+                    <div class="mockup-item">🌿 Landscaping</div>
+                    <div class="mockup-item">🔧 Auto Repair</div>
+                    <div class="mockup-item">🏗️ Contractors</div>
+                    <div class="mockup-item">⚡ Electrician</div>
+                    <div class="mockup-item">🎨 Painter</div>
+                </div>
+                <a href="/how-it-works.html" style="display: block; text-align: center; margin-top: 1rem; color: #1a3a52; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Learn How It Works →</a>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- How It Works Section -->
     <section class="how-it-works">
         <div class="how-it-works-content">
