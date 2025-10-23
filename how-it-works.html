@@ -138,9 +138,12 @@
             text-decoration: none; /* ADDED: Remove underline from link */
         }
         
-        .logo {
-            height: 40px;
-        }
+   .logo {
+    height: 40px;
+    width: 40px; /* New: To make it a perfect square before rounding */
+    border-radius: 50%; /* New: To make it a circle */
+    object-fit: cover; /* New: To ensure the image looks good inside the circle */
+}
         
         /* ADDED: Style for logo text from landing page */
         .logo-text {
