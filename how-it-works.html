@@ -326,7 +326,7 @@
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* CHANGED: Simplified grid to match landing page */
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -462,6 +462,11 @@
             .hero-section p {
                 font-size: 1.1rem;
             }
+            
+            /* ADDED: Responsive footer grid to match landing page */
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -585,32 +590,17 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- CHANGED: Simplified footer to match landing page -->
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">LinkedIn</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:support@hootova.com">support@hootova.com</a></li>
+                        <li><a href="mailto:zac@hootova.com">zac@hootova.com</a></li> <!-- CHANGED: Email updated -->
                     </ul>
                 </div>
             </div>
@@ -712,4 +702,3 @@
     </script>
 </body>
 </html>
-
