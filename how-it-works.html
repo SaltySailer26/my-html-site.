@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +29,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #f7f9fc;
             color: #333;
             line-height: 1.6;
@@ -62,7 +63,7 @@
         }
 
         a {
-            color: #e57a00;
+            color: #ff6b35;
             text-decoration: none;
         }
 
@@ -76,7 +77,7 @@
         }
 
         .text-center { text-align: center; }
-        .text-primary { color: #e57a00; }
+        .text-primary { color: #ff6b35; }
         .text-secondary { color: #1a3a52; }
         
         /* Button Styles */
@@ -94,17 +95,17 @@
         }
 
         .btn-primary {
-            background-color: #e57a00;
+            background-color: #ff6b35;
             color: #ffffff;
-            border: 2px solid #e57a00;
+            border: 2px solid #ff6b35;
         }
         
         .btn-primary:hover {
-            background-color: #c76a00;
-            border-color: #c76a00;
+            background-color: #ff8555;
+            border-color: #ff8555;
             text-decoration: none;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(255,107,53,0.3);
         }
         
         .btn-outline {
@@ -121,7 +122,7 @@
         
         /* Navbar */
         .navbar {
-            background-color: #1a3a52; /* CHANGED: Dark background */
+            background-color: #1a3a52;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             padding: 1rem 2rem;
             display: flex;
@@ -135,22 +136,22 @@
         .logo-container {
             display: flex;
             align-items: center;
-            text-decoration: none; /* ADDED: Remove underline from link */
+            text-decoration: none;
         }
         
-   .logo {
-    height: 40px;
-    width: 40px; /* New: To make it a perfect square before rounding */
-    border-radius: 50%; /* New: To make it a circle */
-    object-fit: cover; /* New: To ensure the image looks good inside the circle */
-}
+        .logo {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
         
-        /* ADDED: Style for logo text from landing page */
         .logo-text {
             color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-left: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-left: 1rem;
+            letter-spacing: 0.5px;
         }
         
         .nav-links {
@@ -167,7 +168,7 @@
         }
         
         .nav-link:hover {
-            color: #e57a00;
+            color: #ff6b35;
             text-decoration: none;
         }
 
@@ -218,7 +219,7 @@
         .step-number {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #e57a00;
+            color: #ff6b35;
             margin-bottom: 0.5rem;
         }
         
@@ -231,7 +232,7 @@
         .step-text p {
             font-size: 1rem;
             color: #4a5568;
-            flex-grow: 1; /* Makes text content fill space */
+            flex-grow: 1;
         }
 
         .step-visual {
@@ -279,8 +280,8 @@
         }
         
         .earnings-box {
-            background-color: #f0fdf4; /* A light green */
-            border: 1px solid #bbf7d0; /* A matching green border */
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
             border-radius: 8px;
             padding: 1rem;
             text-align: center;
@@ -289,14 +290,163 @@
         
         .earnings-label {
             font-size: 0.9rem;
-            color: #166534; /* Dark green text */
+            color: #166534;
             margin-bottom: 0.25rem;
         }
         
         .earnings-amount {
             font-size: 1.75rem;
             font-weight: 700;
-            color: #15803d; /* Darker green text */
+            color: #15803d;
+        }
+
+        /* Distribution Methods Grid - FIXED CENTERING */
+        .distribution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .distribution-item {
+            background-color: #ffffff;
+            padding: 0.75rem;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #1a3a52;
+            text-align: center;
+        }
+
+        .distribution-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Hootova in Action Section */
+        .action-section {
+            background-color: #ffffff;
+            padding: 4rem 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .action-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-section p {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        .phone-mockup {
+            max-width: 350px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+            border-radius: 30px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem;
+            min-height: 400px;
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 1.5rem;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            background-color: #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-info h4 {
+            font-size: 1rem;
+            color: #1a3a52;
+            margin-bottom: 0.15rem;
+        }
+
+        .contact-info p {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .message-bubble {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #1a3a52;
+        }
+
+        .message-bubble strong {
+            color: #ff6b35;
+        }
+
+        .contact-card {
+            background-color: #f7f9fc;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .contact-card-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #cbd5e1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-card-info h5 {
+            font-size: 0.9rem;
+            color: #1a3a52;
+            margin-bottom: 0.1rem;
+        }
+
+        .contact-card-info p {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin: 0;
         }
         
         /* Final CTA Section */
@@ -319,51 +469,60 @@
             color: #4a5568;
         }
         
-        /* Footer */
-        .footer {
+        /* Footer - Matched to Landing Page */
+        footer {
             background-color: #1a3a52;
-            color: #e0e0e0;
-            padding: 4rem 0 2rem 0;
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-contact {
             font-size: 0.95rem;
         }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* CHANGED: Simplified grid to match landing page */
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h4 {
+
+        .footer-contact a {
             color: #ffffff;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
+            text-decoration: none;
+            font-weight: 500;
         }
-        
-        .footer-column ul {
-            list-style: none;
+
+        .footer-contact a:hover {
+            text-decoration: underline;
         }
-        
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
         }
-        
-        .footer-column ul li a {
-            color: #e0e0e0;
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
         }
-        
-        .footer-column ul li a:hover {
+
+        .footer-links a:hover {
             color: #ffffff;
             text-decoration: underline;
         }
-        
-        .footer-bottom {
+
+        .footer-copyright {
+            width: 100%;
             text-align: center;
-            border-top: 1px solid #3b5971;
-            padding-top: 2rem;
-            color: #a0b2c0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
         }
 
         /* Modal Styles */
@@ -383,10 +542,10 @@
         .modal-content {
             background-color: #fefefe;
             margin: 5% auto; 
-            padding: 2.5rem;
+            padding: 1.8rem;
             border: 1px solid #888;
             width: 90%;
-            max-width: 500px;
+            max-width: 400px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             position: relative;
@@ -411,39 +570,47 @@
         
         .modal-content h2 {
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
+            font-size: 1.4rem;
         }
         
         .modal-content p {
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
         }
         
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.9rem;
         }
         
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #4a5568;
-            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1a3a52;
+            font-size: 0.95rem;
         }
         
         .form-group input {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
             font-size: 1rem;
+            transition: border-color 0.3s;
         }
         
         .form-group input:focus {
             outline: none;
-            border-color: #e57a00;
-            box-shadow: 0 0 0 2px rgba(229, 122, 0, 0.2);
+            border-color: #ff6b35;
+        }
+
+        .form-group.optional label:after {
+            content: " (Optional)";
+            color: #94a3b8;
+            font-weight: 400;
+            font-size: 0.85rem;
         }
         
         /* Responsive */
@@ -465,10 +632,24 @@
             .hero-section p {
                 font-size: 1.1rem;
             }
-            
-            /* ADDED: Responsive footer grid to match landing page */
-            .footer-content {
+
+            .distribution-grid {
                 grid-template-columns: 1fr;
+                max-width: 200px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .phone-mockup {
+                max-width: 320px;
             }
         }
     </style>
@@ -477,13 +658,12 @@
 
     <!-- Updated Header -->
     <nav class="navbar">
-        <a href="index.html" class="logo-container"> <!-- Assuming index.html is your landing page -->
+        <a href="index.html" class="logo-container">
             <img src="/images/hootova-owl-logo.png.png" alt="Hootova Logo" class="logo">
-            <span class="logo-text">Hootova</span> <!-- ADDED: Logo text -->
+            <span class="logo-text">HOOTOVA</span>
         </a>
         <div class="nav-links">
-            <!-- REMOVED: "Home" and "Sign In" links -->
-            <button class="btn btn-primary" onclick="openModal()">Launch My Free Pilot</button> <!-- CHANGED: Button text -->
+            <button class="btn btn-primary" onclick="openModal()">Launch My Free Pilot</button>
         </div>
     </nav>
 
@@ -491,11 +671,11 @@
     <section class="hero-section">
         <div class="container">
             <h1>How Hootova Works</h1>
-            <p>Turn your trusted network into real income. Hootova provides the tools to build, share, and monetize your personal roster of recommended pros—all while holding them accountable to the quality you expect.</p>
+            <p>Turn your trusted network into real income. Hootova provides the tools to build, share, and monetize your personal roster of recommended pros—all while ensuring quality service.</p>
         </div>
     </section>
 
-    <!-- Updated Steps Section (as a Feature Grid) -->
+    <!-- Updated Steps Section -->
     <div class="container">
         <div class="feature-grid">
             
@@ -507,7 +687,6 @@
                     <p>Quickly add the local vendors you trust. Add painters, plumbers, electricians, and any other pro you'd recommend to a neighbor. This becomes your personal, shareable list.</p>
                 </div>
                 <div class="step-visual">
-                    <!-- A simple visual for building a list -->
                     <div class="dashboard-preview" style="padding: 1rem 0;">
                          <h5 style="color: #1a3a52; margin-bottom: 1rem; font-size: 1.1rem;">My Trusted Vendors</h5>
                          <div class="stat-row" style="background-color: #f7f9fc; margin: 0 1rem; padding: 0.75rem; border-radius: 8px;">
@@ -526,21 +705,46 @@
                 </div>
             </div>
 
-            <!-- Step 2 -->
+            <!-- Step 2 - UPDATED WITH DISTRIBUTION METHODS -->
             <div class="feature-item">
                 <div class="step-number">STEP 2</div>
                 <div class="step-text">
-                    <h3>Share Your Link</h3>
-                    <p>We give you one simple link to your public roster. Share it with neighbors, clients, or friends. When they hire someone from your list, you get paid a referral fee.</p>
+                    <h3>Share Your Link Everywhere</h3>
+                    <p>Get your custom Hootova link and distribute it to clients through multiple channels. Print QR codes on business cards, refrigerator magnets, and plaques. Add it to your website, include it in emails, or simply text it directly to clients who need a trusted recommendation.</p>
                 </div>
                 <div class="step-visual">
-                    <!-- A simple visual for sharing -->
                     <div class="dashboard-preview">
-                        <h5 style="color: #1a3a52; margin-bottom: 1.5rem; font-size: 1.1rem;">Your Share Link</h5>
-                        <div style="background: #f7f9fc; border: 1px dashed #ccc; border-radius: 8px; padding: 1.5rem; text-align: center; word-break: break-all;">
-                            <span style="color: #4a5568; font-weight: 600;">hootova.com/p/your-name</span>
+                        <h5 style="color: #1a3a52; margin-bottom: 1rem; font-size: 1.1rem;">Your Share Link</h5>
+                        <div style="background: #f7f9fc; border: 1px dashed #ccc; border-radius: 8px; padding: 1rem; text-align: center; word-break: break-all; margin-bottom: 1rem;">
+                            <span style="color: #4a5568; font-weight: 600; font-size: 0.9rem;">hootova.com/p/your-name</span>
                         </div>
-                        <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Copy Link</button>
+                        <h5 style="color: #1a3a52; margin-bottom: 0.75rem; font-size: 0.95rem; text-align: center;">Distribution Options:</h5>
+                        <div class="distribution-grid">
+                            <div class="distribution-item">
+                                <span class="distribution-icon">📱</span>
+                                <span>Text</span>
+                            </div>
+                            <div class="distribution-item">
+                                <span class="distribution-icon">🎴</span>
+                                <span>Cards</span>
+                            </div>
+                            <div class="distribution-item">
+                                <span class="distribution-icon">🧲</span>
+                                <span>Magnets</span>
+                            </div>
+                            <div class="distribution-item">
+                                <span class="distribution-icon">🏆</span>
+                                <span>Plaques</span>
+                            </div>
+                            <div class="distribution-item">
+                                <span class="distribution-icon">🌐</span>
+                                <span>Website</span>
+                            </div>
+                            <div class="distribution-item">
+                                <span class="distribution-icon">📄</span>
+                                <span>Flyers</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -552,7 +756,6 @@
                     <h3>Track & Earn</h3>
                     <p>Your dashboard tracks every view, click, and job. See exactly how much value your network is generating and get paid for the referrals you were already making for free.</p>
                 </div>
-                <!-- Using the dashboard preview you already had -->
                 <div class="step-visual">
                     <div class="dashboard-preview">
                         <h5 style="color: #1a3a52; margin-bottom: 1.5rem; font-size: 1.1rem;">Your Monthly Activity</h5>
@@ -579,72 +782,94 @@
         </div>
     </div>
 
-    <!-- Final CTA Section (Updated) -->
+    <!-- NEW: Hootova in Action Section -->
+    <section class="action-section">
+        <div class="container">
+            <h2>Hootova in Action</h2>
+            <p>When a client contacts a vendor from your roster, the vendor is instantly notified who referred them—creating built-in accountability and ensuring quality service.</p>
+            
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="message-header">
+                        <div class="avatar">H</div>
+                        <div class="contact-info">
+                            <h4>Hootova</h4>
+                            <p>New Lead Notification</p>
+                        </div>
+                    </div>
+                    
+                    <div class="message-bubble">
+                        Hi <strong>Paulie's Auto</strong>, you have a new lead from <strong>Regina the Realtor</strong>:<br><br>
+                        <strong>Sarah Safehill</strong> is having transmission and engine issues. Take good care of her for Regina!
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-icon">👤</div>
+                        <div class="contact-card-info">
+                            <h5>Sarah Safehill</h5>
+                            <p>Contact Card Attached</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
     <section class="final-cta-section">
         <div class="container">
             <h2>Ready to Turn Your Network Into Income?</h2>
             <p>Set up your roster in under 10 minutes. No credit card required. Start tracking the value you create every time you make a referral.</p>
-            <!-- This button now opens the modal -->
-            <button class="btn btn-primary" onclick="openModal()" style="padding: 1rem 2rem; font-size: 1.1rem;">Launch My Free Pilot</button> <!-- CHANGED: Button text -->
+            <button class="btn btn-primary" onclick="openModal()" style="padding: 1rem 2rem; font-size: 1.1rem;">Launch My Free Pilot</button>
         </div>
     </section>
 
-    <!-- NEW: Footer from Landing Page -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- CHANGED: Simplified footer to match landing page -->
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:zac@hootova.com">zac@hootova.com</a></li> <!-- CHANGED: Email updated -->
-                    </ul>
-                </div>
+    <!-- Footer - Matched to Landing Page -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                Contact: <a href="mailto:zac@hootova.com">zac@hootova.com</a>
             </div>
-            <div class="footer-bottom">
-                &copy; 2025 Hootova, Inc. All rights reserved.
+            <div class="footer-links">
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 Hootova. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <!-- NEW: Modal from Landing Page -->
+    <!-- Modal -->
     <div id="formModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2>Launch Your Free Roster</h2>
-            <p>Get set up in 5 minutes. We'll be in touch to help you build your roster and start earning.</p>
+            <h2>Launch Your Roster</h2>
+            <p>Start your free pilot today. No credit card required.</p>
             
             <form id="signupForm" onsubmit="handleSubmit(event)">
                 <div class="form-group">
-                    <label for="fullName">Full Name</label>
+                    <label for="fullName">Full Name *</label>
                     <input type="text" id="fullName" name="fullName" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+                    <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="company">Company / Group (Optional)</label>
-                    <input type="text" id="company" name="company">
+                    <label for="company">Company Name *</label>
+                    <input type="text" id="company" name="company" required>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Phone (Optional)</label>
+                <div class="form-group optional">
+                    <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone">
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 0.85rem;">Get Started</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 1rem;">Launch My Free Pilot</button>
             </form>
         </div>
     </div>
 
-    <!-- NEW: JavaScript for Modal -->
     <script>
-        // Modal Functions
         function openModal() {
             document.getElementById('formModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
@@ -655,7 +880,6 @@
             document.body.style.overflow = 'auto';
         }
         
-        // Close modal if user clicks outside of it
         window.onclick = function(event) {
             const modal = document.getElementById('formModal');
             if (event.target === modal) {
@@ -663,7 +887,6 @@
             }
         }
         
-        // Handle Form Submission
         async function handleSubmit(event) {
             event.preventDefault();
             
@@ -674,8 +897,6 @@
             };
             
             try {
-                // This uses the /api/submit endpoint from your landing page.
-                // Make sure this is correctly set up on your server.
                 const response = await fetch('/api/submit', {
                     method: 'POST',
                     headers: {
@@ -687,19 +908,15 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    // Don't use alert() - let's show a message in the form
-                    const form = document.getElementById('signupForm');
-                    form.innerHTML = `<h3 style='text-align:center; color: #15803d;'>Thank you!</h3><p style='text-align:center;'>We'll be in touch soon to set up your roster.</p>`;
-                    // Close modal after a delay
-                    setTimeout(closeModal, 3000);
+                    alert('Thank you! We\'ll be in touch soon to set up your roster.');
+                    closeModal();
+                    document.getElementById('signupForm').reset();
                 } else {
-                    // Show an error
                     alert('Oops! Something went wrong. Please try again.');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                // This alert is for debugging, you might want a gentler error
-                alert('Oops! An error occurred. Please check the console and try again.');
+                alert('Oops! Something went wrong. Please try again.');
             }
         }
     </script>
