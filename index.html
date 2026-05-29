@@ -1239,6 +1239,23 @@ footer {
 @media (max-width: 640px) {
   .container, .container-narrow { padding: 0 1.25rem; }
   
+  /* Header — tighten and balance on small screens */
+  header { padding: 0.75rem 0; }
+  
+  .header-inner { padding: 0 1.25rem; }
+  
+  .brand { gap: 0.5rem; }
+  
+  .brand-mark { width: 30px; height: 30px; }
+  
+  .brand-name { font-size: 1.2rem; }
+  
+  .nav-actions .btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+  }
+  
   section.standard,
   .recognition,
   .how,
@@ -1257,6 +1274,15 @@ footer {
   
   .hero-cta-row .btn { width: 100%; justify-content: center; }
 }
+
+@media (max-width: 380px) {
+  .brand-name { font-size: 1.1rem; }
+  
+  .nav-actions .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -1268,7 +1294,6 @@ footer {
       <span class="brand-name">Hootova</span>
     </a>
     <div class="nav-actions">
-      <a href="/how-it-works.html" class="nav-link">How it works</a>
       <button class="btn btn-primary" onclick="openModal()">Build your referral page</button>
     </div>
   </div>
@@ -1290,7 +1315,6 @@ footer {
         </p>
         <div class="hero-cta-row">
           <button class="btn btn-primary btn-lg" onclick="openModal()">Build your referral page</button>
-          <a href="/how-it-works.html" class="btn btn-ghost btn-lg">See how it works</a>
         </div>
         <div class="hero-meta">
           <span class="hero-meta-dot"></span>
@@ -1646,7 +1670,6 @@ footer {
         </div>
       </div>
       <div class="footer-links">
-        <a href="/how-it-works.html">How it works</a>
         <a href="/privacy-policy.html">Privacy</a>
         <a href="/terms-of-service.html">Terms</a>
       </div>
