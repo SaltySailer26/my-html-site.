@@ -2,1260 +2,1734 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hootova - Get Paid to Recommend Local Businesses.</title>
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hootova.com/">
-    <meta property="og:title" content="Hootova - Get Paid to Recommend Local Businesses">
-    <meta property="og:description" content="Turn your trusted network into income. Hootova pays you to curate quality local pros and hold them accountable.">
-    <meta property="og:image" content="https://hootova.com/images/hootova-owl-logo.png.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hootova.com/">
-    <meta property="twitter:title" content="Hootova - Get Paid to Recommend Local Businesses">
-    <meta property="twitter:description" content="Turn your trusted network into income. Hootova pays you to curate quality local pros and hold them accountable.">
-    <meta property="twitter:image" content="https://hootova.com/images/hootova-owl-logo.png.png">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #ffffff;
-        }
-
-        /* Header */
-        header {
-            background-color: #1a3a52;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            width: 100%;
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .logo-space {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            background-image: url('./images/hootova-owl-logo.png.png');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .logo h1 {
-            color: #ffffff;
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-button {
-            margin-left: auto;
-            background-color: rgba(255,255,255,0.15);
-            color: #ffffff !important;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 0.6rem 1.5rem;
-            border-radius: 6px;
-            border: 1px solid rgba(255,255,255,0.4);
-            transition: all 0.3s;
-            white-space: nowrap;
-        }
-
-        .nav-button:hover {
-            background-color: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.6);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
-            color: #ffffff;
-            padding: 3.5rem 2rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-text h2 {
-            font-size: 2.3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .hero-text h3 {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            color: #e0f2fe;
-            line-height: 1.7;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #ff6b35;
-            color: #ffffff;
-            padding: 0.9rem 2.2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255,107,53,0.3);
-        }
-
-        .cta-button:hover {
-            background-color: #ff8555;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,107,53,0.4);
-        }
-
-        .trust-line {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            font-style: italic;
-        }
-
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .mockup-placeholder {
-            width: 300px;
-            height: 550px;
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            overflow: hidden;
-        }
-
-        .mockup-header {
-            text-align: center;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .mockup-agent {
-            width: 60px;
-            height: 60px;
-            background-color: #cbd5e1;
-            border-radius: 50%;
-            margin: 0 auto 0.5rem;
-        }
-
-        .mockup-name {
-            color: #1a3a52;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .mockup-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            flex: 1;
-            overflow-y: auto;
-        }
-
-        .mockup-item {
-            background-color: #ffffff;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            color: #1a3a52;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .mockup-link {
-            display: block;
-            text-align: center;
-            margin-top: auto;
-            padding-top: 1rem;
-            color: #1a3a52;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .mockup-link:hover {
-            color: #ff6b35;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            background-color: #f8fafc;
-            padding: 3.5rem 2rem;
-        }
-
-        .how-it-works-content {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .how-it-works h2 {
-            text-align: center;
-            color: #1a3a52;
-            font-size: 1.9rem;
-            margin-bottom: 3rem;
-            font-weight: 700;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .step {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateY(-5px);
-        }
-
-        .step-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .step h4 {
-            color: #1a3a52;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .step p {
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* How You Get Paid Section */
-        .get-paid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3.5rem 2rem;
-        }
-
-        .get-paid h2 {
-            text-align: center;
-            color: #1a3a52;
-            font-size: 1.9rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .get-paid-intro {
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #475569;
-            text-align: center;
-        }
-
-        .get-paid-intro strong {
-            color: #1a3a52;
-        }
-
-        .benefits-list {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #f8fafc;
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
-        .benefit-item {
-            display: flex;
-            gap: 1.2rem;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .benefit-item:last-child {
-            border-bottom: none;
-        }
-
-        .benefit-item-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-        }
-
-        .benefit-item-content h4 {
-            color: #1a3a52;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-
-        .benefit-item-content p {
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Who This Is For Section */
-        .who-for {
-            background-color: #f8fafc;
-            padding: 3.5rem 2rem;
-        }
-
-        .who-for-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .who-for h2 {
-            text-align: center;
-            color: #1a3a52;
-            font-size: 1.9rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .who-for-intro {
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #475569;
-            text-align: center;
-        }
-
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .use-case {
-            background-color: #ffffff;
-            padding: 1.8rem;
-            border-radius: 12px;
-            border: 2px solid #e2e8f0;
-        }
-
-        .use-case h4 {
-            color: #1a3a52;
-            font-size: 1.1rem;
-            margin-bottom: 0.7rem;
-            font-weight: 600;
-        }
-
-        .use-case p {
-            color: #64748b;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Consumer Protection Section */
-        .consumer-protection {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3.5rem 2rem;
-        }
-
-        .consumer-protection h2 {
-            text-align: center;
-            color: #1a3a52;
-            font-size: 1.9rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .consumer-protection-intro {
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #475569;
-            text-align: center;
-        }
-
-        .protection-list {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #f8fafc;
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
-        .protection-item {
-            display: flex;
-            gap: 1.2rem;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .protection-item:last-child {
-            border-bottom: none;
-        }
-
-        .protection-item-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-        }
-
-        .protection-item-content h4 {
-            color: #1a3a52;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-
-        .protection-item-content p {
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Disclosure Section */
-        .disclosure {
-            background-color: #f1f5f9;
-            padding: 3.5rem 2rem;
-        }
-
-        .disclosure-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .disclosure h2 {
-            text-align: center;
-            color: #1a3a52;
-            font-size: 1.9rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .disclosure-box {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid #10b981;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .disclosure-box p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #1a3a52;
-            font-style: italic;
-        }
-
-        .disclosure-why {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .disclosure-why h4 {
-            color: #1a3a52;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .disclosure-why ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .disclosure-why li {
-            padding: 0.5rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: #475569;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .disclosure-why li:before {
-            content: "•";
-            position: absolute;
-            left: 0.5rem;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        /* Compliance/FAQ Section */
-        .compliance {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3.5rem 2rem;
-        }
-
-        .compliance h2 {
-            text-align: center;
-            color: #1a3a52;
-            font-size: 1.9rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .compliance-intro {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #475569;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .compliance-points {
-            background-color: #f8fafc;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .compliance-points ul {
-            list-style: none;
-        }
-
-        .compliance-points li {
-            padding: 0.7rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: #1a3a52;
-            font-size: 0.95rem;
-        }
-
-        .compliance-points li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Social Proof Section */
-        .social-proof {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3.5rem 2rem;
-            background-color: #f8fafc;
-        }
-
-        .social-proof h2 {
-            text-align: center;
-            color: #1a3a52;
-            font-size: 1.9rem;
-            margin-bottom: 3rem;
-            font-weight: 700;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .testimonial {
-            background-color: #ffffff;
-            padding: 1.8rem;
-            border-radius: 12px;
-            border-left: 4px solid #ff6b35;
-            font-style: italic;
-            color: #475569;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .testimonial-author {
-            margin-top: 1.2rem;
-            font-style: normal;
-            color: #1a3a52;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Final CTA Section */
-        .final-cta {
-            background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
-            color: #ffffff;
-            padding: 3.5rem 2rem;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            font-size: 2.1rem;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-
-        .final-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .final-cta .cta-button {
-            background-color: #ff6b35;
-            margin-bottom: 1rem;
-        }
-
-        .final-cta .cta-button:hover {
-            background-color: #ff8555;
-        }
-
-        .cta-subtext {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.9);
-            margin-top: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a3a52;
-            color: #ffffff;
-            padding: 2.5rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-contact {
-            font-size: 0.95rem;
-        }
-
-        .footer-contact a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .footer-contact a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        .footer-copyright {
-            width: 100%;
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.7);
-        }
-
-        /* Form Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            animation: fadeIn 0.3s;
-        }
-
-      .modal.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hootova — Stay top of mind with every client, long after closing.</title>
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hootova.com/">
+<meta property="og:title" content="Hootova — Stay top of mind with every client, long after closing.">
+<meta property="og:description" content="Turn the recommendations you're already making into a branded roster you can hand out to anyone you meet — not just clients at closing.">
+<meta property="og:image" content="https://hootova.com/images/hootova-owl-logo.png.png">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://hootova.com/">
+<meta property="twitter:title" content="Hootova — Stay top of mind with every client, long after closing.">
+<meta property="twitter:description" content="Turn the recommendations you're already making into a branded roster you can hand out to anyone you meet.">
+<meta property="twitter:image" content="https://hootova.com/images/hootova-owl-logo.png.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #1a3a52;
+  --navy-deep: #112839;
+  --navy-soft: #2d5673;
+  --cream: #faf7f2;
+  --cream-warm: #f3eee5;
+  --paper: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #4a5568;
+  --ink-muted: #718096;
+  --rule: #e4ddd0;
+  --accent: #b8895a;        /* warm muted gold/terracotta */
+  --accent-deep: #9a6f42;
+  --success: #2d6a4f;
+  --success-soft: #e8f1ec;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.modal-content {
-    background-color: #ffffff;
-    padding: 1.8rem;           /* reduced from 3rem */
-    border-radius: 12px;
-    max-width: 400px;          /* reduced from 500px */
-    width: 90%;
-    margin: 2rem auto;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    animation: slideUp 0.3s;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-        .close-modal {
-            float: right;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #94a3b8;
-            cursor: pointer;
-            line-height: 1;
-        }
-
-        .close-modal:hover {
-            color: #1a3a52;
-        }
-
-      .form-title {
-    color: #1a3a52;
-    font-size: 1.4rem;           /* reduced from 1.7rem */
-    margin-bottom: 0.3rem;       /* reduced from 0.5rem */
-    clear: both;
-    font-weight: 700;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.form-subtitle {
-    color: #64748b;
-    margin-bottom: 1.2rem;       /* reduced from 2rem */
-    font-size: 0.9rem;           /* reduced from 0.95rem */
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-    .form-group {
-    margin-bottom: 0.9rem;     /* reduced from 1.5rem */
+/* Typography */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: 1.25rem;
 }
 
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #1a3a52;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); }
+h3 { font-size: 1.25rem; line-height: 1.3; }
+h4 { font-size: 1.05rem; font-family: var(--sans); font-weight: 600; letter-spacing: 0; }
 
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
+p { font-size: 1.0625rem; color: var(--ink-soft); line-height: 1.7; }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: #ff6b35;
-        }
+.lead { font-size: 1.15rem; color: var(--ink-soft); }
 
-        .form-group.optional label:after {
-            content: " (Optional)";
-            color: #94a3b8;
-            font-weight: 400;
-            font-size: 0.85rem;
-        }
+/* Header */
+header {
+  background-color: var(--cream);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background-color: rgba(250, 247, 242, 0.95);
+}
 
-        .submit-button {
-            width: 100%;
-            background-color: #ff6b35;
-            color: #ffffff;
-            padding: 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        .submit-button:hover {
-            background-color: #ff8555;
-        }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  background-color: var(--navy);
+  border-radius: 50%;
+  background-image: url('./images/hootova-owl-logo.png.png');
+  background-size: cover;
+  background-position: center;
+}
 
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+.brand-name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
 
-        /* Responsive Design */
-        @media (max-width: 850px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
 
-            .hero-text h2 {
-                font-size: 2rem;
-            }
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
 
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
+.nav-link:hover { color: var(--navy); }
 
-            .use-cases-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+}
 
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
+.btn-primary {
+  background-color: var(--navy);
+  color: var(--paper);
+}
 
-            .mockup-placeholder {
-                margin: 0 auto;
-            }
+.btn-primary:hover {
+  background-color: var(--navy-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 58, 82, 0.2);
+}
 
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+.btn-ghost {
+  background-color: transparent;
+  color: var(--navy);
+  border: 1px solid var(--rule);
+}
 
-            .footer-links {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-        }
+.btn-ghost:hover {
+  border-color: var(--navy);
+  background-color: var(--paper);
+}
 
-        @media (max-width: 640px) {
-            .hero {
-                padding: 2.5rem 1rem;
-            }
+.btn-lg {
+  padding: 1.05rem 2rem;
+  font-size: 1rem;
+}
 
-            .hero-text h2 {
-                font-size: 1.7rem;
-            }
+/* Hero */
+.hero {
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
 
-            .hero-text h3 {
-                font-size: 1rem;
-            }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184, 137, 90, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-            .cta-button {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.95rem;
-            }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+}
 
-            header {
-                padding: 1.5rem 1rem;
-            }
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin-bottom: 1.75rem;
+  font-weight: 500;
+}
 
-            .nav-button {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
+.hero-headline em {
+  font-style: italic;
+  color: var(--accent-deep);
+  font-weight: 400;
+}
 
-            .how-it-works,
-            .get-paid,
-            .who-for,
-            .consumer-protection,
-            .disclosure,
-            .compliance,
-            .social-proof,
-            .final-cta {
-                padding: 2.5rem 1rem;
-            }
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 2.25rem;
+  max-width: 520px;
+}
 
-            .how-it-works h2,
-            .get-paid h2,
-            .who-for h2,
-            .consumer-protection h2,
-            .disclosure h2,
-            .compliance h2,
-            .social-proof h2 {
-                font-size: 1.6rem;
-            }
+.hero-cta-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-            .final-cta h2 {
-                font-size: 1.8rem;
-            }
+.hero-meta {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-            .modal-content {
-                padding: 2rem 1.5rem;
-            }
+.hero-meta-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--success);
+}
 
-            .use-cases-grid {
-                grid-template-columns: 1fr;
-            }
+/* Hero Mockup - Branded Roster Page Preview */
+.mockup {
+  position: relative;
+  background-color: var(--paper);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 2px rgba(26, 58, 82, 0.04),
+    0 12px 40px rgba(26, 58, 82, 0.12),
+    0 32px 80px rgba(26, 58, 82, 0.08);
+  padding: 0;
+  overflow: hidden;
+  max-width: 420px;
+  margin-left: auto;
+  transform: rotate(-1deg);
+  transition: transform 0.4s ease;
+}
 
-            footer {
-                padding: 2rem 1rem;
-            }
-        }
-    </style>
+.mockup:hover { transform: rotate(0deg) translateY(-4px); }
+
+.mockup-browser-bar {
+  background-color: var(--cream-warm);
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d4ccbe;
+}
+
+.browser-url {
+  margin-left: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  background-color: var(--paper);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+}
+
+.mockup-body { padding: 1.75rem 1.5rem 1.5rem; }
+
+.mockup-agent-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.mockup-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.mockup-agent-meta { flex: 1; }
+
+.mockup-agent-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.mockup-agent-title {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-top: 0.1rem;
+}
+
+.mockup-heading {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 1.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.mockup-divider {
+  height: 1px;
+  background-color: var(--rule);
+  margin: 0.75rem 0;
+}
+
+.mockup-vendor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.mockup-vendor:last-child { border-bottom: none; }
+
+.mockup-vendor-info { display: flex; flex-direction: column; gap: 0.15rem; }
+
+.mockup-vendor-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.mockup-vendor-cat {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mockup-vendor-action {
+  font-size: 0.75rem;
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+/* Trust Strip */
+.trust-strip {
+  background-color: var(--cream-warm);
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.trust-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.trust-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--success);
+}
+
+/* Section base */
+section.standard {
+  padding: 5rem 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-head h2 { margin-bottom: 1rem; }
+
+/* Recognition (the "we see you" moment) */
+.recognition {
+  background-color: var(--paper);
+  padding: 5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.recognition-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 1.5rem;
+}
+
+.recognition-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--accent-deep);
+  line-height: 1.4;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--accent);
+  margin: 2rem 0;
+}
+
+.recognition-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stat-card-num {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-card-label {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  text-align: right;
+  max-width: 200px;
+}
+
+/* How It Works */
+.how {
+  background-color: var(--cream);
+  padding: 5rem 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.step {
+  background-color: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 58, 82, 0.08);
+}
+
+.step-num {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-deep);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.step p { font-size: 0.95rem; }
+
+.step-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 1.25rem;
+  color: var(--navy);
+}
+
+/* Comparison */
+.comparison {
+  background-color: var(--paper);
+  padding: 5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.compare-table {
+  max-width: 950px;
+  margin: 0 auto;
+  background-color: var(--cream);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  border-bottom: 1px solid var(--rule);
+}
+
+.compare-row:last-child { border-bottom: none; }
+
+.compare-row.header {
+  background-color: var(--cream-warm);
+}
+
+.compare-cell {
+  padding: 1.1rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--rule);
+}
+
+.compare-cell:last-child { border-right: none; }
+
+.compare-cell.feature-label {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.9rem;
+}
+
+.compare-cell.header-cell {
+  font-family: var(--sans);
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.compare-cell.header-cell.hootova {
+  color: var(--accent-deep);
+}
+
+.check-yes {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.check-no { color: var(--ink-muted); }
+
+/* In Action */
+.in-action {
+  background-color: var(--navy);
+  padding: 5rem 0;
+  color: var(--paper);
+}
+
+.in-action h2, .in-action h3 { color: var(--paper); }
+
+.in-action .section-head p { color: rgba(255, 255, 255, 0.75); }
+
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.action-text h2 {
+  color: var(--paper);
+  margin-bottom: 1.5rem;
+}
+
+.action-text p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+}
+
+.action-text .accent-line {
+  color: var(--accent);
+  font-style: italic;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent);
+}
+
+.notification-mock {
+  background-color: var(--paper);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.25rem;
+}
+
+.notif-app-icon {
+  width: 38px;
+  height: 38px;
+  background-color: var(--navy);
+  border-radius: 8px;
+  background-image: url('./images/hootova-owl-logo.png.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.notif-meta { flex: 1; }
+.notif-app-name { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+.notif-time { font-size: 0.75rem; color: var(--ink-muted); }
+
+.notif-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.notif-body strong { color: var(--accent-deep); font-weight: 600; }
+
+.notif-card {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  background-color: var(--cream);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.85rem;
+}
+
+.notif-card-label {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.notif-card-name { font-weight: 600; color: var(--navy); }
+
+/* Reputation */
+.reputation {
+  background-color: var(--cream);
+  padding: 5rem 0;
+}
+
+.rep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.rep-card {
+  background-color: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+}
+
+.rep-card-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 1.25rem;
+  color: var(--accent-deep);
+}
+
+.rep-card h4 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.rep-card p { font-size: 0.95rem; }
+
+/* Testimonials */
+.testimonials {
+  background-color: var(--paper);
+  padding: 5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.testimonial {
+  background-color: var(--cream);
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-mark {
+  font-family: var(--serif);
+  font-size: 3rem;
+  line-height: 0.5;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.testimonial-quote {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.testimonial-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-soft), var(--navy));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.testimonial-author-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-author-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.testimonial-author-role {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+/* Compensation (the reluctant benefit, finally surfaced) */
+.compensation {
+  background-color: var(--cream-warm);
+  padding: 5rem 0;
+}
+
+.comp-inner {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.comp-inner h2 { margin-bottom: 1.25rem; }
+
+.comp-body {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 2.5rem;
+}
+
+.comp-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.comp-point {
+  background-color: var(--paper);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--success);
+}
+
+.comp-point-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--success);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.comp-point p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* Disclosure */
+.disclosure {
+  background-color: var(--paper);
+  padding: 5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.disclosure-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.disclosure-script {
+  background-color: var(--cream);
+  border-left: 4px solid var(--accent);
+  padding: 2rem 2.25rem;
+  margin: 2.5rem 0;
+  text-align: left;
+  border-radius: 0 8px 8px 0;
+}
+
+.disclosure-script p {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.disclosure-explainer {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  margin-top: 1.5rem;
+}
+
+/* Final CTA */
+.final-cta {
+  background-color: var(--navy);
+  padding: 6rem 0;
+  color: var(--paper);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(184, 137, 90, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.final-cta-inner {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.final-cta h2 {
+  color: var(--paper);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1.5rem;
+}
+
+.final-cta h2 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.final-cta p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.final-cta .btn-primary {
+  background-color: var(--accent);
+  color: var(--paper);
+}
+
+.final-cta .btn-primary:hover {
+  background-color: var(--accent-deep);
+}
+
+.final-cta-meta {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Footer */
+footer {
+  background-color: var(--navy-deep);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--paper);
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.25rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.875rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--paper);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.footer-contact a:hover { color: var(--paper); }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 40, 57, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+}
+
+.modal.active { display: flex; }
+
+.modal-card {
+  background-color: var(--paper);
+  border-radius: 12px;
+  max-width: 440px;
+  width: 100%;
+  padding: 2.25rem;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--ink-muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover { color: var(--navy); }
+
+.modal-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.modal-subtitle {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+.form-group { margin-bottom: 1rem; }
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1.5px solid var(--rule);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  background-color: var(--cream);
+  transition: all 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: var(--paper);
+}
+
+.form-group.optional label::after {
+  content: ' (optional)';
+  color: var(--ink-muted);
+  font-weight: 400;
+  font-size: 0.78rem;
+}
+
+.modal .btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid,
+  .recognition-grid,
+  .action-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hero { padding: 3rem 0; }
+  
+  .mockup {
+    transform: none;
+    margin: 0 auto;
+  }
+  
+  .steps,
+  .rep-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .comp-points {
+    grid-template-columns: 1fr;
+  }
+  
+  .compare-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .compare-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  .compare-row.header {
+    display: none;
+  }
+  
+  .compare-cell.feature-label {
+    background-color: var(--cream-warm);
+  }
+  
+  .compare-cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 0.75rem;
+  }
+  
+  .compare-cell.feature-label::before { content: none; }
+  
+  .trust-inner { gap: 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  .container, .container-narrow { padding: 0 1.25rem; }
+  
+  section.standard,
+  .recognition,
+  .how,
+  .comparison,
+  .in-action,
+  .reputation,
+  .testimonials,
+  .compensation,
+  .disclosure {
+    padding: 3.5rem 0;
+  }
+  
+  .final-cta { padding: 4rem 0; }
+  
+  .hero-cta-row { flex-direction: column; align-items: stretch; }
+  
+  .hero-cta-row .btn { width: 100%; justify-content: center; }
+}
+</style>
 </head>
 <body>
-<!-- Header -->
+
 <header>
-    <div class="logo">
-        <a href="/index.html">
-            <div class="logo-space"></div>
-            <h1>HOOTOVA</h1>
-        </a>
-        <a href="/how-it-works.html" class="nav-button">How It Works</a>
+  <div class="header-inner">
+    <a href="/" class="brand">
+      <div class="brand-mark"></div>
+      <span class="brand-name">Hootova</span>
+    </a>
+    <div class="nav-actions">
+      <a href="/how-it-works.html" class="nav-link">How it works</a>
+      <button class="btn btn-primary" onclick="openModal()">Build your roster</button>
     </div>
+  </div>
 </header>
 
-<!-- Hero Section -->
+<!-- HERO -->
 <section class="hero">
-    <div class="hero-content">
-        <div class="hero-text">
-            <h2>Get Paid to Recommend Local Businesses.</h2>
-            <h3>Hootova is the platform that pays you to curate a trusted network of local pros and ensure quality service.</h3>
-            <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
-            <p class="trust-line">Earn with every business page visit. Stay compliant. Build your reputation.</p>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">For Real Estate Agents</div>
+        <h1 class="hero-headline">
+          You've referred more local businesses<br>
+          than you can count.<br>
+          <em>None of them remember.</em>
+        </h1>
+        <p class="hero-sub">
+          Hootova turns the recommendations you're already making into a branded roster you can hand out to anyone you meet — not just clients at closing. Stay top of mind. Keep tabs on who you sent where. Make your network finally work for you.
+        </p>
+        <div class="hero-cta-row">
+          <button class="btn btn-primary btn-lg" onclick="openModal()">Build your roster</button>
+          <a href="/how-it-works.html" class="btn btn-ghost btn-lg">See how it works</a>
         </div>
-        <div class="hero-visual">
-            <div class="mockup-placeholder">
-                <div class="mockup-header">
-                    <div class="mockup-agent"></div>
-                    <div class="mockup-name">Your Trusted Vendors</div>
-                </div>
-                <div class="mockup-list">
-                    <div class="mockup-item">🌿 Landscaping</div>
-                    <div class="mockup-item">🔧 Auto Repair</div>
-                    <div class="mockup-item">🏗️ Contractors</div>
-                    <div class="mockup-item">⚡ Electrician</div>
-                    <div class="mockup-item">🎨 Painter</div>
-                </div>
-                <a href="/how-it-works.html" class="mockup-link">Learn How It Works →</a>
+        <div class="hero-meta">
+          <span class="hero-meta-dot"></span>
+          Takes 10 minutes. Free to start. No credit card.
+        </div>
+      </div>
+      <div>
+        <div class="mockup">
+          <div class="mockup-browser-bar">
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <div class="browser-url">hootova.com/r/sarah-chen</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-agent-row">
+              <div class="mockup-avatar">SC</div>
+              <div class="mockup-agent-meta">
+                <div class="mockup-agent-name">Sarah Chen's Trusted Pros</div>
+                <div class="mockup-agent-title">Keller Williams · Raleigh, NC</div>
+              </div>
             </div>
+            <div class="mockup-heading">Recommended for you</div>
+            <div class="mockup-vendor">
+              <div class="mockup-vendor-info">
+                <span class="mockup-vendor-name">Greenleaf Landscaping</span>
+                <span class="mockup-vendor-cat">Lawn & yard care</span>
+              </div>
+              <span class="mockup-vendor-action">Contact →</span>
+            </div>
+            <div class="mockup-vendor">
+              <div class="mockup-vendor-info">
+                <span class="mockup-vendor-name">Mike's Plumbing</span>
+                <span class="mockup-vendor-cat">Plumbing repair</span>
+              </div>
+              <span class="mockup-vendor-action">Contact →</span>
+            </div>
+            <div class="mockup-vendor">
+              <div class="mockup-vendor-info">
+                <span class="mockup-vendor-name">Volt Electric</span>
+                <span class="mockup-vendor-cat">Electrical work</span>
+              </div>
+              <span class="mockup-vendor-action">Contact →</span>
+            </div>
+            <div class="mockup-vendor">
+              <div class="mockup-vendor-info">
+                <span class="mockup-vendor-name">Paulie's Auto</span>
+                <span class="mockup-vendor-cat">Auto repair</span>
+              </div>
+              <span class="mockup-vendor-action">Contact →</span>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- How It Works Section -->
-<section class="how-it-works">
-    <div class="how-it-works-content">
-        <h2>Three Steps to Start Tracking Your Network</h2>
-        <div class="steps-grid">
-            <div class="step">
-                <div class="step-icon">✓</div>
-                <h4>Build Your Roster</h4>
-                <p>Add your trusted landscapers, mechanics, contractors, and service pros in minutes. No complicated setup—just names, numbers, and specialties.</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">📱</div>
-                <h4>Share Your Link</h4>
-                <p>Send clients your branded Hootova page via text, email, or social media. Print business cards with your QR code, or share it during closing conversations.</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">📊</div>
-                <h4>Track Every Referral</h4>
-                <p>See who's viewing your roster, which vendors clients are contacting, and when requests happen. Finally know what your network is worth.</p>
-            </div>
-        </div>
+<!-- TRUST STRIP -->
+<section class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Built for realtors
     </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      RESPA-aware by design
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      10-minute setup
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Disclosure built-in
+    </div>
+  </div>
 </section>
 
-<!-- How You Get Paid Section -->
-<section class="get-paid">
-    <h2>You Get Paid Based on Your Reach.</h2>
-    <div class="get-paid-intro">
-        <p>When clients view your Hootova roster, you earn based on monthly page visits—just like an influencer gets paid for reach, but for your local network.</p>
-        <p style="margin-top: 1rem;"><strong>Here's the key difference:</strong> You're not just getting paid to send a name. You're compensated for curating quality, holding vendors accountable, and protecting your clients from bad service. If a vendor underperforms, your reputation is on the line—so you only refer pros you trust.</p>
+<!-- RECOGNITION -->
+<section class="recognition">
+  <div class="recognition-grid">
+    <div class="recognition-text">
+      <div class="eyebrow">A familiar story</div>
+      <h2>Your referral network is your best marketing asset — and the only one you're not getting credit for.</h2>
+      <p>You've built relationships across your community for years. Plumbers, landscapers, electricians, painters, contractors. People call you because they trust your judgment. And every time you make a recommendation, that value evaporates the moment the text is sent.</p>
+      <div class="recognition-quote">
+        "Referrals usually happen at the sale and nowhere else. Hootova opens that up — to anyone you meet, anytime."
+      </div>
     </div>
-    <div class="benefits-list">
-        <div class="benefit-item">
-            <div class="benefit-item-icon">💰</div>
-            <div class="benefit-item-content">
-                <h4>Transparent Compensation</h4>
-                <p>Your clients know you're compensated by Hootova to ensure quality recommendations. It's disclosed upfront, so there's no hidden agenda—just honest curation.</p>
-            </div>
-        </div>
-        <div class="benefit-item">
-            <div class="benefit-item-icon">🎯</div>
-            <div class="benefit-item-content">
-                <h4>Vendor Accountability</h4>
-                <p>When a client reaches out, the vendor is notified who referred them. They know you're watching, which creates built-in quality control.</p>
-            </div>
-        </div>
-        <div class="benefit-item">
-            <div class="benefit-item-icon">⭐</div>
-            <div class="benefit-item-content">
-                <h4>Your Reputation, Your Standards</h4>
-                <p>If a vendor screws up, your client can reach out to you directly. You control who stays on your roster, so you're incentivized to recommend only the best.</p>
-            </div>
-        </div>
+    <div class="recognition-visual">
+      <div class="stat-card">
+        <span class="stat-card-num">~40</span>
+        <span class="stat-card-label">Referrals the average agent gives in a year</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num">0</span>
+        <span class="stat-card-label">Of those tracked, attributed, or remembered</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num">1</span>
+        <span class="stat-card-label">Tool needed to change that</span>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Who This Is For Section -->
-<section class="who-for">
-    <div class="who-for-content">
-        <h2>Not Just for Agents. For Anyone with Local Influence.</h2>
-        <p class="who-for-intro">If people ask you for recommendations—whether you're a real estate agent, apartment manager, barista, or just the person everyone calls for advice—Hootova turns your network into income.</p>
-        <div class="use-cases-grid">
-            <div class="use-case">
-                <h4>Real Estate Agents</h4>
-                <p>Your clients need contractors, landscapers, and mechanics long after closing. Get paid to connect them with pros you trust.</p>
-            </div>
-            <div class="use-case">
-                <h4>Apartment Complex Managers</h4>
-                <p>Tenants constantly ask for vendor recommendations. Share your Hootova roster and earn when they book services.</p>
-            </div>
-            <div class="use-case">
-                <h4>Local Business Owners</h4>
-                <p>Coffee shops, gyms, salons—print your QR code on receipts or post it in-store. When customers need a plumber or electrician, they scan, book, and you earn.</p>
-            </div>
-            <div class="use-case">
-                <h4>Community Connectors</h4>
-                <p>If you're the person friends call for recommendations, turn your social capital into trackable income.</p>
-            </div>
-        </div>
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>A roster page with your name on it. Share it however you share things now.</h2>
+      <p class="lead">Text, business card, QR code, email signature, closing gift, fridge magnet. Whatever you're already doing — your roster lives there.</p>
     </div>
+    <div class="steps">
+      <div class="step">
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        <div class="step-num">STEP ONE</div>
+        <h3>Build your roster</h3>
+        <p>Add the local pros you already trust — landscapers, mechanics, electricians, plumbers, painters. Anyone you'd recommend to a friend.</p>
+      </div>
+      <div class="step">
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        <div class="step-num">STEP TWO</div>
+        <h3>Share your link</h3>
+        <p>Get a branded URL with your name on it. Send it via text, print it on business cards, embed it in your email signature, or gift it at closing.</p>
+      </div>
+      <div class="step">
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <div class="step-num">STEP THREE</div>
+        <h3>See it working</h3>
+        <p>Track who's viewing your roster, which vendors clients are reaching out to, and when. Finally know what your network is worth.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Consumer Protection Section -->
-<section class="consumer-protection">
-    <h2>How This Protects Your Clients (Not Just You)</h2>
-    <p class="consumer-protection-intro">When your client contacts a vendor through Hootova, the vendor is notified exactly who referred them. They know you're watching. They know your reputation is tied to their performance. This creates built-in accountability that a random Google search or Yelp listing can't provide.</p>
-    <div class="protection-list">
-        <div class="protection-item">
-            <div class="protection-item-icon">👁️</div>
-            <div class="protection-item-content">
-                <h4>Vendor Accountability</h4>
-                <p>Pros know they were referred by someone the client trusts</p>
-            </div>
-        </div>
-        <div class="protection-item">
-            <div class="protection-item-icon">🔄</div>
-            <div class="protection-item-content">
-                <h4>Direct Feedback Loop</h4>
-                <p>Clients can contact you if service is subpar</p>
-            </div>
-        </div>
-        <div class="protection-item">
-            <div class="protection-item-icon">✨</div>
-            <div class="protection-item-content">
-                <h4>Curated Quality</h4>
-                <p>You only recommend vendors you'd use yourself</p>
-            </div>
-        </div>
-        <div class="protection-item">
-            <div class="protection-item-icon">🤝</div>
-            <div class="protection-item-content">
-                <h4>Transparent Compensation</h4>
-                <p>Clients know you're paid to ensure quality, not to push random vendors</p>
-            </div>
-        </div>
+<!-- COMPARISON -->
+<section class="comparison">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What's different</div>
+      <h2>You probably already have a system. It just doesn't scale.</h2>
     </div>
+    <div class="compare-table">
+      <div class="compare-row header">
+        <div class="compare-cell header-cell">&nbsp;</div>
+        <div class="compare-cell header-cell">Mental list</div>
+        <div class="compare-cell header-cell">PDF vendor list</div>
+        <div class="compare-cell header-cell hootova">Hootova</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell feature-label">Works long after closing</div>
+        <div class="compare-cell" data-label="Mental list"><span class="check-no">Only in conversation</span></div>
+        <div class="compare-cell" data-label="PDF list"><span class="check-no">Gets lost in inbox</span></div>
+        <div class="compare-cell" data-label="Hootova"><span class="check-yes">Always one tap away</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell feature-label">Keeps you top of mind</div>
+        <div class="compare-cell" data-label="Mental list"><span class="check-no">No</span></div>
+        <div class="compare-cell" data-label="PDF list"><span class="check-no">Briefly</span></div>
+        <div class="compare-cell" data-label="Hootova"><span class="check-yes">Every visit</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell feature-label">Tracks who you sent where</div>
+        <div class="compare-cell" data-label="Mental list"><span class="check-no">No</span></div>
+        <div class="compare-cell" data-label="PDF list"><span class="check-no">No</span></div>
+        <div class="compare-cell" data-label="Hootova"><span class="check-yes">Yes</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell feature-label">Vendors held accountable</div>
+        <div class="compare-cell" data-label="Mental list"><span class="check-no">Hopefully</span></div>
+        <div class="compare-cell" data-label="PDF list"><span class="check-no">Hopefully</span></div>
+        <div class="compare-cell" data-label="Hootova"><span class="check-yes">By name, every time</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell feature-label">Builds your reputation</div>
+        <div class="compare-cell" data-label="Mental list"><span class="check-no">Slowly</span></div>
+        <div class="compare-cell" data-label="PDF list"><span class="check-no">Marginally</span></div>
+        <div class="compare-cell" data-label="Hootova"><span class="check-yes">Compounds over time</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Disclosure Section -->
+<!-- IN ACTION -->
+<section class="in-action">
+  <div class="action-grid">
+    <div class="action-text">
+      <div class="eyebrow" style="color: var(--accent);">In action</div>
+      <h2>Every referral has your name on it. Vendors notice.</h2>
+      <p>When a client reaches out to one of your pros, the vendor knows exactly who sent them. They show up on time. They quote fair. They treat the client like the relationship matters — because it does.</p>
+      <p class="accent-line">Your reputation becomes the quality control mechanism. And it works.</p>
+    </div>
+    <div>
+      <div class="notification-mock">
+        <div class="notif-header">
+          <div class="notif-app-icon"></div>
+          <div class="notif-meta">
+            <div class="notif-app-name">Hootova · New lead</div>
+            <div class="notif-time">Just now</div>
+          </div>
+        </div>
+        <div class="notif-body">
+          Hi <strong>Paulie's Auto</strong> — you've got a new lead from <strong>Regina Martinez</strong>:<br><br>
+          Sarah is having transmission and engine issues. Take good care of her for Regina.
+          <div class="notif-card">
+            <div class="notif-card-label">Client</div>
+            <div class="notif-card-name">Sarah · (919) 555-0143</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPUTATION (Three Promises) -->
+<section class="reputation">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Why agents use it</div>
+      <h2>Three things every roster does for you, automatically.</h2>
+    </div>
+    <div class="rep-grid">
+      <div class="rep-card">
+        <svg class="rep-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <h4>Stay top of mind</h4>
+        <p>A page with your name on it that clients come back to for years. Every visit is a soft touchpoint. You don't have to do anything.</p>
+      </div>
+      <div class="rep-card">
+        <svg class="rep-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <h4>Track what your network does</h4>
+        <p>See which clients viewed your roster, who they contacted, and when. The asymmetry you've been living with — finally visible.</p>
+      </div>
+      <div class="rep-card">
+        <svg class="rep-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <h4>Protect your reputation</h4>
+        <p>Vendors know you sent the client. They show up differently. If one underdelivers, you remove them. Quality control runs on your name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">From the field</div>
+      <h2>Agents finally getting credit for their networks.</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <div class="testimonial-mark">"</div>
+        <div class="testimonial-quote">I've been referring the same landscaper for eight years. I had no idea how many of my clients actually called him. Now I can see it — and it's way more than I thought.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SM</div>
+          <div class="testimonial-author-meta">
+            <span class="testimonial-author-name">Sarah M.</span>
+            <span class="testimonial-author-role">Keller Williams · Raleigh, NC</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-mark">"</div>
+        <div class="testimonial-quote">I was worried about compliance, but Hootova makes it simple. No kickbacks, no gray areas — just a professional way to share my trusted pros.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MD</div>
+          <div class="testimonial-author-meta">
+            <span class="testimonial-author-name">Mike D.</span>
+            <span class="testimonial-author-role">RE/MAX · Charlotte, NC</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-mark">"</div>
+        <div class="testimonial-quote">Set it up in five minutes, sent the link to my last fifty clients. Twelve people viewed it the first day. It's the closing gift I should've had years ago.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JL</div>
+          <div class="testimonial-author-meta">
+            <span class="testimonial-author-name">Jennifer L.</span>
+            <span class="testimonial-author-role">Coldwell Banker · Asheville, NC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPENSATION (reluctant benefit, finally surfaced) -->
+<section class="compensation">
+  <div class="comp-inner">
+    <div class="eyebrow">And yes — the money part</div>
+    <h2>You're compensated for page traffic. Here's how it works.</h2>
+    <p class="comp-body">
+      Hootova pays you based on monthly visits to your roster page — the same way an influencer is compensated for reach. Not per lead. Not per transaction. For traffic, because traffic reflects the quality of the curation. The better your roster, the more people return to it, the more you earn.
+    </p>
+    <div class="comp-points">
+      <div class="comp-point">
+        <div class="comp-point-label">No kickbacks</div>
+        <p>You're paid for reach and curation, not for individual referrals. This keeps us cleanly outside RESPA settlement-services restrictions.</p>
+      </div>
+      <div class="comp-point">
+        <div class="comp-point-label">Fully disclosed</div>
+        <p>Every roster page includes a disclosure to clients. No hidden incentives. Your integrity stays intact because the model is transparent.</p>
+      </div>
+      <div class="comp-point">
+        <div class="comp-point-label">General service pros only</div>
+        <p>Landscapers, mechanics, electricians, plumbers. No lenders. No title companies. No home inspectors. The categories that don't trigger settlement-services law.</p>
+      </div>
+      <div class="comp-point">
+        <div class="comp-point-label">Your roster, your standards</div>
+        <p>Compensation only matters if the roster is real. You control who's on it. We pay you to maintain quality, not to push specific vendors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLOSURE -->
 <section class="disclosure">
-    <div class="disclosure-content">
-        <h2>Full Transparency with Your Clients</h2>
-        <div class="disclosure-box">
-            <p>"Hey, just a heads up—I'm compensated by Hootova to ensure these vendors provide the best service possible. It's my job to make sure they're treating you right. If your experience is anything less than great, please let me know immediately."</p>
-        </div>
-        <div class="disclosure-why">
-            <h4>Why This Works:</h4>
-            <ul>
-                <li>Makes your role clear (you're a quality curator, not a middleman)</li>
-                <li>Gives clients permission to hold vendors accountable through you</li>
-                <li>Positions compensation as a service (ensuring quality) rather than a kickback (pushing random vendors)</li>
-            </ul>
-        </div>
+  <div class="disclosure-inner">
+    <div class="eyebrow">Built-in disclosure</div>
+    <h2>This is what your clients see.</h2>
+    <p class="lead">A short, plain-language disclosure appears on every roster page. You don't write it. You don't add it. It's already there.</p>
+    <div class="disclosure-script">
+      <p>"I'm compensated by Hootova based on page traffic, which is how I make sure these vendors take great care of the people I send them. If your experience is anything less than excellent, let me know — I'll handle it."</p>
     </div>
+    <p class="disclosure-explainer">
+      Transparency is the product. Clients trust you more, vendors take the work seriously, and your reputation does the rest.
+    </p>
+  </div>
 </section>
 
-<!-- Compliance Section -->
-<section class="compliance">
-    <h2>Yes, You Get Paid. Here's Why It's Compliant.</h2>
-    <p class="compliance-intro">Hootova compensates you for curating and maintaining a quality vendor network—similar to how influencers earn affiliate income. The key difference: this isn't a settlement service kickback.</p>
-    <p class="compliance-intro">We focus exclusively on general service providers (landscapers, mechanics, contractors, electricians) that are outside RESPA's scope. You're not getting paid for referring lenders or title companies—you're earning income for connecting clients with trusted local pros and holding those pros accountable.</p>
-    
-    <div class="compliance-points">
-        <ul>
-            <li>Compensation is for curation and quality assurance, not settlement service referrals</li>
-            <li>Full disclosure to clients that you earn when they use your vendors</li>
-            <li>You control your roster—remove vendors who underperform</li>
-            <li>Vendors know you referred the client, creating built-in accountability</li>
-        </ul>
-    </div>
-</section>
-
-<!-- Social Proof Section -->
-<section class="social-proof">
-    <h2>Agents Are Finally Getting Credit for Their Networks</h2>
-    <div class="testimonials-grid">
-        <div class="testimonial">
-            "I've been referring the same landscaper for 8 years, but had no idea how many of my clients actually called him. Now I can see it in real time—and it's way more than I thought."
-            <div class="testimonial-author">— Sarah M., Keller Williams</div>
-        </div>
-        <div class="testimonial">
-            "I was worried about compliance, but Hootova makes it so simple. No kickbacks, no gray areas—just a professional way to share my trusted vendors."
-            <div class="testimonial-author">— Mike D., RE/MAX</div>
-        </div>
-        <div class="testimonial">
-            "Set it up in 5 minutes, sent the link to my last 50 clients, and already had 12 people view my roster. This is genius."
-            <div class="testimonial-author">— Jennifer L., Coldwell Banker</div>
-        </div>
-    </div>
-</section>
-
-<!-- Final CTA Section -->
+<!-- FINAL CTA -->
 <section class="final-cta">
-    <h2>Your Network Is Worth More Than You Think.</h2>
-    <p>Stop letting your referrals disappear into the void. Start tracking the value you create every time you recommend a trusted pro.</p>
-    <button class="cta-button" onclick="openModal()">Launch My Free Pilot</button>
-    <p class="cta-subtext">No credit card required. Set up in under 10 minutes.</p>
+  <div class="final-cta-inner">
+    <h2>Your network has been working for free. <em>Time to fix that.</em></h2>
+    <p>Build your roster in ten minutes. Share it with the next person who asks. See what happens.</p>
+    <button class="btn btn-primary btn-lg" onclick="openModal()">Build your roster</button>
+    <div class="final-cta-meta">Free to start · No credit card required · 10-minute setup</div>
+  </div>
 </section>
 
-<!-- Footer -->
 <footer>
-    <div class="footer-content">
-        <div class="footer-contact">
-            Contact: <a href="mailto:zac@hootova.com">zac@hootova.com</a>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-mark"></div>
+        <div>
+          <div class="footer-brand-name">Hootova</div>
+          <div class="footer-tagline">For the agents already doing the work.</div>
         </div>
-        <div class="footer-links">
-            <a href="/privacy-policy.html">Privacy Policy</a>
-            <a href="/terms-of-service.html">Terms of Service</a>
-        </div>
-        <div class="footer-copyright">
-            © 2025 Hootova. All rights reserved.
-        </div>
+      </div>
+      <div class="footer-links">
+        <a href="/how-it-works.html">How it works</a>
+        <a href="/privacy-policy.html">Privacy</a>
+        <a href="/terms-of-service.html">Terms</a>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        Questions? <a href="mailto:zac@hootova.com">zac@hootova.com</a>
+      </div>
+      <div>© 2026 Hootova. All rights reserved.</div>
+    </div>
+  </div>
 </footer>
 
-<!-- Form Modal -->
-<div id="formModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <h3 class="form-title">Launch Your Roster</h3>
-        <p class="form-subtitle">Start your free pilot today. No credit card required.</p>
-        <form id="signupForm" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-                <label for="fullName">Full Name *</label>
-                <input type="text" id="fullName" name="fullName" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="company">Company Name *</label>
-                <input type="text" id="company" name="company" required>
-            </div>
-            <div class="form-group optional">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            <button type="submit" class="submit-button">Launch My Free Pilot</button>
-        </form>
-    </div>
+<!-- Modal -->
+<div id="formModal" class="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <h3 class="modal-title">Build your roster</h3>
+    <p class="modal-subtitle">Free to start. No credit card. Setup takes about 10 minutes.</p>
+    <form id="signupForm" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Brokerage or company</label>
+        <input type="text" id="company" name="company" required>
+      </div>
+      <div class="form-group optional">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">Get started</button>
+    </form>
+  </div>
 </div>
 
 <script>
-    function openModal() {
-        document.getElementById('formModal').classList.add('active');
-        document.body.style.overflow = 'hidden';
+function openModal() {
+  document.getElementById('formModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('formModal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  const formData = {
+    name: document.getElementById('fullName').value,
+    email: document.getElementById('email').value,
+    message: `Brokerage: ${document.getElementById('company').value}\nPhone: ${document.getElementById('phone').value}`
+  };
+  try {
+    const response = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+    const result = await response.json();
+    if (result.success) {
+      alert("Thanks — we'll be in touch soon to set up your roster.");
+      closeModal();
+      document.getElementById('signupForm').reset();
+    } else {
+      alert('Something went wrong. Please try again.');
     }
-    
-    function closeModal() {
-        document.getElementById('formModal').classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-    
-    window.onclick = function(event) {
-        const modal = document.getElementById('formModal');
-        if (event.target === modal) {
-            closeModal();
-        }
-    }
-    
-    async function handleSubmit(event) {
-        event.preventDefault();
-        
-        const formData = {
-            name: document.getElementById('fullName').value,
-            email: document.getElementById('email').value,
-            message: `Company: ${document.getElementById('company').value}\nPhone: ${document.getElementById('phone').value}`
-        };
-        
-        try {
-            const response = await fetch('/api/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
-                alert('Thank you! We\'ll be in touch soon to set up your roster.');
-                closeModal();
-                document.getElementById('signupForm').reset();
-            } else {
-                alert('Oops! Something went wrong. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Oops! Something went wrong. Please try again.');
-        }
-    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Something went wrong. Please try again.');
+  }
+}
 </script>
+
 </body>
 </html>
