@@ -4,18 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hootova — Your referral network can do more than you think.</title>
+<title>Hootova | Make your referral network work for you.</title>
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hootova.com/">
-<meta property="og:title" content="Hootova — Your referral network can do more than you think.">
-<meta property="og:description" content="Hootova turns your referrals into something that actually works for you — marketing, accountability, visibility, and compensation, all in one place.">
+<meta property="og:title" content="Hootova | Make your referral network work for you.">
+<meta property="og:description" content="Hootova turns your referrals into something that actually works for you: marketing, accountability, visibility, and compensation, all in one place.">
 <meta property="og:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://hootova.com/">
-<meta property="twitter:title" content="Hootova — Your referral network can do more than you think.">
-<meta property="twitter:description" content="Hootova turns your referrals into something that actually works for you — marketing, accountability, visibility, and compensation, all in one place.">
+<meta property="twitter:title" content="Hootova | Make your referral network work for you.">
+<meta property="twitter:description" content="Hootova turns your referrals into something that actually works for you: marketing, accountability, visibility, and compensation, all in one place.">
 <meta property="twitter:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -247,28 +247,38 @@ header {
 .hero-rotate-wrapper {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
-  min-height: 2.2em;
   position: relative;
+  height: 5.5rem;
+  overflow: hidden;
 }
 
 .hero-rotate-line {
   font-family: var(--sans);
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: var(--ink-soft);
   line-height: 1.5;
   position: absolute;
   left: 0;
-  top: 0;
+  width: 100%;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: all 0.5s ease;
   white-space: nowrap;
+}
+
+.hero-rotate-line.prev {
+  opacity: 0.2;
+  top: 0;
 }
 
 .hero-rotate-line.active {
   opacity: 1;
-  transform: translateY(0);
+  top: 1.75rem;
+}
+
+.hero-rotate-line.next {
+  opacity: 0.2;
+  top: 3.5rem;
 }
 
 .hero-rotate-line strong {
@@ -1371,16 +1381,15 @@ button:focus-visible {
       <div>
         <div class="eyebrow">For Real Estate Agents</div>
         <h1 class="hero-headline">
-          Your referral network<br>
-          can do more than<br>
-          <em>you think.</em>
+          Make your referral<br>
+          network <em>work for you.</em>
         </h1>
         <div class="hero-rotate-wrapper" aria-live="polite">
           <div class="hero-rotate-line active">Use it to <strong>stay top of mind.</strong></div>
-          <div class="hero-rotate-line">Use it to <strong>win more clients.</strong></div>
+          <div class="hero-rotate-line next">Use it to <strong>win more clients.</strong></div>
           <div class="hero-rotate-line">Use it to <strong>hold vendors accountable.</strong></div>
           <div class="hero-rotate-line">Use it to <strong>grow your network.</strong></div>
-          <div class="hero-rotate-line">Use it to <strong>get paid for your influence.</strong></div>
+          <div class="hero-rotate-line prev">Use it to <strong>get paid for your influence.</strong></div>
         </div>
         <p class="hero-sub">
           Hootova turns your referrals into something that actually works for you — marketing, accountability, visibility, and compensation, all in one place.
@@ -1811,15 +1820,26 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
 
-// Rotating hero text
+// Rotating hero text with prev/next transparency
 (function() {
   var lines = document.querySelectorAll('.hero-rotate-line');
   if (!lines.length) return;
+  var count = lines.length;
   var current = 0;
-  setInterval(function() {
-    lines[current].classList.remove('active');
-    current = (current + 1) % lines.length;
+
+  function update() {
+    for (var i = 0; i < count; i++) {
+      lines[i].classList.remove('active', 'prev', 'next');
+    }
+    lines[(current - 1 + count) % count].classList.add('prev');
     lines[current].classList.add('active');
+    lines[(current + 1) % count].classList.add('next');
+  }
+
+  update();
+  setInterval(function() {
+    current = (current + 1) % count;
+    update();
   }, 3000);
 })();
 
