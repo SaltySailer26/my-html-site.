@@ -4,18 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hootova — Stay top of mind with every client, long after closing.</title>
+<title>Hootova — Your referral network can do more than you think.</title>
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hootova.com/">
-<meta property="og:title" content="Hootova — Stay top of mind with every client, long after closing.">
-<meta property="og:description" content="Turn the referrals you're already making into a branded page you can share with anyone you meet — not just clients at closing.">
+<meta property="og:title" content="Hootova — Your referral network can do more than you think.">
+<meta property="og:description" content="Hootova turns your referrals into something that actually works for you — marketing, accountability, visibility, and compensation, all in one place.">
 <meta property="og:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://hootova.com/">
-<meta property="twitter:title" content="Hootova — Stay top of mind with every client, long after closing.">
-<meta property="twitter:description" content="Turn the referrals you're already making into a branded page you can share with anyone you meet.">
+<meta property="twitter:title" content="Hootova — Your referral network can do more than you think.">
+<meta property="twitter:description" content="Hootova turns your referrals into something that actually works for you — marketing, accountability, visibility, and compensation, all in one place.">
 <meta property="twitter:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -241,6 +241,39 @@ header {
   font-style: italic;
   color: var(--accent-deep);
   font-weight: 400;
+}
+
+/* Rotating text */
+.hero-rotate-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  min-height: 2.2em;
+  position: relative;
+}
+
+.hero-rotate-line {
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  white-space: nowrap;
+}
+
+.hero-rotate-line.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-rotate-line strong {
+  color: var(--navy);
+  font-weight: 600;
 }
 
 .hero-sub {
@@ -1338,12 +1371,19 @@ button:focus-visible {
       <div>
         <div class="eyebrow">For Real Estate Agents</div>
         <h1 class="hero-headline">
-          You give more referrals<br>
-          than you can count.<br>
-          <em>Help them remember.</em>
+          Your referral network<br>
+          can do more than<br>
+          <em>you think.</em>
         </h1>
+        <div class="hero-rotate-wrapper" aria-live="polite">
+          <div class="hero-rotate-line active">Use it to <strong>stay top of mind.</strong></div>
+          <div class="hero-rotate-line">Use it to <strong>win more clients.</strong></div>
+          <div class="hero-rotate-line">Use it to <strong>hold vendors accountable.</strong></div>
+          <div class="hero-rotate-line">Use it to <strong>grow your network.</strong></div>
+          <div class="hero-rotate-line">Use it to <strong>get paid for your influence.</strong></div>
+        </div>
         <p class="hero-sub">
-          Hootova turns the referrals you're already making into a branded page you can share with anyone you meet — not just clients at closing. Stay top of mind. Keep tabs on who you sent where. Make your network finally work for you.
+          Hootova turns your referrals into something that actually works for you — marketing, accountability, visibility, and compensation, all in one place.
         </p>
         <div class="hero-cta-row">
           <button class="btn btn-primary btn-lg" onclick="openModal()">Build your referral page</button>
@@ -1445,7 +1485,7 @@ button:focus-visible {
       <h2>Your referral network is your best marketing asset — and the only one you're not getting credit for.</h2>
       <p>You've built relationships across your community for years. Plumbers, landscapers, electricians, painters, contractors. People call you because they trust your judgment. And every time you make a recommendation, that value evaporates the moment the text is sent.</p>
       <div class="recognition-quote">
-        "Referrals usually happen at the sale and nowhere else. Hootova opens it up to everyone you've ever met, at any time."
+        "Good business stays local when good people vouch for it."
       </div>
     </div>
     <div class="recognition-visual">
@@ -1694,7 +1734,7 @@ button:focus-visible {
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="final-cta-inner">
-    <h2>Your network has been working for free. <em>Time to fix that.</em></h2>
+    <h2>Your referral network already exists. <em>Make it work for you.</em></h2>
     <p>Build your referral page in ten minutes. Share it with the next person who asks. See what happens.</p>
     <button class="btn btn-primary btn-lg" onclick="openModal()">Build your referral page</button>
     <div class="final-cta-meta">Free to start · No credit card required · 10-minute setup</div>
@@ -1708,7 +1748,7 @@ button:focus-visible {
         <div class="brand-mark" role="img" aria-label="Hootova logo"></div>
         <div>
           <div class="footer-brand-name">Hootova</div>
-          <div class="footer-tagline">For the agents already doing the work.</div>
+          <div class="footer-tagline">Your referrals keep this town running.</div>
         </div>
       </div>
       <div class="footer-links">
@@ -1770,6 +1810,18 @@ function closeModal() {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
+
+// Rotating hero text
+(function() {
+  var lines = document.querySelectorAll('.hero-rotate-line');
+  if (!lines.length) return;
+  var current = 0;
+  setInterval(function() {
+    lines[current].classList.remove('active');
+    current = (current + 1) % lines.length;
+    lines[current].classList.add('active');
+  }, 3000);
+})();
 
 async function handleSubmit(event) {
   event.preventDefault();
