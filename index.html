@@ -417,6 +417,76 @@ header {
   margin: 0.75rem 0;
 }
 
+/* Activity feed (hero mockup) */
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.activity-item:last-child { border-bottom: none; }
+
+.activity-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+}
+
+.activity-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.activity-icon--check {
+  background-color: var(--success-soft);
+  color: var(--success);
+}
+
+.activity-icon--notify {
+  background-color: #e8ecf4;
+  color: var(--navy-soft);
+}
+
+.activity-icon--star {
+  background-color: #f5f0e6;
+  color: var(--accent-deep);
+}
+
+.activity-icon--report {
+  background-color: var(--success-soft);
+  color: var(--success);
+}
+
+.activity-content { flex: 1; min-width: 0; }
+
+.activity-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.activity-detail {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+.activity-time {
+  font-size: 0.65rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  margin-top: 0.15rem;
+}
+
 .mockup-vendor {
   display: flex;
   align-items: center;
@@ -1409,44 +1479,56 @@ button:focus-visible {
             <div class="browser-dot"></div>
             <div class="browser-dot"></div>
             <div class="browser-dot"></div>
-            <div class="browser-url">hootova.com/r/sarah-chen</div>
+            <div class="browser-url">hootova.com/dashboard</div>
           </div>
           <div class="mockup-body">
             <div class="mockup-agent-row">
               <div class="mockup-avatar">SC</div>
               <div class="mockup-agent-meta">
-                <div class="mockup-agent-name">Sarah Chen's Trusted Pros</div>
-                <div class="mockup-agent-title">Keller Williams · Raleigh, NC</div>
+                <div class="mockup-agent-name">Sarah Chen</div>
+                <div class="mockup-agent-title">Recent activity</div>
               </div>
             </div>
-            <div class="mockup-heading">Recommended for you</div>
-            <div class="mockup-vendor">
-              <div class="mockup-vendor-info">
-                <span class="mockup-vendor-name">Greenleaf Landscaping</span>
-                <span class="mockup-vendor-cat">Lawn & yard care</span>
+            <div class="mockup-divider"></div>
+            <div class="activity-item">
+              <div class="activity-icon activity-icon--check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              <span class="mockup-vendor-action">Contact →</span>
+              <div class="activity-content">
+                <div class="activity-label">Check-in sent</div>
+                <div class="activity-detail">"Did Mike's Plumbing get in touch?"</div>
+              </div>
+              <div class="activity-time">2m ago</div>
             </div>
-            <div class="mockup-vendor">
-              <div class="mockup-vendor-info">
-                <span class="mockup-vendor-name">Mike's Plumbing</span>
-                <span class="mockup-vendor-cat">Plumbing repair</span>
+            <div class="activity-item">
+              <div class="activity-icon activity-icon--notify" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
-              <span class="mockup-vendor-action">Contact →</span>
+              <div class="activity-content">
+                <div class="activity-label">Vendor notified</div>
+                <div class="activity-detail">Greenleaf Landscaping · "Referral from Sarah Chen"</div>
+              </div>
+              <div class="activity-time">1h ago</div>
             </div>
-            <div class="mockup-vendor">
-              <div class="mockup-vendor-info">
-                <span class="mockup-vendor-name">Volt Electric</span>
-                <span class="mockup-vendor-cat">Electrical work</span>
+            <div class="activity-item">
+              <div class="activity-icon activity-icon--star" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               </div>
-              <span class="mockup-vendor-action">Contact →</span>
+              <div class="activity-content">
+                <div class="activity-label">Feedback received</div>
+                <div class="activity-detail">Volt Electric · "Great work, showed up on time"</div>
+              </div>
+              <div class="activity-time">3h ago</div>
             </div>
-            <div class="mockup-vendor">
-              <div class="mockup-vendor-info">
-                <span class="mockup-vendor-name">Paulie's Auto</span>
-                <span class="mockup-vendor-cat">Auto repair</span>
+            <div class="activity-item">
+              <div class="activity-icon activity-icon--report" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
               </div>
-              <span class="mockup-vendor-action">Contact →</span>
+              <div class="activity-content">
+                <div class="activity-label">Monthly report ready</div>
+                <div class="activity-detail">12 referrals · 3 vendors contacted</div>
+              </div>
+              <div class="activity-time">1d ago</div>
             </div>
           </div>
         </div>
