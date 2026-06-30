@@ -729,70 +729,102 @@ section.standard {
   color: var(--navy);
 }
 
-/* How It Works - expanded step layouts */
-.how-step-row {
+/* How It Works - vertical step layouts */
+.how-step {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+}
+
+.how-step:last-child { margin-bottom: 0; }
+
+.how-step h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.how-step > p {
+  font-size: 0.95rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.how-step-mockup {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.how-step-mockup .mockup {
+  max-width: 340px;
+}
+
+.share-methods {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.share-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.share-method-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--paper);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-method-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.share-method span {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.auto-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-  margin-bottom: 3rem;
-}
-
-.how-step-text {
-  background-color: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 2rem 1.75rem;
-}
-
-.how-step-text h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.how-step-text p { font-size: 0.95rem; }
-
-.how-step-caption {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-  margin-top: 0.75rem;
-  font-style: italic;
-}
-
-.how-step-compact {
-  background-color: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 2rem 1.75rem;
+  gap: 0.75rem;
   max-width: 640px;
-  margin: 0 auto 3rem;
+  margin: 1.75rem auto 0;
+  text-align: left;
 }
 
-.how-step-compact h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.how-step-compact p { font-size: 0.95rem; }
-
-.how-step-wide {
+.auto-item {
+  padding: 0.85rem 1rem;
   background-color: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 2.5rem 2rem;
+  border-radius: 6px;
 }
 
-.how-step-wide h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+.auto-item strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.15rem;
 }
 
-.how-step-wide > p { font-size: 0.95rem; }
-
-.how-step-wide .rep-grid {
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 2rem;
+.auto-item span {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
 }
 
 /* Comparison */
@@ -1423,8 +1455,7 @@ footer {
   .rep-grid,
   .testimonial-grid,
   .automation-detail .rep-grid,
-  .how-step-row,
-  .how-step-wide .rep-grid {
+  .auto-list {
     grid-template-columns: 1fr;
   }
   
@@ -1674,30 +1705,21 @@ button:focus-visible {
     </div>
 
     <!-- Step 1: Build your page -->
-    <div class="how-step-row">
-      <div class="how-step-text">
-        <svg class="step-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-        <div class="step-num">STEP ONE</div>
-        <h3>Build your page</h3>
-        <p>Add the local pros you already trust: landscapers, mechanics, electricians, plumbers, painters. Anyone you'd recommend to a friend.</p>
-      </div>
-      <div class="how-step-visual">
-        <div class="mockup" style="transform: none; margin: 0 auto;">
+    <div class="how-step">
+      <div class="step-num">STEP ONE</div>
+      <h3>Build your page</h3>
+      <p>Add the local pros you already trust. Landscapers, plumbers, electricians, painters. Anyone you'd recommend to a friend.</p>
+      <div class="how-step-mockup">
+        <div class="mockup" style="transform: none;">
           <div class="mockup-browser-bar">
             <div class="browser-dot"></div>
             <div class="browser-dot"></div>
             <div class="browser-dot"></div>
-            <div class="browser-url">hootova.com/r/sarah-chen</div>
+            <div class="browser-url">hootova.com/r/your-page</div>
           </div>
           <div class="mockup-body">
-            <div class="mockup-agent-row">
-              <div class="mockup-avatar">SC</div>
-              <div class="mockup-agent-meta">
-                <div class="mockup-agent-name">Sarah Chen's Trusted Pros</div>
-                <div class="mockup-agent-title">Keller Williams · Raleigh, NC</div>
-              </div>
-            </div>
-            <div class="mockup-heading">Recommended for you</div>
+            <div class="mockup-heading" style="margin-top: 0; font-size: 1.05rem;">Example Referral Page</div>
+            <div class="mockup-divider"></div>
             <div class="mockup-vendor">
               <div class="mockup-vendor-info">
                 <span class="mockup-vendor-name">Greenleaf Landscaping</span>
@@ -1728,44 +1750,63 @@ button:focus-visible {
             </div>
           </div>
         </div>
-        <p class="how-step-caption">Example referral page</p>
       </div>
     </div>
 
-    <!-- Step 2: Put it everywhere -->
-    <div class="how-step-compact">
-      <svg class="step-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <!-- Step 2: Share it everywhere -->
+    <div class="how-step">
       <div class="step-num">STEP TWO</div>
-      <h3>Put it everywhere</h3>
-      <p>QR code at open houses. Link in your email signature. Text it to clients. Print it on closing gifts. Send referrals from the app. Your page meets people wherever you already are.</p>
+      <h3>Share it everywhere</h3>
+      <p>Your page meets people wherever you already are.</p>
+      <div class="share-methods">
+        <div class="share-method">
+          <div class="share-method-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <span>QR code</span>
+        </div>
+        <div class="share-method">
+          <div class="share-method-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span>Email signature</span>
+        </div>
+        <div class="share-method">
+          <div class="share-method-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <span>Text message</span>
+        </div>
+        <div class="share-method">
+          <div class="share-method-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <span>Business cards</span>
+        </div>
+      </div>
     </div>
 
     <!-- Step 3: Hootova automates it -->
-    <div class="how-step-wide">
-      <svg class="step-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+    <div class="how-step">
       <div class="step-num">STEP THREE</div>
       <h3>Hootova automates it</h3>
-      <p>Once your referral page is live, Hootova handles the rest. Here's what's working behind the scenes.</p>
-      <div class="rep-grid">
-        <div class="rep-card">
-          <svg class="rep-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <h4>Automated client check-ins</h4>
-          <p>Hootova follows up after referrals to confirm contact and service quality. You hear about problems before they become reviews.</p>
+      <p>You built the page. The system runs it.</p>
+      <div class="auto-list">
+        <div class="auto-item">
+          <strong>Automated check-ins</strong>
+          <span>Follows up with clients to confirm contact and service quality</span>
         </div>
-        <div class="rep-card">
-          <svg class="rep-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          <h4>Vendor reports</h4>
-          <p>Two-sided visibility: vendors see which agents send them business. Agents see referral totals and who's getting the most traffic.</p>
+        <div class="auto-item">
+          <strong>Vendor reports</strong>
+          <span>Two-sided visibility into who sends business and who receives it</span>
         </div>
-        <div class="rep-card">
-          <svg class="rep-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          <h4>Content from your network</h4>
-          <p>Vendor deals and promotions flow to your clients under your name. Seasonal tips, special offers, local updates. You stay in their inbox without lifting a finger.</p>
+        <div class="auto-item">
+          <strong>Content from your network</strong>
+          <span>Vendor deals and seasonal tips flow to clients under your name</span>
         </div>
-        <div class="rep-card">
-          <svg class="rep-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          <h4>Dashboard visibility</h4>
-          <p>Real-time referrals, traffic, and engagement in one place. See what your network is worth and which vendors your clients use most.</p>
+        <div class="auto-item">
+          <strong>Dashboard</strong>
+          <span>Referrals, traffic, and engagement in one place</span>
         </div>
       </div>
     </div>
