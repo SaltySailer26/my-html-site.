@@ -4,20 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hootova | Make your referrals, work for you.</title>
+<title>Hootova | Get paid for the connections you already make.</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hootova.com/">
-<meta property="og:title" content="Hootova | Make your referrals, work for you.">
-<meta property="og:description" content="Hootova turns your referrals into something that actually works for you: marketing, service quality, visibility, and compensation, all in one place.">
+<meta property="og:title" content="Hootova | Get paid for the connections you already make.">
+<meta property="og:description" content="List the local businesses you recommend, and share it once. Hootova sends the intros, checks in after every job, and pays you every month.">
 <meta property="og:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://hootova.com/">
-<meta property="twitter:title" content="Hootova | Make your referrals, work for you.">
-<meta property="twitter:description" content="Hootova turns your referrals into something that actually works for you: marketing, service quality, visibility, and compensation, all in one place.">
+<meta property="twitter:title" content="Hootova | Get paid for the connections you already make.">
+<meta property="twitter:description" content="List the local businesses you recommend, and share it once. Hootova sends the intros, checks in after every job, and pays you every month.">
 <meta property="twitter:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1316,7 +1316,10 @@ footer {
 
 @media (max-width: 640px) {
   .container, .container-narrow { padding: 0 1.25rem; }
-  
+
+  /* Rotating lines are longer in v4 and nowrap — step down to fit small screens */
+  .hero-rotate-line { font-size: 1rem; }
+
   /* Header - tighten and balance on small screens */
   header { padding: 0.75rem 0; }
   
@@ -1396,7 +1399,7 @@ button:focus-visible {
       <span class="brand-name">Hootova</span>
     </a>
     <div class="nav-actions">
-      <button class="btn btn-primary" onclick="openModal()">Build your referral page</button>
+      <button class="btn btn-primary" onclick="openModal()">Build your page</button>
     </div>
   </div>
 </header>
@@ -1409,21 +1412,22 @@ button:focus-visible {
       <div>
         <div class="eyebrow">For Real Estate Agents</div>
         <h1 class="hero-headline">
-          Make your referrals,<br>
-          <em>work for you.</em>
+          Get paid for the connections you already make.<br>
+          <em>Let Hootova automate it for you.</em>
         </h1>
         <div class="hero-rotate-wrapper" aria-live="polite">
-          <div class="hero-rotate-line active">Use it to <strong>stay top of mind.</strong></div>
-          <div class="hero-rotate-line next">Use it to <strong>win more clients.</strong></div>
-          <div class="hero-rotate-line">Use it to <strong>ensure excellent service.</strong></div>
-          <div class="hero-rotate-line">Use it to <strong>grow your network.</strong></div>
-          <div class="hero-rotate-line prev">Use it to <strong>get paid for your influence.</strong></div>
+          <div class="hero-rotate-line active">You're the connection to <strong>a punctual carpenter.</strong></div>
+          <div class="hero-rotate-line next">You're the connection to <strong>a detailed landscaper.</strong></div>
+          <div class="hero-rotate-line">You're the connection to <strong>a trustworthy house cleaner.</strong></div>
+          <div class="hero-rotate-line">You're the connection to <strong>a mechanic with integrity.</strong></div>
+          <div class="hero-rotate-line">You're the connection to <strong>a reliable pool technician.</strong></div>
+          <div class="hero-rotate-line prev">You're the connection to <strong>an artistic photographer.</strong></div>
         </div>
         <p class="hero-sub">
-          Hootova turns your referrals into something that actually works for you: marketing, service quality, visibility, and compensation, all in one place.
+          List the local businesses you recommend, and share it once. Hootova sends the intros, checks in after every job, and pays you every month.
         </p>
         <div class="hero-cta-row">
-          <button class="btn btn-primary btn-lg" onclick="openModal()">Build your referral page</button>
+          <button class="btn btn-primary btn-lg" onclick="openModal()">Build your page</button>
         </div>
         <div class="hero-meta">
           <span class="hero-meta-dot"></span>
@@ -1775,8 +1779,8 @@ button:focus-visible {
 <section class="final-cta">
   <div class="final-cta-inner">
     <h2>Your referral network already exists. <em>Make it work for you.</em></h2>
-    <p>Build your referral page in ten minutes. Share it with the next person who asks. See what happens.</p>
-    <button class="btn btn-primary btn-lg" onclick="openModal()">Build your referral page</button>
+    <p>Build your page in ten minutes. Share it with the next person who asks. See what happens.</p>
+    <button class="btn btn-primary btn-lg" onclick="openModal()">Build your page</button>
     <div class="final-cta-meta">Free to start · No credit card required · 10-minute setup</div>
   </div>
 </section>
@@ -1812,7 +1816,7 @@ button:focus-visible {
 <div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target===this)closeModal()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
-    <h3 class="modal-title" id="modal-title">Build your referral page</h3>
+    <h3 class="modal-title" id="modal-title">Build your page</h3>
     <p class="modal-subtitle">Free to start. No credit card. Setup takes about 10 minutes.</p>
     <form id="signupForm" onsubmit="handleSubmit(event)">
       <div class="form-group">
