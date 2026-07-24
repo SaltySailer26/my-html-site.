@@ -840,7 +840,7 @@ button:focus-visible {
     </a>
     <div class="nav-actions">
       <a href="/" class="nav-link">Home</a>
-      <button class="btn btn-primary" onclick="openModal()">Build your referral page</button>
+      <button class="btn btn-primary" onclick="openModal()">Build your page</button>
     </div>
   </div>
 </header>
@@ -852,7 +852,7 @@ button:focus-visible {
   <div class="container">
     <div class="eyebrow">How it works</div>
     <h1>Three steps. Ten minutes. Then it runs itself.</h1>
-    <p class="lead">Turn your trusted network into something that actually works for you. Hootova provides the tools to build, share, and manage your personal referral page of recommended pros.</p>
+    <p class="lead">Turn your trusted network into something that actually works for you. Hootova provides the tools to build, share, and manage your personal page of recommended local pros.</p>
   </div>
 </section>
 
@@ -864,7 +864,7 @@ button:focus-visible {
     <div class="step-card">
       <div class="step-card-text">
         <div class="step-num">STEP ONE</div>
-        <h3>Build your referral page</h3>
+        <h3>Build your page</h3>
         <p>Quickly add the local vendors you trust. Painters, plumbers, electricians, and any other pro you'd recommend to a neighbor. This becomes your personal, shareable page.</p>
       </div>
       <div class="step-card-visual">
@@ -904,12 +904,12 @@ button:focus-visible {
       <div class="step-card-text">
         <div class="step-num">STEP THREE</div>
         <h3>Track and earn</h3>
-        <p>Your dashboard tracks every view, click, and referral. See exactly how much value your network is generating and get compensated for the page traffic you drive.</p>
+        <p>Your dashboard tracks every view, click, and lead. See exactly how much value your network is generating and get compensated for the page traffic you drive.</p>
       </div>
       <div class="step-card-visual">
         <h4>Your Monthly Activity</h4>
         <div class="dash-stat-row">
-          <span class="dash-stat-label">Referral Page Views</span>
+          <span class="dash-stat-label">Page Views</span>
           <span class="dash-stat-value">342</span>
         </div>
         <div class="dash-stat-row">
@@ -935,7 +935,7 @@ button:focus-visible {
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">Distribution</div>
-      <h2>Ways to share your referral page</h2>
+      <h2>Ways to share your page</h2>
       <p class="lead">Make it easy for clients to find your trusted vendors. Your custom link works everywhere.</p>
     </div>
     <div class="dist-grid">
@@ -965,14 +965,14 @@ button:focus-visible {
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
         </div>
         <h4>Plaques</h4>
-        <p>Gift closing plaques with your referral page link</p>
+        <p>Gift closing plaques with your page link</p>
       </div>
       <div class="dist-card">
         <div class="dist-icon">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
         <h4>Your Website</h4>
-        <p>Embed your referral page on your existing site</p>
+        <p>Embed your page on your existing site</p>
       </div>
       <div class="dist-card">
         <div class="dist-icon">
@@ -990,8 +990,8 @@ button:focus-visible {
   <div class="action-grid">
     <div class="action-text">
       <div class="eyebrow">In action</div>
-      <h2>Every referral has your name on it. Vendors notice.</h2>
-      <p>When a client contacts a vendor from your referral page, the vendor is instantly notified who referred them, creating built-in accountability and ensuring quality service.</p>
+      <h2>Every intro has your name on it. Vendors notice.</h2>
+      <p>When a client contacts a vendor from your page, the vendor is instantly notified who sent them, creating built-in accountability and ensuring quality service.</p>
     </div>
     <div>
       <div class="notification-mock">
@@ -1018,9 +1018,9 @@ button:focus-visible {
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="final-cta-inner">
-    <h2>Your referral network already exists. <em>Make it work for you.</em></h2>
-    <p>Build your referral page in ten minutes. Share it with the next person who asks. See what happens.</p>
-    <button class="btn btn-primary btn-lg" onclick="openModal()">Build your referral page</button>
+    <h2>Your local business network already exists. <em>Make it work for you.</em></h2>
+    <p>Build your page in ten minutes. Share it with the next person who asks. See what happens.</p>
+    <button class="btn btn-primary btn-lg" onclick="openModal()">Build your page</button>
     <div class="final-cta-meta">Free to start · No credit card required · 10-minute setup</div>
   </div>
 </section>
@@ -1056,7 +1056,7 @@ button:focus-visible {
 <div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target===this)closeModal()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
-    <h3 class="modal-title" id="modal-title">Build your referral page</h3>
+    <h3 class="modal-title" id="modal-title">Build your page</h3>
     <p class="modal-subtitle">Free to start. No credit card. Setup takes about 10 minutes.</p>
     <form id="signupForm" onsubmit="handleSubmit(event)">
       <div class="form-group">
@@ -1110,7 +1110,7 @@ async function handleSubmit(event) {
     });
     const result = await response.json();
     if (result.success) {
-      alert("Thanks! We'll be in touch soon to set up your referral page.");
+      alert("Thanks! We'll be in touch soon to set up your page.");
       closeModal();
       document.getElementById('signupForm').reset();
     } else {
