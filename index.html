@@ -245,51 +245,35 @@ header {
   font-weight: 400;
 }
 
-/* Rotating text */
-.hero-rotate-stem {
+/* Rotating text — static stem, trade crossfades in place on the same line */
+.hero-rotate-row {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   font-family: var(--sans);
   font-size: 1.35rem;
   font-weight: 500;
   color: var(--ink-soft);
   line-height: 1.5;
-  margin-top: 1rem;
 }
 
 .hero-rotate-wrapper {
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
+  display: inline-block;
   position: relative;
-  height: 5.5rem;
-  overflow: hidden;
+  height: 1.5em;
+  vertical-align: top;
 }
 
 .hero-rotate-line {
-  font-family: var(--sans);
-  font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  line-height: 1.5;
   position: absolute;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.5s ease;
-  white-space: nowrap;
-}
-
-.hero-rotate-line.prev {
-  opacity: 0.2;
   top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  white-space: nowrap;
 }
 
 .hero-rotate-line.active {
   opacity: 1;
-  top: 1.75rem;
-}
-
-.hero-rotate-line.next {
-  opacity: 0.2;
-  top: 3.5rem;
 }
 
 .hero-rotate-line strong {
@@ -1326,6 +1310,9 @@ footer {
 @media (max-width: 640px) {
   .container, .container-narrow { padding: 0 1.25rem; }
 
+  /* Stem + trade won't fit one line on phones — let the trade drop to its own line */
+  .hero-rotate-wrapper { display: block; }
+
 
   /* Header - tighten and balance on small screens */
   header { padding: 0.75rem 0; }
@@ -1422,14 +1409,16 @@ button:focus-visible {
           Get paid for the connections you already make.<br>
           <em>Let Hootova automate it for you.</em>
         </h1>
-        <div class="hero-rotate-stem">You're the connection to</div>
-        <div class="hero-rotate-wrapper" aria-live="polite">
-          <div class="hero-rotate-line active"><strong>a punctual carpenter.</strong></div>
-          <div class="hero-rotate-line next"><strong>a detailed landscaper.</strong></div>
-          <div class="hero-rotate-line"><strong>a trustworthy house cleaner.</strong></div>
-          <div class="hero-rotate-line"><strong>a mechanic with integrity.</strong></div>
-          <div class="hero-rotate-line"><strong>a reliable pool technician.</strong></div>
-          <div class="hero-rotate-line prev"><strong>an artistic photographer.</strong></div>
+        <div class="hero-rotate-row">
+          <span class="hero-rotate-stem">You're the connection to</span>
+          <span class="hero-rotate-wrapper" aria-live="polite">
+            <span class="hero-rotate-line active"><strong>a punctual carpenter.</strong></span>
+            <span class="hero-rotate-line next"><strong>a detailed landscaper.</strong></span>
+            <span class="hero-rotate-line"><strong>a trustworthy house cleaner.</strong></span>
+            <span class="hero-rotate-line"><strong>a mechanic with integrity.</strong></span>
+            <span class="hero-rotate-line"><strong>a reliable pool technician.</strong></span>
+            <span class="hero-rotate-line prev"><strong>an artistic photographer.</strong></span>
+          </span>
         </div>
         <p class="hero-sub">
           List the local businesses you recommend, and share it once. Hootova sends the intros, checks in after every job, and pays you every month.
