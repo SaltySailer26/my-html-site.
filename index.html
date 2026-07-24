@@ -256,24 +256,46 @@ header {
   line-height: 1.5;
 }
 
+/* The trade slot: a gold fill-in-the-blank sized to the longest trade,
+   with a one-line window the trades roll up through */
 .hero-rotate-wrapper {
   display: inline-block;
   position: relative;
   height: 1.5em;
+  overflow: hidden;
   vertical-align: top;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Invisible copy of the longest trade — sets the width of the blank */
+.hero-rotate-sizer {
+  display: inline-block;
+  visibility: hidden;
+  white-space: nowrap;
 }
 
 .hero-rotate-line {
   position: absolute;
-  top: 0;
+  top: 1.5em;
   left: 0;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: top 0.5s ease, opacity 0.5s ease;
   white-space: nowrap;
 }
 
+.hero-rotate-line.next {
+  top: 1.5em;
+  opacity: 0;
+}
+
 .hero-rotate-line.active {
+  top: 0;
   opacity: 1;
+}
+
+.hero-rotate-line.prev {
+  top: -1.5em;
+  opacity: 0;
 }
 
 .hero-rotate-line strong {
@@ -1310,8 +1332,6 @@ footer {
 @media (max-width: 640px) {
   .container, .container-narrow { padding: 0 1.25rem; }
 
-  /* Stem + trade won't fit one line on phones — let the trade drop to its own line */
-  .hero-rotate-wrapper { display: block; }
 
 
   /* Header - tighten and balance on small screens */
@@ -1407,11 +1427,12 @@ button:focus-visible {
         <div class="eyebrow">For Real Estate Agents</div>
         <h1 class="hero-headline">
           Get paid for the connections you already make.<br>
-          <em>Let Hootova automate it for you.</em>
+          <em>And let Hootova automate it for you.</em>
         </h1>
         <div class="hero-rotate-row">
           <span class="hero-rotate-stem">You're the connection to</span>
           <span class="hero-rotate-wrapper" aria-live="polite">
+            <span class="hero-rotate-sizer" aria-hidden="true"><strong>a trustworthy house cleaner.</strong></span>
             <span class="hero-rotate-line active"><strong>a punctual carpenter.</strong></span>
             <span class="hero-rotate-line next"><strong>a detailed landscaper.</strong></span>
             <span class="hero-rotate-line"><strong>a trustworthy house cleaner.</strong></span>
