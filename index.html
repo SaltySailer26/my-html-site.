@@ -246,8 +246,17 @@ header {
 }
 
 /* Rotating text */
-.hero-rotate-wrapper {
+.hero-rotate-stem {
+  font-family: var(--sans);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1.5;
   margin-top: 1rem;
+}
+
+.hero-rotate-wrapper {
+  margin-top: 0.25rem;
   margin-bottom: 0.5rem;
   position: relative;
   height: 5.5rem;
@@ -1317,8 +1326,6 @@ footer {
 @media (max-width: 640px) {
   .container, .container-narrow { padding: 0 1.25rem; }
 
-  /* Rotating lines are longer in v4 and nowrap — step down to fit small screens */
-  .hero-rotate-line { font-size: 1rem; }
 
   /* Header - tighten and balance on small screens */
   header { padding: 0.75rem 0; }
@@ -1415,13 +1422,14 @@ button:focus-visible {
           Get paid for the connections you already make.<br>
           <em>Let Hootova automate it for you.</em>
         </h1>
+        <div class="hero-rotate-stem">You're the connection to</div>
         <div class="hero-rotate-wrapper" aria-live="polite">
-          <div class="hero-rotate-line active">You're the connection to <strong>a punctual carpenter.</strong></div>
-          <div class="hero-rotate-line next">You're the connection to <strong>a detailed landscaper.</strong></div>
-          <div class="hero-rotate-line">You're the connection to <strong>a trustworthy house cleaner.</strong></div>
-          <div class="hero-rotate-line">You're the connection to <strong>a mechanic with integrity.</strong></div>
-          <div class="hero-rotate-line">You're the connection to <strong>a reliable pool technician.</strong></div>
-          <div class="hero-rotate-line prev">You're the connection to <strong>an artistic photographer.</strong></div>
+          <div class="hero-rotate-line active"><strong>a punctual carpenter.</strong></div>
+          <div class="hero-rotate-line next"><strong>a detailed landscaper.</strong></div>
+          <div class="hero-rotate-line"><strong>a trustworthy house cleaner.</strong></div>
+          <div class="hero-rotate-line"><strong>a mechanic with integrity.</strong></div>
+          <div class="hero-rotate-line"><strong>a reliable pool technician.</strong></div>
+          <div class="hero-rotate-line prev"><strong>an artistic photographer.</strong></div>
         </div>
         <p class="hero-sub">
           List the local businesses you recommend, and share it once. Hootova sends the intros, checks in after every job, and pays you every month.
