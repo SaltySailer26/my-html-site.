@@ -4,20 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hootova | Get paid for the connections you already make.</title>
+<title>Hootova | Get paid for the local businesses you already recommend.</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hootova.com/">
-<meta property="og:title" content="Hootova | Get paid for the connections you already make.">
-<meta property="og:description" content="List the local businesses you recommend, share it with clients once. Hootova sends the intros, checks in after every job, and pays you every month.">
+<meta property="og:title" content="Hootova | Get paid for the local businesses you already recommend.">
+<meta property="og:description" content="Hootova writes the content, sends it under your name, and pays for the materials. You don't do the work. You just stay top of mind, and get paid for it.">
 <meta property="og:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://hootova.com/">
-<meta property="twitter:title" content="Hootova | Get paid for the connections you already make.">
-<meta property="twitter:description" content="List the local businesses you recommend, share it with clients once. Hootova sends the intros, checks in after every job, and pays you every month.">
+<meta property="twitter:title" content="Hootova | Get paid for the local businesses you already recommend.">
+<meta property="twitter:description" content="Hootova writes the content, sends it under your name, and pays for the materials. You don't do the work. You just stay top of mind, and get paid for it.">
 <meta property="twitter:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,10 +143,11 @@ header {
   letter-spacing: -0.01em;
 }
 
-.nav-actions {
+/* Site nav (shared across all pages) */
+.site-nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .nav-link {
@@ -155,9 +156,78 @@ header {
   color: var(--ink-soft);
   text-decoration: none;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .nav-link:hover { color: var(--navy); }
+
+.nav-link[aria-current="page"] {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 40px;
+  padding: 0 10px;
+  background-color: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--navy);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Collapse to a hamburger once the links stop fitting beside the wordmark */
+@media (max-width: 820px) {
+  .header-inner { flex-wrap: wrap; }
+
+  .nav-toggle { display: flex; }
+
+  .site-nav {
+    display: none;
+    flex-basis: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0;
+    margin-top: 0.85rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .site-nav.open { display: flex; }
+
+  .site-nav .nav-link {
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+  }
+
+  .site-nav .nav-cta {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 0.85rem;
+    justify-content: center;
+  }
+}
 
 /* Buttons */
 .btn {
@@ -231,15 +301,22 @@ header {
 
 .hero-headline {
   font-family: var(--serif);
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 3.9vw, 2.95rem);
+  line-height: 1.08;
   letter-spacing: -0.025em;
   color: var(--navy);
   margin-bottom: 1.75rem;
   font-weight: 500;
 }
 
+/* The em line is a full sentence now, not a six-word kicker — it needs
+   sub-headline scale and room to breathe, or it swamps the headline. */
 .hero-headline em {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
   font-style: italic;
   color: var(--accent-deep);
   font-weight: 400;
@@ -1344,13 +1421,7 @@ footer {
   .brand-mark { width: 40px; height: 40px; }
   
   .brand-name { font-size: 1.2rem; }
-  
-  .nav-actions .btn {
-    padding: 0.55rem 0.9rem;
-    font-size: 0.8rem;
-    border-radius: 4px;
-  }
-  
+
   section.standard,
   .recognition,
   .how,
@@ -1371,11 +1442,6 @@ footer {
 
 @media (max-width: 380px) {
   .brand-name { font-size: 1.1rem; }
-  
-  .nav-actions .btn {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.75rem;
-  }
 }
 /* Accessibility: skip link */
 .skip-link {
@@ -1412,9 +1478,17 @@ button:focus-visible {
       <div class="brand-mark" role="img" aria-label="Hootova logo"></div>
       <span class="brand-name">Hootova</span>
     </a>
-    <div class="nav-actions">
-      <button class="btn btn-primary" onclick="openModal()">Build your page</button>
-    </div>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="siteNav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <a href="/" class="nav-link" aria-current="page">Home</a>
+      <a href="/how-it-works.html" class="nav-link">How It Works</a>
+      <a href="/for-local-pros.html" class="nav-link">For Local Pros</a>
+      <button class="btn btn-primary nav-cta" type="button" onclick="openModal()">Get started</button>
+    </nav>
   </div>
 </header>
 
@@ -1426,8 +1500,8 @@ button:focus-visible {
       <div>
         <div class="eyebrow">For Real Estate Agents</div>
         <h1 class="hero-headline">
-          Get paid for the connections you already make.<br>
-          <em>And let Hootova automate it for you.</em>
+          You recommend local businesses to your clients all the time, for free.
+          <em>Hootova turns that into a marketing service that keeps you top of mind with your client base — and it's the first to pay you for it.</em>
         </h1>
         <div class="hero-rotate-row">
           <span class="hero-rotate-stem">You're the connection to</span>
@@ -1442,10 +1516,11 @@ button:focus-visible {
           </span>
         </div>
         <p class="hero-sub">
-          List the local businesses you recommend, share it with clients once. Hootova sends the intros, checks in after every job, and pays you every month.
+          Hootova writes the content, sends it under your name, and pays for the materials. You don't do the work. You just stay top of mind &mdash; and get paid for it.
         </p>
         <div class="hero-cta-row">
-          <button class="btn btn-primary btn-lg" onclick="openModal()">Build your page</button>
+          <a class="btn btn-primary btn-lg" href="/how-it-works.html">See how it works</a>
+          <button class="btn btn-ghost btn-lg" type="button" onclick="openModal()">Get started</button>
         </div>
         <div class="hero-meta">
           <span class="hero-meta-dot"></span>
@@ -1478,7 +1553,7 @@ button:focus-visible {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
               <div class="activity-content">
-                <div class="activity-label">Vendor notified</div>
+                <div class="activity-label">Local business notified</div>
                 <div class="activity-detail">New lead forwarded with your name and client details</div>
               </div>
               <div class="activity-time">1h ago</div>
@@ -1489,7 +1564,7 @@ button:focus-visible {
               </div>
               <div class="activity-content">
                 <div class="activity-label">Feedback received</div>
-                <div class="activity-detail">Client confirmed vendor showed up on time and did great work</div>
+                <div class="activity-detail">Client confirmed the plumber showed up on time and did great work</div>
               </div>
               <div class="activity-time">3h ago</div>
             </div>
@@ -1499,7 +1574,7 @@ button:focus-visible {
               </div>
               <div class="activity-content">
                 <div class="activity-label">Monthly report ready</div>
-                <div class="activity-detail">12 intros sent, 3 vendors contacted this month</div>
+                <div class="activity-detail">12 intros sent, 3 local pros contacted this month</div>
               </div>
               <div class="activity-time">1d ago</div>
             </div>
@@ -1868,6 +1943,26 @@ function closeModal() {
   document.getElementById('formModal').classList.remove('active');
   document.body.style.overflow = 'auto';
 }
+
+// Collapsible site nav
+(function() {
+  var toggle = document.getElementById('navToggle');
+  var nav = document.getElementById('siteNav');
+  if (!toggle || !nav) return;
+
+  function setNav(open) {
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  toggle.addEventListener('click', function() {
+    setNav(!nav.classList.contains('open'));
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') setNav(false);
+  });
+})();
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
