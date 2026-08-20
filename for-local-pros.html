@@ -616,6 +616,106 @@ button:focus-visible {
 @media (max-width: 380px) {
   .brand-name { font-size: 1.1rem; }
 }
+
+/* Contact modal (shared pattern with index.html) */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 40, 57, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+}
+
+.modal.active { display: flex; }
+
+.modal-card {
+  background-color: var(--paper);
+  border-radius: 12px;
+  max-width: 440px;
+  width: 100%;
+  padding: 2.25rem;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--ink-muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover { color: var(--navy); }
+
+.modal-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.modal-subtitle {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+.form-group { margin-bottom: 1rem; }
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1.5px solid var(--rule);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  background-color: var(--cream);
+  transition: all 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: var(--paper);
+}
+
+.form-group.optional label::after {
+  content: ' (optional)';
+  color: var(--ink-muted);
+  font-weight: 400;
+  font-size: 0.78rem;
+}
+
+.modal .btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
 </style>
 </head>
 <body>
@@ -758,7 +858,7 @@ button:focus-visible {
   <div class="final-cta-inner">
     <h2>An agent already gives out your name. <em>Let's make it count.</em></h2>
     <p>If an agent has mentioned Hootova to you, they've most likely already added you. Send us a note and we'll walk you through exactly what a confirmed job costs and what happens next. It's a five-minute conversation.</p>
-    <a href="mailto:hello@hootova.com?subject=Getting%20listed%20on%20an%20agent%27s%20Hootova%20page" class="btn btn-primary btn-lg">Email us</a>
+    <button type="button" class="btn btn-primary btn-lg" onclick="openModal()">Get in touch</button>
     <div class="final-cta-meta">No monthly fee · No contract · Billed only on confirmed work</div>
   </div>
 </section>
@@ -790,6 +890,37 @@ button:focus-visible {
   </div>
 </footer>
 
+<div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target===this)closeModal()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <h3 class="modal-title" id="modal-title">Get in touch</h3>
+    <p class="modal-subtitle">Tell us about your business and we'll walk you through what a confirmed job costs and what happens next.</p>
+    <form id="signupForm" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="business">Business name</label>
+        <input type="text" id="business" name="business" required>
+      </div>
+      <div class="form-group optional">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group optional">
+        <label for="agent">Which agent mentioned Hootova to you</label>
+        <input type="text" id="agent" name="agent">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">Send</button>
+    </form>
+  </div>
+</div>
+
 <script>
 // Collapsible site nav
 (function() {
@@ -810,6 +941,47 @@ button:focus-visible {
     if (e.key === 'Escape') setNav(false);
   });
 })();
+
+function openModal() {
+  document.getElementById('formModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('formModal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  const formData = {
+    name: document.getElementById('fullName').value,
+    email: document.getElementById('email').value,
+    message: `Business: ${document.getElementById('business').value}\nPhone: ${document.getElementById('phone').value}\nAgent who mentioned Hootova: ${document.getElementById('agent').value}`
+  };
+  try {
+    const response = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+    const result = await response.json();
+    if (result.success) {
+      alert("Thanks! We'll be in touch soon.");
+      closeModal();
+      document.getElementById('signupForm').reset();
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Something went wrong. Please try again.');
+  }
+}
 </script>
 
 </body>
