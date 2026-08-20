@@ -12,14 +12,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hootova.com/how-it-works.html">
 <meta property="og:title" content="How It Works - Hootova">
-<meta property="og:description" content="See how Hootova helps you turn your trusted network into income in 3 simple steps.">
+<meta property="og:description" content="Add the local pros you already trust, share your page once, and let Hootova run it. Ten minutes to set up.">
 <meta property="og:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://hootova.com/how-it-works.html">
 <meta property="twitter:title" content="How It Works - Hootova">
-<meta property="twitter:description" content="See how Hootova helps you turn your trusted network into income in 3 simple steps.">
+<meta property="twitter:description" content="Add the local pros you already trust, share your page once, and let Hootova run it. Ten minutes to set up.">
 <meta property="twitter:image" content="https://hootova.com/images/hootova-owl-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -830,6 +830,10 @@ footer {
 @media (max-width: 640px) {
   .container, .container-narrow { padding: 0 1.25rem; }
 
+  .runs { padding: 3.5rem 0; }
+
+  .auto-list { grid-template-columns: 1fr; }
+
   header { padding: 0.75rem 0; }
 
   .header-inner { padding: 0 1.25rem; }
@@ -860,6 +864,44 @@ footer {
 
 @media (max-width: 380px) {
   .brand-name { font-size: 1.1rem; }
+}
+
+
+/* What runs without you */
+.runs {
+  background-color: var(--cream);
+  padding: 5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.auto-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 820px;
+  margin: 2.5rem auto 0;
+}
+
+.auto-item {
+  padding: 1.25rem 1.4rem;
+  background-color: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+.auto-item strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+
+.auto-item span {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
 }
 
 /* Accessibility: skip link */
@@ -918,7 +960,7 @@ button:focus-visible {
   <div class="container">
     <div class="eyebrow">How it works</div>
     <h1>Three steps. Ten minutes. Then it runs itself.</h1>
-    <p class="lead">Turn your trusted network into something that actually works for you. Hootova provides the tools to build, share, and manage your personal page of recommended local pros.</p>
+    <p class="lead">Ten minutes to set up, then it runs itself. You add the local pros you already trust, share your page once, and Hootova handles the follow-ups, the content, and the payouts.</p>
   </div>
 </section>
 
@@ -931,10 +973,10 @@ button:focus-visible {
       <div class="step-card-text">
         <div class="step-num">STEP ONE</div>
         <h3>Build your page</h3>
-        <p>Quickly add the local vendors you trust. Painters, plumbers, electricians, and any other pro you'd recommend to a neighbor. This becomes your personal, shareable page.</p>
+        <p>Add the local pros you already trust. Painters, plumbers, electricians, house cleaners, mechanics, and anyone else you'd send a neighbor to. That list becomes your personal, shareable page.</p>
       </div>
       <div class="step-card-visual">
-        <h4>My Trusted Vendors</h4>
+        <h4>My Trusted Pros</h4>
         <div class="vendor-row">
           <span class="vendor-name">Acme Painting Co.</span>
           <span class="vendor-action">+ Add</span>
@@ -970,7 +1012,7 @@ button:focus-visible {
       <div class="step-card-text">
         <div class="step-num">STEP THREE</div>
         <h3>Track and earn</h3>
-        <p>Your dashboard tracks every view, click, and lead. See exactly how much value your network is generating and get compensated for the page traffic you drive.</p>
+        <p>Your dashboard tracks every view, click, and lead, so you can see which of your recommendations are actually getting used. You're paid on the traffic your page brings in, not on any individual job.</p>
       </div>
       <div class="step-card-visual">
         <h4>Your Monthly Activity</h4>
@@ -979,11 +1021,11 @@ button:focus-visible {
           <span class="dash-stat-value">342</span>
         </div>
         <div class="dash-stat-row">
-          <span class="dash-stat-label">Vendor Contacts</span>
+          <span class="dash-stat-label">Pro Contacts</span>
           <span class="dash-stat-value">47</span>
         </div>
         <div class="dash-stat-row">
-          <span class="dash-stat-label">Active Vendors</span>
+          <span class="dash-stat-label">Active Pros</span>
           <span class="dash-stat-value">12</span>
         </div>
         <div class="earnings-box">
@@ -1002,7 +1044,7 @@ button:focus-visible {
     <div class="section-head">
       <div class="eyebrow">Distribution</div>
       <h2>Ways to share your page</h2>
-      <p class="lead">Make it easy for clients to find your trusted vendors. Your custom link works everywhere.</p>
+      <p class="lead">Make it easy for clients to find the local pros you trust. Your custom link works everywhere.</p>
     </div>
     <div class="dist-grid">
       <div class="dist-card">
@@ -1051,13 +1093,42 @@ button:focus-visible {
   </div>
 </section>
 
+<!-- WHAT RUNS WITHOUT YOU -->
+<section class="runs">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">After setup</div>
+      <h2>What keeps running once you've stopped thinking about it.</h2>
+      <p class="lead">You built the page in step one. Everything below happens on its own, all year, with your name on it.</p>
+    </div>
+    <div class="auto-list">
+      <div class="auto-item">
+        <strong>Check-ins after every job</strong>
+        <span>Hootova asks your client how it went. If something went sideways, you hear about it first and you can take that business off your page at any time.</span>
+      </div>
+      <div class="auto-item">
+        <strong>Both sides can see it</strong>
+        <span>The local business sees that the job came from you. You see which of your recommendations your clients are actually using.</span>
+      </div>
+      <div class="auto-item">
+        <strong>Content sent under your name</strong>
+        <span>Seasonal reminders and local offers go out to your client base looking like you wrote them. You don't write any of it, and Hootova pays for the printed materials.</span>
+      </div>
+      <div class="auto-item">
+        <strong>One dashboard</strong>
+        <span>Leads, page traffic, engagement, and what you've earned, in one place.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- IN ACTION -->
 <section class="in-action">
   <div class="action-grid">
     <div class="action-text">
       <div class="eyebrow">In action</div>
-      <h2>Every intro has your name on it. Vendors notice.</h2>
-      <p>When a client contacts a vendor from your page, the vendor is instantly notified who sent them, creating built-in accountability and ensuring quality service.</p>
+      <h2>Every intro has your name on it. That's why the work is good.</h2>
+      <p>When a client contacts someone from your page, that business is told immediately who sent them. They show up on time and they quote fair, because your next call is worth more to them than any single invoice.</p>
     </div>
     <div>
       <div class="notification-mock">
@@ -1084,9 +1155,9 @@ button:focus-visible {
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="final-cta-inner">
-    <h2>Your local business network already exists. <em>Make it work for you.</em></h2>
-    <p>Build your page in ten minutes. Share it with the next person who asks. See what happens.</p>
-    <button class="btn btn-primary btn-lg" onclick="openModal()">Build your page</button>
+    <h2>You already made the connections. <em>Now let them work for you.</em></h2>
+    <p>Set it up in ten minutes. Share it with the next person who asks. See what happens.</p>
+    <button class="btn btn-primary btn-lg" type="button" onclick="openModal()">Get started</button>
     <div class="final-cta-meta">Free to start · No credit card required · 10-minute setup</div>
   </div>
 </section>
