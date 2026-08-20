@@ -607,37 +607,6 @@ header {
   font-weight: 700;
 }
 
-.mockup-vendor {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.mockup-vendor:last-child { border-bottom: none; }
-
-.mockup-vendor-info { display: flex; flex-direction: column; gap: 0.15rem; }
-
-.mockup-vendor-name {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.mockup-vendor-cat {
-  font-size: 0.7rem;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.mockup-vendor-action {
-  font-size: 0.75rem;
-  color: var(--accent-deep);
-  font-weight: 600;
-}
-
 /* Trust Strip */
 .trust-strip {
   background-color: var(--cream-warm);
@@ -685,43 +654,8 @@ section.standard {
 
 .section-head h2 { margin-bottom: 1rem; }
 
-/* Flywheel */
-.flywheel {
-  padding: 5rem 0;
-  background-color: var(--paper);
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-
-.flywheel .container-narrow {
-  text-align: center;
-}
-
-.flywheel .lead {
-  max-width: 560px;
-  margin: 1rem auto 2.5rem;
-}
-
-.flywheel-img {
-  max-width: 640px;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-}
-
 .in-action .eyebrow {
   color: var(--accent);
-}
-
-.how-step-mockup .mockup {
-  max-width: 340px;
-  transform: none;
-  margin: 0 auto;
-}
-
-.how-step-mockup .mockup-heading {
-  margin-top: 0;
-  font-size: 1.05rem;
 }
 
 /* Recognition (the "we see you" moment) */
@@ -747,16 +681,7 @@ section.standard {
   margin-bottom: 1.5rem;
 }
 
-.recognition-quote {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.3rem;
-  color: var(--accent-deep);
-  line-height: 1.4;
-  padding-left: 1.5rem;
-  border-left: 3px solid var(--accent);
-  margin: 2rem 0;
-}
+.recognition-text p + p { margin-top: 1.1rem; }
 
 .recognition-visual {
   display: flex;
@@ -764,31 +689,37 @@ section.standard {
   gap: 1rem;
 }
 
-.stat-card {
+/* Founder story (replaces the old stat-card trio) */
+.founder-story {
   background-color: var(--cream);
   border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 1.5rem 1.75rem;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 2rem 2.25rem;
 }
 
-.stat-card-num {
+.founder-story p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.founder-story-kicker {
   font-family: var(--serif);
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1;
-  letter-spacing: -0.03em;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  color: var(--accent-deep);
+  margin-bottom: 0;
 }
 
-.stat-card-label {
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  text-align: right;
-  max-width: 200px;
+.founder-story-by {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
 }
 
 /* How It Works */
@@ -797,120 +728,15 @@ section.standard {
   padding: 5rem 0;
 }
 
-.how-mockup-row {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-}
-
-.step-icon {
-  width: 36px;
-  height: 36px;
-  margin-bottom: 1.25rem;
-  color: var(--navy);
-}
-
-.step-num {
-  font-family: var(--serif);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-deep);
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-}
-
-/* How It Works - vertical step layouts */
-.how-step {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3.5rem;
-}
-
-.how-step:last-child { margin-bottom: 0; }
-
-.how-step h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.how-step > p {
-  font-size: 0.95rem;
-  max-width: 500px;
+.how-teaser {
+  max-width: 720px;
   margin: 0 auto;
+  text-align: center;
 }
 
-.how-step-mockup {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.share-methods {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  margin-top: 1.75rem;
-  flex-wrap: wrap;
-}
-
-.share-method {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.share-method-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--paper);
-  border: 1px solid var(--rule);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.share-method-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-.share-method span {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  font-weight: 500;
-}
-
-.auto-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  max-width: 640px;
-  margin: 1.75rem auto 0;
-  text-align: left;
-}
-
-.auto-item {
-  padding: 0.85rem 1rem;
-  background-color: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-}
-
-.auto-item strong {
-  display: block;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 0.15rem;
-}
-
-.auto-item span {
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-  line-height: 1.4;
+.how-teaser p {
+  font-size: 1.15rem;
+  margin: 0 auto 2.25rem;
 }
 
 /* In Action */
@@ -1102,30 +928,17 @@ section.standard {
   margin: 0;
 }
 
-/* Disclosure */
-.disclosure {
+/* The disclosure clients see, shown inside the compensation section */
+.comp-script {
   background-color: var(--paper);
-  padding: 5rem 0;
-  border-top: 1px solid var(--rule);
-}
-
-.disclosure-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  text-align: center;
-}
-
-.disclosure-script {
-  background-color: var(--cream);
   border-left: 4px solid var(--accent);
   padding: 2rem 2.25rem;
-  margin: 2.5rem 0;
+  margin-top: 2.5rem;
   text-align: left;
   border-radius: 0 8px 8px 0;
 }
 
-.disclosure-script p {
+.comp-script p {
   font-family: var(--serif);
   font-size: 1.15rem;
   font-style: italic;
@@ -1134,10 +947,10 @@ section.standard {
   margin: 0;
 }
 
-.disclosure-explainer {
-  font-size: 0.95rem;
+.comp-script-note {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
   color: var(--ink-muted);
-  margin-top: 1.5rem;
 }
 
 /* Final CTA */
@@ -1394,8 +1207,7 @@ footer {
     margin: 0 auto;
   }
   
-  .rep-grid,
-  .auto-list {
+  .rep-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1425,13 +1237,13 @@ footer {
   section.standard,
   .recognition,
   .how,
-  .flywheel,
   .in-action,
   .reputation,
-  .compensation,
-  .disclosure {
+  .compensation {
     padding: 3.5rem 0;
   }
+
+  .founder-story { padding: 1.5rem 1.5rem; }
   
   .final-cta { padding: 4rem 0; }
   
@@ -1598,7 +1410,7 @@ button:focus-visible {
     </div>
     <div class="trust-item">
       <svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      RESPA-aware by design
+      Nothing to write, ever
     </div>
     <div class="trust-item">
       <svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1611,130 +1423,15 @@ button:focus-visible {
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- HOW IT WORKS (teaser -> /how-it-works.html) -->
 <section class="how">
   <div class="container">
-    <div class="section-head">
+    <div class="how-teaser">
       <div class="eyebrow">How it works</div>
       <h2>Three steps. Ten minutes. Then it runs itself.</h2>
+      <p>You add the local pros you already trust. You share your page once. After that, Hootova writes the emails, sends them under your name, pays for the magnets and the flyers, checks in with your clients after every job, and pays you every month.</p>
+      <a class="btn btn-primary btn-lg" href="/how-it-works.html">See the three steps</a>
     </div>
-
-    <!-- Step 1: Build your page -->
-    <div class="how-step">
-      <div class="step-num">STEP ONE</div>
-      <h3>Build your page</h3>
-      <p>Add the local pros you already trust. Landscapers, plumbers, electricians, painters. Anyone you'd recommend to a friend.</p>
-      <div class="how-step-mockup">
-        <div class="mockup">
-          <div class="mockup-browser-bar">
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-url">hootova.com/r/your-page</div>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-heading">Example Hootova Page</div>
-            <div class="mockup-divider"></div>
-            <div class="mockup-vendor">
-              <div class="mockup-vendor-info">
-                <span class="mockup-vendor-name">Greenleaf Landscaping</span>
-                <span class="mockup-vendor-cat">Lawn & yard care</span>
-              </div>
-              <span class="mockup-vendor-action">Contact →</span>
-            </div>
-            <div class="mockup-vendor">
-              <div class="mockup-vendor-info">
-                <span class="mockup-vendor-name">Mike's Plumbing</span>
-                <span class="mockup-vendor-cat">Plumbing repair</span>
-              </div>
-              <span class="mockup-vendor-action">Contact →</span>
-            </div>
-            <div class="mockup-vendor">
-              <div class="mockup-vendor-info">
-                <span class="mockup-vendor-name">Volt Electric</span>
-                <span class="mockup-vendor-cat">Electrical work</span>
-              </div>
-              <span class="mockup-vendor-action">Contact →</span>
-            </div>
-            <div class="mockup-vendor">
-              <div class="mockup-vendor-info">
-                <span class="mockup-vendor-name">Paulie's Auto</span>
-                <span class="mockup-vendor-cat">Auto repair</span>
-              </div>
-              <span class="mockup-vendor-action">Contact →</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 2: Share it everywhere -->
-    <div class="how-step">
-      <div class="step-num">STEP TWO</div>
-      <h3>Share it everywhere</h3>
-      <p>Your page meets people wherever you already are.</p>
-      <div class="share-methods">
-        <div class="share-method">
-          <div class="share-method-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-          </div>
-          <span>QR code</span>
-        </div>
-        <div class="share-method">
-          <div class="share-method-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <span>Email signature</span>
-        </div>
-        <div class="share-method">
-          <div class="share-method-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-          </div>
-          <span>Text message</span>
-        </div>
-        <div class="share-method">
-          <div class="share-method-icon">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-          </div>
-          <span>Business cards</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 3: Hootova automates it -->
-    <div class="how-step">
-      <div class="step-num">STEP THREE</div>
-      <h3>Hootova automates it</h3>
-      <p>You built the page. The system runs it.</p>
-      <div class="auto-list">
-        <div class="auto-item">
-          <strong>Automated check-ins</strong>
-          <span>Follows up with clients to confirm contact and service quality</span>
-        </div>
-        <div class="auto-item">
-          <strong>Vendor reports</strong>
-          <span>Two-sided visibility into who sends business and who receives it</span>
-        </div>
-        <div class="auto-item">
-          <strong>Content from your network</strong>
-          <span>Vendor deals and seasonal tips flow to clients under your name</span>
-        </div>
-        <div class="auto-item">
-          <strong>Dashboard</strong>
-          <span>Leads, traffic, and engagement in one place</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- THE HOOTOVA LOOP -->
-<section class="flywheel">
-  <div class="container-narrow">
-    <div class="eyebrow">The big picture</div>
-    <h2>One loop. Everyone wins.</h2>
-    <p class="lead">Hootova turns the connections you already make into a cycle that builds on itself. More visibility, more trust, more value back to you.</p>
-    <img class="flywheel-img" src="./images/hootova_loop_transparent.png" alt="The Hootova Loop: Share your page, clients find trusted pros, vendors get warm intros, you stay top of mind and earn">
   </div>
 </section>
 
@@ -1742,25 +1439,18 @@ button:focus-visible {
 <section class="recognition">
   <div class="recognition-grid">
     <div class="recognition-text">
-      <div class="eyebrow">A familiar story</div>
-      <h2>Your local business network is your best marketing asset. And the only one you're not getting credit for.</h2>
-      <p>You've built relationships across your community for years. Plumbers, landscapers, electricians, painters, contractors. People call you because they trust your judgment. And every time you make a recommendation, that value evaporates the moment the text is sent.</p>
-      <div class="recognition-quote">
-        "Good business stays local when good people vouch for it."
-      </div>
+      <div class="eyebrow">What you already do</div>
+      <h2>You already know who's actually good. Your clients get treated better because of it.</h2>
+      <p>You know who does the work right, not who has the most reviews. You know what a job should cost, so your client doesn't collect three quotes and get talked into extras they didn't need. You know who actually shows up.</p>
+      <p>And your name on the job changes how your client gets treated. When a painter or a plumber hears the work came from you, they show up on time and they quote fair, because your next call is worth more to them than any single invoice.</p>
+      <p>You've been running that service for years. You've just never been paid for it, and it stops the day the sale closes.</p>
     </div>
     <div class="recognition-visual">
-      <div class="stat-card">
-        <span class="stat-card-num">100+</span>
-        <span class="stat-card-label">Recommendations the average agent makes in a year</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-num">0</span>
-        <span class="stat-card-label">Of those tracked, attributed, or remembered</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-num">1</span>
-        <span class="stat-card-label">Tool needed to change that</span>
+      <div class="founder-story">
+        <p>When I moved from Massachusetts to North Carolina, my car's A/C went out. I called three mechanics and got three different diagnoses &mdash; the cheapest quote was $2,500.</p>
+        <p>Then I called a local realtor for the name of someone she trusted. One phone call later, the actual problem &mdash; a leak &mdash; cost $400 to find, patch, and refill.</p>
+        <p class="founder-story-kicker">That's the power of a local connection. It's why I built Hootova.</p>
+        <div class="founder-story-by">Zac, founder of Hootova</div>
       </div>
     </div>
   </div>
@@ -1771,9 +1461,9 @@ button:focus-visible {
   <div class="action-grid">
     <div class="action-text">
       <div class="eyebrow">In action</div>
-      <h2>Every intro has your name on it. Vendors notice.</h2>
-      <p>When a client reaches out to one of your pros, the vendor knows exactly who sent them. They show up on time. They quote fair. They treat the client like the relationship matters. Because it does.</p>
-      <p class="accent-line">Your reputation becomes the quality control mechanism. And it works.</p>
+      <h2>Every intro has your name on it. That's why the work is good.</h2>
+      <p>When a client contacts someone from your page, that business is told immediately who sent them. They treat your client like the relationship matters, because it does &mdash; a stranger's one-star review costs them almost nothing, and losing your steady work costs them everything.</p>
+      <p class="accent-line">Your reputation is the quality control. It always was. Now it's attached to every job.</p>
     </div>
     <div>
       <div class="notification-mock">
@@ -1802,81 +1492,72 @@ button:focus-visible {
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">Why agents use it</div>
-      <h2>Three things your page does for you, automatically.</h2>
+      <h2>What Hootova does while you're out working.</h2>
     </div>
     <div class="rep-grid">
       <div class="rep-card">
         <svg class="rep-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         <h4>Stay top of mind</h4>
-        <p>Your clients get periodic emails with local deals and seasonal tips from the vendors on your page. Every email has your name on it. You stay in their inbox without writing a thing.</p>
+        <p>Your clients get regular emails with local offers and seasonal reminders, written by Hootova and sent under your name. You stay in their inbox all year without writing a thing.</p>
       </div>
       <div class="rep-card">
         <svg class="rep-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        <h4>See everything from your dashboard</h4>
-        <p>Lead totals, page traffic, which vendors your clients contacted, and when. Vendors see who sends them business. You see what your network is actually worth.</p>
+        <h4>See what it's actually worth</h4>
+        <p>Lead totals, page traffic, which local pros your clients contacted, and when. Those businesses see who sent them the work. You finally see what your recommendations produce.</p>
       </div>
       <div class="rep-card">
         <svg class="rep-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <h4>Ensure excellent service</h4>
-        <p>Hootova checks in with your clients after every intro. If something goes wrong, you hear about it first. You can remove any vendor at any time. Your name stays clean.</p>
+        <h4>Keep the work good</h4>
+        <p>Hootova checks in with your clients after every job. If something goes wrong, you hear about it first, and you can take any business off your page at any time.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPENSATION (reluctant benefit, finally surfaced) -->
+<!-- COMPENSATION -->
 <section class="compensation">
   <div class="comp-inner">
     <div class="eyebrow">And yes, the money part</div>
-    <h2>You're compensated for page traffic. Here's how it works.</h2>
+    <h2>You're paid for reach, the way an influencer is. Never per job.</h2>
     <p class="comp-body">
-      Hootova pays you based on monthly visits to your page, the same way an influencer is compensated for reach. Not per lead. Not per transaction. For traffic, because traffic reflects the quality of the curation. The better your list, the more people return to it, the more you earn.
+      Hootova pays you every month based on how many people use your page, not on what any one business makes from it. That distinction is the whole thing. The moment you'd earn more by steering a client toward one particular painter, your recommendation stops being a recommendation and your clients would be right to stop trusting it. So you're paid for the size of your influence and for keeping a list worth trusting, which is exactly what you were doing for free.
     </p>
     <div class="comp-points">
       <div class="comp-point">
         <div class="comp-point-label">No kickbacks</div>
-        <p>You're paid for reach and curation, not for individual jobs or leads. This keeps us cleanly outside RESPA settlement-services restrictions.</p>
+        <p>You're paid for reach and for the quality of your list, never for an individual job or lead. That's what keeps this clear of settlement-services rules.</p>
       </div>
       <div class="comp-point">
         <div class="comp-point-label">Fully disclosed</div>
-        <p>Every page includes a disclosure to clients. No hidden incentives. Your integrity stays intact because the model is transparent.</p>
+        <p>Every page tells your clients you're compensated, in plain language. You don't write it and you don't add it. It's already there.</p>
       </div>
       <div class="comp-point">
-        <div class="comp-point-label">General service pros only</div>
-        <p>Landscapers, mechanics, electricians, plumbers. No lenders. No title companies. No home inspectors. The categories that don't trigger settlement-services law.</p>
+        <div class="comp-point-label">Everyday trades only</div>
+        <p>Landscapers, mechanics, electricians, plumbers, painters, house cleaners, photographers. Nothing tied to a closing, ever.</p>
       </div>
       <div class="comp-point">
         <div class="comp-point-label">Your page, your standards</div>
-        <p>Compensation only matters if the list is real. You control who's on it. We pay you to maintain quality, not to push specific vendors.</p>
+        <p>You decide who goes on it and you can take anyone off at any time. We pay you to keep the list good, not to push anybody.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- DISCLOSURE -->
-<section class="disclosure">
-  <div class="disclosure-inner">
-    <div class="eyebrow">Built-in disclosure</div>
-    <h2>This is what your clients see.</h2>
-    <p class="lead">A short, plain-language disclosure appears on every page. You don't write it. You don't add it. It's already there.</p>
-    <div class="disclosure-script">
-      <p>"I'm compensated by Hootova based on page traffic, which is how I make sure these vendors take great care of the people I send them. If your experience is anything less than excellent, let me know. I'll handle it."</p>
+    <div class="comp-script">
+      <p>"I'm compensated by Hootova based on traffic to my page, which is how I make sure these businesses take great care of the people I send them. If your experience is anything less than excellent, let me know. I'll handle it."</p>
+      <div class="comp-script-note">This is the disclosure your clients see. It's already written and already on your page.</div>
     </div>
-    <p class="disclosure-explainer">
-      Transparency is the product. Clients trust you more, vendors take the work seriously, and your reputation does the rest.
-    </p>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="final-cta-inner">
-    <h2>Your local business network already exists. <em>Make it work for you.</em></h2>
-    <p>Build your page in ten minutes. Share it with the next person who asks. See what happens.</p>
-    <button class="btn btn-primary btn-lg" onclick="openModal()">Build your page</button>
+    <h2>You already made the connections. <em>Now let them work for you.</em></h2>
+    <p>Set it up in ten minutes. Share your page with the next person who asks. See what happens.</p>
+    <button class="btn btn-primary btn-lg" type="button" onclick="openModal()">Get started</button>
     <div class="final-cta-meta">Free to start · No credit card required · 10-minute setup</div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-inner">
@@ -1904,12 +1585,10 @@ button:focus-visible {
 </footer>
 
 <!-- Modal -->
-</main>
-
 <div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target===this)closeModal()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
-    <h3 class="modal-title" id="modal-title">Build your page</h3>
+    <h3 class="modal-title" id="modal-title">Get started</h3>
     <p class="modal-subtitle">Free to start. No credit card. Setup takes about 10 minutes.</p>
     <form id="signupForm" onsubmit="handleSubmit(event)">
       <div class="form-group">
