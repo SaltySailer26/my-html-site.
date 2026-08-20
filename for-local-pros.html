@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hootova | For Local Pros</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<meta name="description" content="An agent already recommends you. Hootova sends that recommendation to their whole client base, all year. The work arrives free — you're only billed after your customer confirms you did the job.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hootova.com/for-local-pros.html">
+<meta property="og:title" content="Hootova | For Local Pros">
+<meta property="og:description" content="An agent already recommends you. Hootova sends that recommendation to their whole client base, all year. You're only billed after your customer confirms you did the job.">
+<meta property="og:image" content="https://hootova.com/images/hootova-owl-logo.png">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://hootova.com/for-local-pros.html">
+<meta property="twitter:title" content="Hootova | For Local Pros">
+<meta property="twitter:description" content="An agent already recommends you. Hootova sends that recommendation to their whole client base, all year. You're only billed after your customer confirms you did the job.">
+<meta property="twitter:image" content="https://hootova.com/images/hootova-owl-logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #1a3a52;
+  --navy-deep: #112839;
+  --navy-soft: #2d5673;
+  --cream: #faf7f2;
+  --cream-warm: #f3eee5;
+  --paper: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #4a5568;
+  --ink-muted: #718096;
+  --rule: #e4ddd0;
+  --accent: #b8895a;        /* warm muted gold/terracotta */
+  --accent-deep: #9a6f42;
+  --success: #2d6a4f;
+  --success-soft: #e8f1ec;
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Typography */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: 1.25rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); }
+h3 { font-size: 1.25rem; line-height: 1.3; }
+h4 { font-size: 1.05rem; font-family: var(--sans); font-weight: 600; letter-spacing: 0; }
+
+p { font-size: 1.0625rem; color: var(--ink-soft); line-height: 1.7; }
+
+.lead { font-size: 1.15rem; color: var(--ink-soft); }
+
+/* Header */
+header {
+  background-color: var(--cream);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background-color: rgba(250, 247, 242, 0.95);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  background-color: var(--navy);
+  border-radius: 50%;
+  background-image: url('./images/hootova-owl-logo.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
+/* Site nav (shared across all pages) */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-link:hover { color: var(--navy); }
+
+.nav-link[aria-current="page"] {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 40px;
+  padding: 0 10px;
+  background-color: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--navy);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Collapse to a hamburger once the links stop fitting beside the wordmark */
+@media (max-width: 820px) {
+  .header-inner { flex-wrap: wrap; }
+
+  .nav-toggle { display: flex; }
+
+  .site-nav {
+    display: none;
+    flex-basis: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0;
+    margin-top: 0.85rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .site-nav.open { display: flex; }
+
+  .site-nav .nav-link {
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+  }
+
+  .site-nav .nav-cta {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 0.85rem;
+    justify-content: center;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background-color: var(--navy);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background-color: var(--navy-deep);
+  color: var(--paper);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 58, 82, 0.2);
+}
+
+.btn-lg {
+  padding: 1.05rem 2rem;
+  font-size: 1rem;
+}
+
+/* Page Hero */
+.page-hero {
+  padding: 5rem 0 4rem;
+  text-align: center;
+}
+
+.page-hero h1 {
+  margin-bottom: 1.25rem;
+}
+
+.page-hero .lead {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Section base */
+section.standard {
+  padding: 5rem 0;
+}
+
+.section-paper {
+  background-color: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-head {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+}
+
+.section-head h2 { margin-bottom: 1rem; }
+
+/* Narrative prose blocks */
+.prose {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.prose p + p { margin-top: 1.15rem; }
+
+/* Numbered flow */
+.flow {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+  list-style: none;
+  counter-reset: flow;
+}
+
+.flow li {
+  counter-increment: flow;
+  position: relative;
+  padding-left: 3.25rem;
+  padding-bottom: 2rem;
+}
+
+.flow li:last-child { padding-bottom: 0; }
+
+.flow li::before {
+  content: counter(flow);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  background-color: var(--cream);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+.flow h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.3rem;
+}
+
+.flow p { font-size: 1rem; }
+
+/* The money section */
+.money {
+  background-color: var(--navy);
+  padding: 5rem 0;
+  color: var(--paper);
+}
+
+.money h2 { color: var(--paper); }
+
+.money .eyebrow { color: var(--accent); }
+
+.money p { color: rgba(255, 255, 255, 0.8); }
+
+.money-headline {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+  margin: 0 0 2.5rem;
+}
+
+.money-terms {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.money-term {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 1.4rem 1.6rem;
+}
+
+.money-term h4 {
+  color: var(--paper);
+  margin-bottom: 0.4rem;
+}
+
+.money-term p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Objection block */
+.objection {
+  background-color: var(--cream-warm);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 2rem 2.25rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.objection-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.45;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+
+/* Trades note */
+.trades-note {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.trades-note p { font-size: 0.95rem; color: var(--ink-muted); }
+
+/* Final CTA */
+.final-cta {
+  background-color: var(--navy);
+  padding: 6rem 0;
+  color: var(--paper);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(184, 137, 90, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.final-cta-inner {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.final-cta h2 {
+  color: var(--paper);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1.5rem;
+}
+
+.final-cta h2 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.final-cta p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.final-cta .btn-primary {
+  background-color: var(--accent);
+  color: var(--paper);
+}
+
+.final-cta .btn-primary:hover {
+  background-color: var(--accent-deep);
+}
+
+.final-cta-meta {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Footer */
+footer {
+  background-color: var(--navy-deep);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--paper);
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.25rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.875rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--paper);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.footer-contact a:hover { color: var(--paper); }
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--navy);
+  color: var(--paper);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  z-index: 200;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .container, .container-narrow { padding: 0 1.25rem; }
+
+  header { padding: 0.75rem 0; }
+
+  .header-inner { padding: 0 1.25rem; }
+
+  .brand { gap: 0.5rem; }
+
+  .brand-mark { width: 40px; height: 40px; }
+
+  .brand-name { font-size: 1.2rem; }
+
+  .page-hero { padding: 3.5rem 0 2.5rem; }
+
+  section.standard,
+  .money { padding: 3.5rem 0; }
+
+  .final-cta { padding: 4rem 0; }
+
+  .money-headline { padding-left: 1.1rem; }
+
+  .objection { padding: 1.75rem 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .brand-name { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="brand">
+      <div class="brand-mark" role="img" aria-label="Hootova logo"></div>
+      <span class="brand-name">Hootova</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="siteNav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/how-it-works.html" class="nav-link">How It Works</a>
+      <a href="/for-local-pros.html" class="nav-link" aria-current="page">For Local Pros</a>
+      <a href="/" class="btn btn-primary nav-cta">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">For local pros</div>
+    <h1>An agent already vouches for you. Hootova sends that to everyone they know.</h1>
+    <p class="lead">You're on some real estate agent's short list &mdash; the name they give out when a client asks who to call. Hootova takes that same recommendation and puts it in front of every client that agent has ever worked with, all year, under the agent's name. The work arrives free. You're not billed until your customer tells us you did the job.</p>
+  </div>
+</section>
+
+<!-- WHAT THIS IS -->
+<section class="standard section-paper">
+  <div class="container-narrow">
+    <div class="section-head">
+      <div class="eyebrow">What this is</div>
+      <h2>The agent's word, going to more than one person at a time.</h2>
+    </div>
+    <div class="prose">
+      <p>Right now an agent recommends you the way it has always worked. A client asks who to call about the peeling trim on the front porch, and the agent gives them your name. That happens a handful of times a year, whenever your trade happens to come up.</p>
+      <p>Hootova is a marketing service for real estate agents. It gives an agent a page with their name and face at the top and the local businesses they actually trust underneath &mdash; you among them. Then it writes and sends things to that agent's whole client base, all year, under the agent's name, with your business in them. The agent doesn't write any of it. Neither do you.</p>
+      <p>There are two moments where this shows up for you. The first is while a house is being listed: the seller needs the trim painted, the carpets cleaned, and the photos shot before it goes online, and the agent is lining all of that up in the same couple of weeks. The second is every year after the sale, when the water heater goes on a Sunday and that homeowner needs somebody they can trust. Both come through the same page, with the same name on them.</p>
+      <p>Same recommendation. Same person making it. It just stops depending on whether the agent happens to be standing in the room.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT'S DIFFERENT -->
+<section class="standard">
+  <div class="container-narrow">
+    <div class="section-head">
+      <div class="eyebrow">Why this work is different</div>
+      <h2>It's not a stranger. It's somebody who already trusts the person who sent them.</h2>
+    </div>
+    <div class="prose">
+      <p>You know what a bought lead is worth. Fifty to a hundred dollars for a name, four calls to get one back, and half of them were never going to hire anybody.</p>
+      <p>This is the opposite of that in every direction. The person calling got your name from someone they spent months trusting through the biggest purchase of their life. They aren't collecting three quotes. They already decided.</p>
+      <p>And every job says who sent it. When a client asks for you through the page, we tell you the agent's name before you ever pick up the phone &mdash; and the client knows that you know. That's what makes this work worth showing up on time for. The agent hears how the job went, and can take any business off their page whenever they want, for any reason. That isn't a rule we enforce. It's the same reason you already take good care of the people they send you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS FOR YOU -->
+<section class="standard section-paper">
+  <div class="container-narrow">
+    <div class="section-head">
+      <div class="eyebrow">How it works for you</div>
+      <h2>What being recommended through Hootova actually involves.</h2>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>The agent adds you.</h3>
+        <p>You don't build anything, write a profile, or manage a listing. The agent puts you on their page because they already send you work. If you want to be on it, that conversation is with them.</p>
+      </li>
+      <li>
+        <h3>Hootova markets you all year, at no cost to you.</h3>
+        <p>We write what goes out and send it to that agent's client base under the agent's name. If you've got something worth telling people &mdash; a slow month you'd like to fill, twenty percent off Saturdays, a kind of job you want more of &mdash; tell us and it goes in.</p>
+      </li>
+      <li>
+        <h3>The work comes straight to you.</h3>
+        <p>When a client wants you, we send you their name, their number, what they need, and which agent sent them. Immediately, free, with nothing in front of it. You call them and run the job exactly the way you always have. We're not in the middle of it and we don't take a booking.</p>
+      </li>
+      <li>
+        <h3>We text the customer afterward.</h3>
+        <p>One question: did the work happen. Their answer is what tells the agent how it went, and it's the only thing you're ever billed on.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- THE MONEY -->
+<section class="money">
+  <div class="container-narrow">
+    <div class="eyebrow">What it costs</div>
+    <p class="money-headline">You don't pay us until your customer tells us you did the work.</p>
+    <div class="prose">
+      <p>Every job that comes to you through the page arrives free. All of them, handed straight over, nothing gated and nothing held back behind a fee. You never pay to find out who wants you.</p>
+      <p>Afterward, we text that customer and ask whether they worked with you. If they say yes, that's when you're billed for that job &mdash; one charge, on work that already happened, out of money you have already collected. If they don't say yes, you're not billed. If the job never came, there's nothing to bill.</p>
+      <p>What a confirmed job costs is settled before you're ever listed. You'll have that number in writing from the person who signs you up, and nothing goes live until you've agreed to it.</p>
+    </div>
+    <div class="money-terms">
+      <div class="money-term">
+        <h4>No monthly fee, no contract, no exclusivity</h4>
+        <p>Nothing to cancel and nothing to renew. If it never produces for you, it never costs you anything.</p>
+      </div>
+      <div class="money-term">
+        <h4>Never billed for a job the agent hands you directly</h4>
+        <p>If they call you themselves the way they always have, that stays between you and them. We bill for work our marketing caused, and nothing else.</p>
+      </div>
+      <div class="money-term">
+        <h4>You're paid before we are</h4>
+        <p>The charge comes after the job is done and confirmed, so there's no month where you're out money waiting to see if it works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE OBJECTION -->
+<section class="standard">
+  <div class="container-narrow">
+    <div class="objection">
+      <p class="objection-quote">&ldquo;That agent already sends me work for free. Why would I pay for it now?&rdquo;</p>
+      <p>You wouldn't, and that doesn't change. Keep taking those calls. You will never see a bill for one.</p>
+      <p>What you'd be paying for is the part that doesn't exist right now. An agent recommending you in person is a handful of jobs a year, whenever your trade comes up in conversation. Hootova puts you in front of that agent's entire client base &mdash; everyone they have ever sold a house to &mdash; on an ongoing basis, under a name those people already trust. That's the marketing, and it's the only part you're billed for. Only after it works.</p>
+    </div>
+    <div class="trades-note">
+      <p>Hootova works with everyday trades: painters, carpenters, plumbers, electricians, mechanics, landscapers, house cleaners, carpet cleaners, pest control, photographers, and stagers. Nothing tied to a closing, ever. Agents are paid by Hootova for the size of the audience they've built, never for sending work to one particular business &mdash; and every agent's page says so in plain language where their clients can read it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>An agent already gives out your name. <em>Let's make it count.</em></h2>
+    <p>If an agent has mentioned Hootova to you, they've most likely already added you. Send us a note and we'll walk you through exactly what a confirmed job costs and what happens next. It's a five-minute conversation.</p>
+    <a href="mailto:hello@hootova.com?subject=Getting%20listed%20on%20an%20agent%27s%20Hootova%20page" class="btn btn-primary btn-lg">Email us</a>
+    <div class="final-cta-meta">No monthly fee · No contract · Billed only on confirmed work</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-mark" role="img" aria-label="Hootova logo"></div>
+        <div>
+          <div class="footer-brand-name">Hootova</div>
+          <div class="footer-tagline">Your word, connecting this town.</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy-policy.html">Privacy</a>
+        <a href="/terms-of-service.html">Terms</a>
+        <a href="/accessibility.html">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        Questions? <a href="mailto:hello@hootova.com">hello@hootova.com</a>
+      </div>
+      <div>© 2026 Hootova. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Collapsible site nav
+(function() {
+  var toggle = document.getElementById('navToggle');
+  var nav = document.getElementById('siteNav');
+  if (!toggle || !nav) return;
+
+  function setNav(open) {
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  toggle.addEventListener('click', function() {
+    setNav(!nav.classList.contains('open'));
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') setNav(false);
+  });
+})();
+</script>
+
+</body>
+</html>
