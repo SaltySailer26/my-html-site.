@@ -57,6 +57,25 @@ body {
   text-align: center;
 }
 
+.portrait {
+  width: 168px;
+  height: 200px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface);
+  border: 3px solid var(--white);
+  box-shadow: 0 2px 14px rgba(33, 33, 33, 0.14);
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 .identity .name {
   font-family: 'Lora', Georgia, 'Times New Roman', serif;
   font-size: 1.55rem;
@@ -171,12 +190,6 @@ body {
   outline: none;
 }
 
-.fineprint {
-  margin: 14px auto 0;
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-}
-
 /* ---------- Trades ---------- */
 
 .trades {
@@ -203,51 +216,81 @@ body {
   color: var(--ink-soft);
 }
 
-.grid {
+.list {
   list-style: none;
   margin: 34px 0 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 14px;
 }
 
-.grid a {
-  display: block;
-  height: 100%;
+.list > li + li { margin-top: 12px; }
+
+.entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
   background: var(--white);
   border: 1px solid var(--line);
   border-left: 3px solid var(--csp-teal);
   border-radius: 3px;
   padding: 18px 20px;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
-.grid a:hover,
-.grid a:focus-visible {
+.badge {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   background: var(--csp-teal-tint);
-  border-color: var(--csp-teal);
-  transform: translateY(-1px);
-  outline: none;
+  border: 1px solid rgba(0, 128, 163, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
-.grid .trade {
+.entry-body { flex: 1 1 auto; min-width: 0; }
+
+.entry .trade {
   display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.entry .biz {
+  display: block;
+  margin-top: 3px;
   font-family: 'Lora', Georgia, 'Times New Roman', serif;
   font-size: 1.08rem;
   font-weight: 600;
   color: var(--csp-teal-deep);
 }
 
-.grid .blurb {
+.entry .blurb {
   display: block;
-  margin-top: 4px;
-  font-size: 0.86rem;
-  line-height: 1.5;
-  color: var(--ink-soft);
+  margin-top: 7px;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink);
 }
+
+.entry .phone {
+  display: block;
+  margin-top: 9px;
+  font-size: 0.9rem;
+}
+
+.entry .phone a {
+  color: var(--csp-teal-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 128, 163, 0.35);
+}
+
+.entry .phone a:hover { border-bottom-color: var(--csp-teal); }
 
 /* ---------- Note ---------- */
 
@@ -316,6 +359,9 @@ footer a { color: #8b8b8b; }
   .signup { flex-direction: column; }
   .signup button { width: 100%; }
   .note-card { padding: 24px 20px; }
+  .portrait { width: 132px; height: 158px; margin-bottom: 18px; }
+  .entry { flex-direction: column; gap: 12px; padding: 18px; }
+  .badge { width: 38px; height: 38px; font-size: 1rem; }
 }
 </style>
 </head>
@@ -323,6 +369,9 @@ footer a { color: #8b8b8b; }
 
 <header class="masthead">
   <div class="wrap identity">
+    <div class="portrait">
+      <img src="tricia.jpg" alt="Tricia Delp Ireland" width="168" height="200">
+    </div>
     <p class="name">Tricia Delp Ireland</p>
     <p class="brokerage">Coastal Select Properties</p>
     <p class="locale">Wilmington&rsquo;s Historic District &amp; our local beaches</p>
@@ -334,63 +383,91 @@ footer a { color: #8b8b8b; }
 
   <section class="hero">
     <div class="wrap">
-      <h1>Enter your email and subscribe to get access to the best rates and the best service from local professionals that I know do great work.</h1>
+      <h1>The local pros I actually trust with my own clients.</h1>
 
-      <p class="sub">The same short list I hand my own clients when they ask me who to call.</p>
+      <p class="sub">Enter your email and I&rsquo;ll send you the list.</p>
 
       <form class="signup" onsubmit="return false;">
         <label for="email">Your email address</label>
         <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
-        <button type="submit">Subscribe</button>
+        <button type="submit">Get the list</button>
       </form>
-
-      <p class="fineprint">A few emails a year. Nothing else, and never your address to anyone.</p>
     </div>
   </section>
 
   <section class="trades">
     <div class="wrap">
       <div class="section-head">
-        <h2>Who I call</h2>
-        <p>Everyday trades my clients ask me about most. Tap one to see who I use.</p>
+        <h2>Let me make the introduction</h2>
+        <p>I don&rsquo;t hand these out lightly &mdash; every name here is someone I&rsquo;ve used myself, and I&rsquo;ll make sure you&rsquo;re treated right.</p>
       </div>
 
-      <ul class="grid">
+      <ul class="list">
         <li>
-          <a href="#">
-            <span class="trade">Painters</span>
-            <span class="blurb">Interior, exterior, and the salt-air touch-ups every coastal house needs.</span>
-          </a>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#128396;&#65039;</span>
+            <div class="entry-body">
+              <span class="trade">Painters</span>
+              <span class="biz">Blue Heron Painting Co.</span>
+              <span class="blurb">&ldquo;They repainted our whole exterior two summers ago and it still looks new &mdash; they know how to handle salt air.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550142">(910) 555-0142</a></span>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="#">
-            <span class="trade">Plumbers</span>
-            <span class="blurb">Repairs, water heaters, and the older Historic District plumbing.</span>
-          </a>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#128295;</span>
+            <div class="entry-body">
+              <span class="trade">Plumbers</span>
+              <span class="biz">Cape Fear Plumbing</span>
+              <span class="blurb">&ldquo;Older Historic District pipes scare most plumbers off. These guys don&rsquo;t blink.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550166">(910) 555-0166</a></span>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="#">
-            <span class="trade">Electricians</span>
-            <span class="blurb">Panel work, fixtures, and rewiring in the older homes downtown.</span>
-          </a>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#128161;</span>
+            <div class="entry-body">
+              <span class="trade">Electricians</span>
+              <span class="biz">Brightline Electric</span>
+              <span class="blurb">&ldquo;Rewired a 1920s bungalow for me without a single surprise on the invoice.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550119">(910) 555-0119</a></span>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="#">
-            <span class="trade">Landscapers</span>
-            <span class="blurb">Yard clean-ups, planting, and upkeep that holds up in coastal soil.</span>
-          </a>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#127807;</span>
+            <div class="entry-body">
+              <span class="trade">Landscapers</span>
+              <span class="biz">Tidewater Landscaping</span>
+              <span class="blurb">&ldquo;My own yard, actually &mdash; I wouldn&rsquo;t trust anyone else with it.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550184">(910) 555-0184</a></span>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="#">
-            <span class="trade">House Cleaners</span>
-            <span class="blurb">Move-in and move-out deep cleans, plus regular visits.</span>
-          </a>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#129529;</span>
+            <div class="entry-body">
+              <span class="trade">House Cleaners</span>
+              <span class="biz">Sparkle Coastal Cleaning</span>
+              <span class="blurb">&ldquo;Move-out clean before a closing, same day notice, no complaints from buyers.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550157">(910) 555-0157</a></span>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="#">
-            <span class="trade">Handymen</span>
-            <span class="blurb">The punch list of small jobs that never quite adds up to one trade.</span>
-          </a>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#128736;&#65039;</span>
+            <div class="entry-body">
+              <span class="trade">Handymen</span>
+              <span class="biz">Anchor Handyman Services</span>
+              <span class="blurb">&ldquo;The guy who shows up for the stuff nobody else wants to quote.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550173">(910) 555-0173</a></span>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
