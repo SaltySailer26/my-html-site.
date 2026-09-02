@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Paige Mattocks | Local Pros I Trust</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Brand color from buyinwilmington.com's own stylesheet: #03c3f9.
+     Darkened along the same hue to clear 4.5:1 on white. */
+  --brand: #02708f;
+  --brand-rgb: 2, 112, 143;
+  --brand-deep: #015770;
+  --brand-tint: #e8f2f5;
+  --ink: #212121;
+  --ink-soft: #555555;
+  --line: #dcdcdc;
+  --surface: #f9f9f9;
+  --white: #ffffff;
+  --sand: #f5f1ea;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  border-top: 5px solid var(--brand);
+  background: var(--white);
+  padding: 34px 0 0;
+}
+
+.identity {
+  text-align: center;
+}
+
+.portrait {
+  width: 168px;
+  height: 200px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface);
+  border: 3px solid var(--white);
+  box-shadow: 0 2px 14px rgba(33, 33, 33, 0.14);
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.identity .name {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+
+.identity .brokerage {
+  margin: 10px 0 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.identity .locale {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.rule {
+  width: 44px;
+  height: 2px;
+  background: var(--brand);
+  border: 0;
+  margin: 26px auto 0;
+}
+
+/* ---------- Hero / signup ---------- */
+
+.hero {
+  padding: 40px 0 52px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.5rem, 4.4vw, 2.05rem);
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: -0.005em;
+  margin: 0 auto;
+  max-width: 20em;
+  color: var(--ink);
+}
+
+.hero .sub {
+  margin: 20px auto 0;
+  max-width: 30em;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.signup {
+  margin: 32px auto 0;
+  max-width: 470px;
+  display: flex;
+  gap: 10px;
+}
+
+.signup label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.signup input[type="email"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--white);
+  padding: 15px 16px;
+  border: 2px solid var(--line);
+  border-radius: 3px;
+}
+
+.signup input[type="email"]::placeholder { color: #8b8b8b; }
+
+.signup input[type="email"]:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+
+.signup button {
+  flex: 0 0 auto;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: var(--brand);
+  padding: 15px 26px;
+  border: 2px solid var(--brand);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.signup button:hover,
+.signup button:focus-visible {
+  background: var(--brand-deep);
+  border-color: var(--brand-deep);
+  outline: none;
+}
+
+/* ---------- Trades ---------- */
+
+.trades {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 52px 0 56px;
+}
+
+.section-head { text-align: center; }
+
+.section-head h2 {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+}
+
+.section-head p {
+  margin: 12px auto 0;
+  max-width: 32em;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.list {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+}
+
+.list > li + li { margin-top: 12px; }
+
+.entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brand);
+  border-radius: 3px;
+  padding: 18px 20px;
+}
+
+.badge {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--brand-tint);
+  border: 1px solid rgba(var(--brand-rgb), 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.entry-body { flex: 1 1 auto; min-width: 0; }
+
+.entry .trade {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.entry .biz {
+  display: block;
+  margin-top: 3px;
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--brand-deep);
+}
+
+.entry .blurb {
+  display: block;
+  margin-top: 7px;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.entry .phone {
+  display: block;
+  margin-top: 9px;
+  font-size: 0.9rem;
+}
+
+.entry .phone a {
+  color: var(--brand-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(var(--brand-rgb), 0.35);
+}
+
+.entry .phone a:hover { border-bottom-color: var(--brand); }
+
+/* ---------- Note ---------- */
+
+.note {
+  padding: 52px 0 44px;
+}
+
+.note-card {
+  background: var(--sand);
+  border-radius: 4px;
+  padding: 28px 30px;
+}
+
+.note-card p {
+  margin: 0;
+  font-size: 0.97rem;
+  color: var(--ink);
+}
+
+.note-card p + p { margin-top: 14px; }
+
+.signoff {
+  margin-top: 20px !important;
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--brand-deep);
+}
+
+.contact {
+  margin: 30px 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.contact a {
+  color: var(--brand-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(var(--brand-rgb), 0.35);
+}
+
+.contact a:hover { border-bottom-color: var(--brand); }
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 26px 0 40px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: #8b8b8b;
+}
+
+footer p + p { margin-top: 6px; }
+
+footer a { color: #8b8b8b; }
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .signup { flex-direction: column; }
+  .signup button { width: 100%; }
+  .note-card { padding: 24px 20px; }
+  .portrait { width: 132px; height: 157px; margin-bottom: 18px; }
+  .entry { flex-direction: column; gap: 12px; padding: 18px; }
+  .badge { width: 38px; height: 38px; font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap identity">
+    <div class="portrait">
+      <img src="/r/paige-mattocks/paige.jpg" alt="Paige Mattocks" width="168" height="200">
+    </div>
+    <p class="name">Paige Mattocks</p>
+    <p class="brokerage">Aimee &amp; Co.</p>
+    <p class="locale">New Hanover, Pender &amp; Brunswick&nbsp;Counties</p>
+    <hr class="rule">
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Local Professionals You Can Trust</h1>
+
+      <p class="sub">Enter your email to receive the best service and rates.</p>
+
+      <form class="signup" onsubmit="return false;">
+        <label for="email">Your email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+        <button type="submit">Get the list</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="trades">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Let me make the introduction</h2>
+        <p>I personally make sure all my clients are treated right.</p>
+      </div>
+
+      <ul class="list">
+
+        <li>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#128396;&#65039;</span>
+            <div class="entry-body">
+              <span class="trade">Painter</span>
+              <span class="biz">Blue Heron Painting Co.</span>
+              <span class="blurb">&ldquo;They repainted a whole exterior for me two summers ago and it still looks new. They know how to handle salt air.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550142">910.555.0142</a></span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#128295;</span>
+            <div class="entry-body">
+              <span class="trade">Plumber</span>
+              <span class="biz">Cape Fear Plumbing Works</span>
+              <span class="blurb">&ldquo;He crawled under an older house on a Sunday to find a leak two other outfits had missed, then charged me for the one hour it took.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550166">910.555.0166</a></span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#128161;</span>
+            <div class="entry-body">
+              <span class="trade">Electrician</span>
+              <span class="biz">Live Oak Electric</span>
+              <span class="blurb">&ldquo;They rewired a 1920s bungalow for me without cracking a single wall of the original plaster.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550119">910.555.0119</a></span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#10052;&#65039;</span>
+            <div class="entry-body">
+              <span class="trade">Heating &amp; Air</span>
+              <span class="biz">Tidewater Heating &amp; Air</span>
+              <span class="blurb">&ldquo;My sellers lost their air conditioning the first week of July, and he had a new system running before the next morning.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550164">910.555.0164</a></span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#127807;</span>
+            <div class="entry-body">
+              <span class="trade">Landscaper</span>
+              <span class="biz">Greenfield Lawn &amp; Landscape</span>
+              <span class="blurb">&ldquo;His crew cleared and reseeded a badly overgrown lot in under a week, right before it went on the market.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550184">910.555.0184</a></span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="entry">
+            <span class="badge" aria-hidden="true">&#128736;&#65039;</span>
+            <div class="entry-body">
+              <span class="trade">Handyman</span>
+              <span class="biz">Anchor Handyman Services</span>
+              <span class="blurb">&ldquo;He has patched sticking doors and rotten trim in half the houses I have sold, and he turns up the day he says he will.&rdquo;</span>
+              <span class="phone"><a href="tel:+19105550173">910.555.0173</a></span>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section class="note">
+    <div class="wrap">
+      <div class="note-card">
+        <p>The keys change hands and my job is supposed to be finished. Then months later something needs painting, or fixing, or replacing altogether, and my phone lights up with a version of the same question: who would you call for this?</p>
+        <p>This is my list of answers. Local people doing everyday work around New Hanover, Pender and Brunswick, and a name only goes on it after I have watched how they handle somebody else&rsquo;s home and how they treat the family living in it.</p>
+        <p class="signoff">&mdash; Paige</p>
+      </div>
+
+      <p class="contact">
+        Paige Mattocks &middot; Aimee &amp; Co.<br>
+        <a href="tel:+19199201848">919.920.1848</a> &middot;
+        <a href="mailto:paige@aimeeandco.com">paige@aimeeandco.com</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Powered by <a href="https://hootova.com">Hootova</a>.</p>
+    <p>Home services only. Nothing here involves settlement or closing services.</p>
+  </div>
+</footer>
+
+</body>
+</html>
