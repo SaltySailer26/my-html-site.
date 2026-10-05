@@ -305,43 +305,41 @@ header {
   line-height: 1.08;
   letter-spacing: -0.025em;
   color: var(--navy);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   font-weight: 500;
 }
 
-/* The em line is a full sentence now, not a six-word kicker. It needs
-   sub-headline scale and room to breathe, or it swamps the headline. */
+/* Hero type system, three tiers:
+   H1   serif, navy; the em line is its payoff beat, nearly full size,
+        set apart by italic + gold rather than by shrinking
+   H2   sans 500, navy-soft; .hero-lead and .hero-rotate-row share one
+        style so they read as two lines of a single statement
+   H3   sans 400, ink-soft body copy (.hero-sub) */
 .hero-headline em {
   display: block;
-  margin-top: 0.9rem;
-  font-size: clamp(1.1rem, 1.7vw, 1.4rem);
-  line-height: 1.4;
-  letter-spacing: -0.01em;
+  margin-top: 0.3em;
+  font-size: 0.86em;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   font-style: italic;
   color: var(--accent-deep);
-  font-weight: 400;
+  font-weight: 500;
 }
 
-/* H2 lead-in: sits between the H1 em line and the rotator, same sans
-   scale as the rotate row but navy/600 so the two read as one block */
-.hero-lead {
+.hero-lead,
+.hero-rotate-row {
   font-family: var(--sans);
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.4;
+  font-size: clamp(1.15rem, 1.6vw, 1.3rem);
+  font-weight: 500;
+  color: var(--navy-soft);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
   margin: 0;
 }
 
 /* Rotating text: static stem, trade crossfades in place on the same line */
 .hero-rotate-row {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--sans);
-  font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  line-height: 1.5;
+  margin-bottom: 1.25rem;
 }
 
 /* The trade slot: a gold fill-in-the-blank sized to the longest trade,
@@ -392,11 +390,13 @@ header {
 }
 
 .hero-sub {
-  font-size: 1.15rem;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  font-weight: 400;
   color: var(--ink-soft);
-  line-height: 1.6;
-  margin-bottom: 2.25rem;
-  max-width: 520px;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 500px;
 }
 
 .hero-cta-row {
@@ -422,53 +422,72 @@ header {
   background-color: var(--success);
 }
 
-/* Hero Mockup - Branded Page Preview */
-.mockup {
+/* Hero mockup: iPhone frame (bezel, Dynamic Island, side buttons) */
+.phone {
   position: relative;
-  background-color: var(--paper);
-  border-radius: 12px;
-  box-shadow:
-    0 1px 2px rgba(26, 58, 82, 0.04),
-    0 12px 40px rgba(26, 58, 82, 0.12),
-    0 32px 80px rgba(26, 58, 82, 0.08);
-  padding: 0;
-  overflow: hidden;
-  max-width: 420px;
+  width: 290px;
+  aspect-ratio: 9 / 19.5;
+  padding: 10px;
   margin-left: auto;
+  margin-right: 1.5rem;
+  background-color: #1d1d1f;
+  border-radius: 50px;
+  box-shadow:
+    inset 0 0 0 2px #3a3a3c,
+    0 2px 4px rgba(26, 58, 82, 0.08),
+    0 16px 40px rgba(26, 58, 82, 0.18),
+    0 36px 80px rgba(26, 58, 82, 0.12);
   transform: rotate(-1deg);
   transition: transform 0.4s ease;
 }
 
-.mockup:hover { transform: rotate(0deg) translateY(-4px); }
+.phone:hover { transform: rotate(0deg) translateY(-4px); }
 
-.mockup-browser-bar {
-  background-color: var(--cream-warm);
-  padding: 0.6rem 0.9rem;
+/* Side buttons: volume pair on the left, power on the right */
+.phone::before,
+.phone::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: #2c2c2e;
+}
+
+.phone::before {
+  left: -3px;
+  top: 120px;
+  height: 46px;
+  border-radius: 2px 0 0 2px;
+  box-shadow: 0 58px 0 #2c2c2e;
+}
+
+.phone::after {
+  right: -3px;
+  top: 150px;
+  height: 72px;
+  border-radius: 0 2px 2px 0;
+}
+
+.phone-screen {
+  position: relative;
+  height: 100%;
   display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  border-bottom: 1px solid var(--rule);
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 40px;
+  overflow: hidden;
 }
 
-.browser-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #d4ccbe;
+.phone-island {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 84px;
+  height: 24px;
+  background-color: #000000;
+  border-radius: 14px;
+  z-index: 2;
 }
-
-.browser-url {
-  margin-left: 0.75rem;
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  color: var(--ink-muted);
-  background-color: var(--paper);
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  border: 1px solid var(--rule);
-}
-
-.mockup-body { padding: 1.75rem 1.5rem 1.5rem; }
 
 .mockup-agent-row {
   display: flex;
@@ -505,25 +524,6 @@ header {
   font-size: 0.75rem;
   color: var(--ink-muted);
   margin-top: 0.1rem;
-}
-
-.mockup-heading {
-  font-family: var(--serif);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--navy);
-  margin: 1.25rem 0 0.75rem;
-  letter-spacing: -0.01em;
-}
-
-.mockup-heading:first-child {
-  margin-top: 0;
-}
-
-.mockup-divider {
-  height: 1px;
-  background-color: var(--rule);
-  margin: 0.75rem 0;
 }
 
 /* Activity feed (hero mockup) */
@@ -622,60 +622,159 @@ header {
    iMessage colors, not the site palette, so it reads as a real phone */
 .imsg {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 18px;
-  overflow: hidden;
+  color: #000000;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Status bar + Messages nav bar share one translucent-gray top panel,
+   the way iOS draws them */
+.ios-top {
+  background-color: #f6f6f7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ios-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 42px;
+  padding: 0 1.45rem 0 1.65rem;
+}
+
+.ios-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ios-glyphs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ios-glyphs svg { display: block; }
+
+.ios-nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0.1rem 0.85rem 0.55rem;
+}
+
+.ios-back { justify-self: start; }
+.ios-facetime { justify-self: end; }
 
 .imsg-contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.85rem 0 0.65rem;
-  background-color: #f6f6f6;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  gap: 0.2rem;
 }
 
 .imsg-avatar {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: linear-gradient(180deg, #a5abb8 0%, #858994 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 .imsg-name {
-  font-size: 0.72rem;
-  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.66rem;
 }
 
 .imsg-thread {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1rem 1.1rem;
+  justify-content: flex-end;
+  padding: 0.75rem 0.9rem 0.6rem;
+  background-color: #ffffff;
+  overflow: hidden;
 }
+
+.imsg-stamp {
+  align-self: center;
+  font-size: 0.62rem;
+  color: #8e8e93;
+  margin-bottom: 0.15rem;
+}
+
+.imsg-stamp strong { font-weight: 600; }
 
 .imsg-bubble {
   position: relative;
-  max-width: 75%;
-  padding: 0.5rem 0.8rem;
-  border-radius: 18px;
-  font-size: 0.9rem;
+  max-width: 76%;
+  padding: 0.42rem 0.72rem;
+  border-radius: 17px;
+  font-size: 0.84rem;
   line-height: 1.3;
   letter-spacing: -0.005em;
   word-wrap: break-word;
-  margin-top: 0.6rem;
+  margin-top: 0.55rem;
 }
 
-.imsg-bubble:first-child { margin-top: 0; }
+.imsg-receipt {
+  align-self: flex-end;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #8e8e93;
+  margin: 0.2rem 0.2rem 0 0;
+}
+
+.ios-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem 0;
+  background-color: #ffffff;
+}
+
+.ios-plus {
+  flex: none;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: #e9e9eb;
+  color: #7c7c80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.ios-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 29px;
+  padding: 0 0.6rem 0 0.75rem;
+  border: 1px solid #d1d1d6;
+  border-radius: 15px;
+  font-size: 0.78rem;
+  color: #b3b3b8;
+}
+
+.ios-home {
+  flex: none;
+  width: 36%;
+  height: 4px;
+  margin: 0.7rem auto 0.45rem;
+  border-radius: 3px;
+  background-color: #000000;
+}
 
 .imsg-sent {
   align-self: flex-end;
@@ -727,10 +826,9 @@ header {
   border-bottom-right-radius: 10px;
 }
 
-@media (max-width: 640px) {
-  .mockup-body { padding: 1.25rem 1rem 1rem; }
-  .imsg-thread { padding: 0.85rem 0.85rem 1rem; }
-  .imsg-bubble { max-width: 80%; font-size: 0.875rem; }
+@media (max-width: 360px) {
+  .phone { width: 270px; }
+  .imsg-bubble { font-size: 0.8rem; }
 }
 
 /* Trust Strip */
@@ -1328,7 +1426,7 @@ footer {
   
   .hero { padding: 3rem 0; }
   
-  .mockup {
+  .phone {
     transform: none;
     margin: 0 auto;
   }
@@ -1472,27 +1570,39 @@ button:focus-visible {
         </div>
       </div>
       <div>
-        <div class="mockup">
-          <div class="mockup-browser-bar">
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-url">hootova.com/dashboard</div>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-heading">Sent in your name</div>
-            <div class="mockup-divider"></div>
-            <div class="imsg" role="img" aria-label="Text conversation. Jane: Hey Mike, it's Jane! My client's A/C died, some guy quoted her $5k. Mike: That's steep. Send her my number, I'll take a look today. Jane: You're the best.">
-              <div class="imsg-contact" aria-hidden="true">
-                <div class="imsg-avatar">M</div>
-                <div class="imsg-name">Mike</div>
+        <div class="phone" role="img" aria-label="iPhone text conversation. Jane: Hey Mike, it's Jane! A past client's A/C died, some guy quoted her $5k. Mike: That's steep. Send her my number, I'll take a look today. Jane: You're the best.">
+          <div class="phone-screen imsg" aria-hidden="true">
+            <div class="phone-island"></div>
+            <div class="ios-top">
+              <div class="ios-status">
+                <span class="ios-time">9:41</span>
+                <span class="ios-glyphs">
+                  <svg width="17" height="11" viewBox="0 0 17 11" fill="#000"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
+                  <svg width="15" height="11" viewBox="0 0 16 12" fill="none" stroke="#000" stroke-width="1.7" stroke-linecap="round"><path d="M1.5 4.6a9 9 0 0 1 13 0"/><path d="M4.2 7.3a5.4 5.4 0 0 1 7.6 0"/><circle cx="8" cy="10.2" r="1.1" fill="#000" stroke="none"/></svg>
+                  <svg width="24" height="11" viewBox="0 0 25 12"><rect x="0.5" y="0.5" width="21" height="11" rx="3.2" fill="none" stroke="#000" stroke-opacity="0.4"/><rect x="2" y="2" width="18" height="8" rx="1.8" fill="#000"/><rect x="22.8" y="4" width="1.7" height="4" rx="0.8" fill="#000" fill-opacity="0.4"/></svg>
+                </span>
               </div>
-              <div class="imsg-thread" aria-hidden="true">
-                <div class="imsg-bubble imsg-sent">Hey Mike, it's Jane! My client's A/C died, some guy quoted her $5k 😳</div>
-                <div class="imsg-bubble imsg-received">That's steep. Send her my number, I'll take a look today.</div>
-                <div class="imsg-bubble imsg-sent">You're the best 🙏</div>
+              <div class="ios-nav">
+                <svg class="ios-back" width="11" height="18" viewBox="0 0 11 18" fill="none" stroke="#0b84fe" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2L2 9l7 7"/></svg>
+                <div class="imsg-contact">
+                  <div class="imsg-avatar">M</div>
+                  <div class="imsg-name">Mike <svg width="5" height="8" viewBox="0 0 5 8" fill="none" stroke="#8e8e93" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l3 3-3 3"/></svg></div>
+                </div>
+                <svg class="ios-facetime" width="22" height="15" viewBox="0 0 24 16" fill="#0b84fe"><rect x="0" y="1" width="15.5" height="14" rx="3.5"/><path d="M17 6.2l5.4-3.6c.7-.4 1.6.1 1.6.9v9c0 .8-.9 1.3-1.6.9L17 9.8z"/></svg>
               </div>
             </div>
+            <div class="imsg-thread">
+              <div class="imsg-stamp"><strong>Today</strong> 9:38 AM</div>
+              <div class="imsg-bubble imsg-sent">Hey Mike, it's Jane! A past client's A/C died, some guy quoted her $5k 😳</div>
+              <div class="imsg-bubble imsg-received">That's steep. Send her my number, I'll take a look today.</div>
+              <div class="imsg-bubble imsg-sent">You're the best 🙏</div>
+              <div class="imsg-receipt">Delivered</div>
+            </div>
+            <div class="ios-input">
+              <span class="ios-plus">+</span>
+              <span class="ios-field">iMessage <svg width="10" height="14" viewBox="0 0 10 14" fill="none" stroke="#b3b3b8" stroke-width="1.4" stroke-linecap="round"><rect x="3" y="0.8" width="4" height="7.6" rx="2" fill="#b3b3b8" stroke="none"/><path d="M1 6.2a4 4 0 0 0 8 0M5 10.4v2.6"/></svg></span>
+            </div>
+            <div class="ios-home"></div>
           </div>
         </div>
       </div>
