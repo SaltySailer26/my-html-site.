@@ -322,6 +322,17 @@ header {
   font-weight: 400;
 }
 
+/* H2 lead-in: sits between the H1 em line and the rotator, same sans
+   scale as the rotate row but navy/600 so the two read as one block */
+.hero-lead {
+  font-family: var(--sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.4;
+  margin: 0;
+}
+
 /* Rotating text: static stem, trade crossfades in place on the same line */
 .hero-rotate-row {
   margin-top: 1rem;
@@ -605,6 +616,121 @@ header {
 
 .activity-earnings strong {
   font-weight: 700;
+}
+
+/* iMessage thread (hero mockup): deliberately iOS system font and
+   iMessage colors, not the site palette, so it reads as a real phone */
+.imsg {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.imsg-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.85rem 0 0.65rem;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.imsg-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #a5abb8 0%, #858994 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.imsg-name {
+  font-size: 0.72rem;
+  color: #000000;
+}
+
+.imsg-thread {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 1.1rem;
+}
+
+.imsg-bubble {
+  position: relative;
+  max-width: 75%;
+  padding: 0.5rem 0.8rem;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  word-wrap: break-word;
+  margin-top: 0.6rem;
+}
+
+.imsg-bubble:first-child { margin-top: 0; }
+
+.imsg-sent {
+  align-self: flex-end;
+  background-color: #0b84fe;
+  color: #ffffff;
+}
+
+.imsg-received {
+  align-self: flex-start;
+  background-color: #e9e9eb;
+  color: #000000;
+}
+
+/* Bubble tails: classic two-pseudo trick, the ::after masks with the
+   thread background to carve the curve */
+.imsg-bubble::before,
+.imsg-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 20px;
+}
+
+.imsg-sent::before {
+  right: -7px;
+  width: 20px;
+  background-color: #0b84fe;
+  border-bottom-left-radius: 16px 14px;
+}
+
+.imsg-sent::after {
+  right: -26px;
+  width: 26px;
+  background-color: #ffffff;
+  border-bottom-left-radius: 10px;
+}
+
+.imsg-received::before {
+  left: -7px;
+  width: 20px;
+  background-color: #e9e9eb;
+  border-bottom-right-radius: 16px 14px;
+}
+
+.imsg-received::after {
+  left: -26px;
+  width: 26px;
+  background-color: #ffffff;
+  border-bottom-right-radius: 10px;
+}
+
+@media (max-width: 640px) {
+  .mockup-body { padding: 1.25rem 1rem 1rem; }
+  .imsg-thread { padding: 0.85rem 0.85rem 1rem; }
+  .imsg-bubble { max-width: 80%; font-size: 0.875rem; }
 }
 
 /* Trust Strip */
@@ -1317,23 +1443,24 @@ button:focus-visible {
       <div>
         <div class="eyebrow">For Real Estate Agents</div>
         <h1 class="hero-headline">
-          You recommend local businesses to your clients all the time, for free.
-          <em>Hootova turns your connections to local businesses into a marketing service that keeps you top of mind with your clientbase.</em>
+          Your clients need you for more than buying and selling.
+          <em>They need your reputation.</em>
         </h1>
+        <p class="hero-lead">Save your clients the guesswork of who to trust.</p>
         <div class="hero-rotate-row">
-          <span class="hero-rotate-stem">You're the connection to</span>
+          <span class="hero-rotate-stem">Introduce them to your</span>
           <span class="hero-rotate-wrapper" aria-live="polite">
-            <span class="hero-rotate-sizer" aria-hidden="true"><strong>a trustworthy house cleaner.</strong></span>
-            <span class="hero-rotate-line active"><strong>a punctual carpenter.</strong></span>
-            <span class="hero-rotate-line next"><strong>a detailed landscaper.</strong></span>
-            <span class="hero-rotate-line"><strong>a trustworthy house cleaner.</strong></span>
-            <span class="hero-rotate-line"><strong>a mechanic with integrity.</strong></span>
-            <span class="hero-rotate-line"><strong>a reliable pool technician.</strong></span>
-            <span class="hero-rotate-line prev"><strong>an artistic photographer.</strong></span>
+            <span class="hero-rotate-sizer" aria-hidden="true"><strong>trustworthy house cleaner.</strong></span>
+            <span class="hero-rotate-line active"><strong>punctual carpenter.</strong></span>
+            <span class="hero-rotate-line next"><strong>detailed landscaper.</strong></span>
+            <span class="hero-rotate-line"><strong>trustworthy house cleaner.</strong></span>
+            <span class="hero-rotate-line"><strong>mechanic with integrity.</strong></span>
+            <span class="hero-rotate-line"><strong>reliable pool technician.</strong></span>
+            <span class="hero-rotate-line prev"><strong>artistic photographer.</strong></span>
           </span>
         </div>
         <p class="hero-sub">
-          Hootova writes the content, sends it under your name, and pays for the materials. You don't do the work. You just stay top of mind, and get paid for it.
+          Hootova gives your client base a way to connect with the people you recommend. Because your name's on it, they're treated right.
         </p>
         <div class="hero-cta-row">
           <a class="btn btn-primary btn-lg" href="/how-it-works.html">See how it works</a>
@@ -1341,7 +1468,7 @@ button:focus-visible {
         </div>
         <div class="hero-meta">
           <span class="hero-meta-dot"></span>
-          Takes 10 minutes. Free to start. No credit card.
+          Takes 10 minutes. No cost to you. We get paid by the businesses, not by agents.
         </div>
       </div>
       <div>
@@ -1353,51 +1480,18 @@ button:focus-visible {
             <div class="browser-url">hootova.com/dashboard</div>
           </div>
           <div class="mockup-body">
-            <div class="mockup-heading">Recent Automations</div>
+            <div class="mockup-heading">Sent in your name</div>
             <div class="mockup-divider"></div>
-            <div class="activity-item">
-              <div class="activity-icon activity-icon--check" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div class="imsg" role="img" aria-label="Text conversation. Jane: Hey Mike, it's Jane! My client's A/C died, some guy quoted her $5k. Mike: That's steep. Send her my number, I'll take a look today. Jane: You're the best.">
+              <div class="imsg-contact" aria-hidden="true">
+                <div class="imsg-avatar">M</div>
+                <div class="imsg-name">Mike</div>
               </div>
-              <div class="activity-content">
-                <div class="activity-label">Client check-in sent</div>
-                <div class="activity-detail">Confirming service was received and quality was good</div>
+              <div class="imsg-thread" aria-hidden="true">
+                <div class="imsg-bubble imsg-sent">Hey Mike, it's Jane! My client's A/C died, some guy quoted her $5k 😳</div>
+                <div class="imsg-bubble imsg-received">That's steep. Send her my number, I'll take a look today.</div>
+                <div class="imsg-bubble imsg-sent">You're the best 🙏</div>
               </div>
-              <div class="activity-time">2m ago</div>
-            </div>
-            <div class="activity-item">
-              <div class="activity-icon activity-icon--notify" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div class="activity-content">
-                <div class="activity-label">Local business notified</div>
-                <div class="activity-detail">New lead forwarded with your name and client details</div>
-              </div>
-              <div class="activity-time">1h ago</div>
-            </div>
-            <div class="activity-item">
-              <div class="activity-icon activity-icon--star" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <div class="activity-content">
-                <div class="activity-label">Feedback received</div>
-                <div class="activity-detail">Client confirmed the plumber showed up on time and did great work</div>
-              </div>
-              <div class="activity-time">3h ago</div>
-            </div>
-            <div class="activity-item">
-              <div class="activity-icon activity-icon--report" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-              </div>
-              <div class="activity-content">
-                <div class="activity-label">Monthly report ready</div>
-                <div class="activity-detail">12 intros sent, 3 local pros contacted this month</div>
-              </div>
-              <div class="activity-time">1d ago</div>
-            </div>
-            <div class="activity-earnings">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              <span>June earnings: <strong>$47.00</strong></span>
             </div>
           </div>
         </div>
